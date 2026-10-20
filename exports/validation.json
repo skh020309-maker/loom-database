@@ -1,0 +1,57 @@
+{
+  "checked_on": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "database": {
+    "status": "ok",
+    "notes_checked": 12,
+    "errors": [],
+    "checks": [
+      "integrity",
+      "foreign_keys",
+      "sha256",
+      "excerpt_length",
+      "source_provenance",
+      "content_origin",
+      "annotation_state",
+      "evidence_note",
+      "author_split_leakage",
+      "training_permission"
+    ],
+    "scope_note": "离线结构校验；不代替网页原文比对或人工语义核验。"
+  },
+  "records": 12,
+  "authors": 6,
+  "exports_count_match": true,
+  "unit_tests": {
+    "passed": 16,
+    "command": "python -m unittest discover -s tests -v",
+    "verified_by": "implementation subagent"
+  },
+  "browser_checks": {
+    "initial_count": 12,
+    "zh_count": 3,
+    "zh_keyword_minimal_reproduction_count": 1,
+    "provenance_details_expand": true
+  },
+  "mysql_export": {
+    "status": "ok",
+    "source": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\loom.db",
+    "output": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\exports\\mysql_seed.sql",
+    "row_counts": {
+      "sources": 12,
+      "notes": 12,
+      "annotations": 12,
+      "tags": 36,
+      "note_tags": 36,
+      "import_batches": 1,
+      "processing_logs": 12
+    },
+    "total_rows": 121,
+    "sql_sha256": "03b3b9b5f083b268ee5241a4a4abf2600923bc72bc6f917f7b7b574e1848b87b",
+    "mysql_executed": false,
+    "mysql_version_required": "8.0.29+",
+    "limitations": "SQL generated and locally checked only; import requires empty tables. Indexed URL/ID/tag length bounds are enforced; schema is not a live MySQL migration."
+  },
+  "mysql_live_tested": false,
+  "glm_executed": false
+}

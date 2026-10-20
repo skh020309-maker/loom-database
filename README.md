@@ -24,7 +24,7 @@
 
 以本地 2026 年 10 月的《Loom需求分析文档》和《讲稿》为当前依据：UniApp 手机 App，Spring Boot 3 后端，MySQL 8，Redis，本地 SQLite。较早的 V2.6 文档属于网页方案，涉及技术路线或功能优先级冲突时，不据它覆盖较新的手机方案。
 
-当前先交付便于组员复制、检查的 SQLite 样本库；`schema/mysql.sql` 提供 MySQL 8 的同构样本表和迁移参考，`exports/mysql_seed.sql` 提供数据导入脚本。**未在 MySQL 服务上执行，也未连接 App、Redis 或 GLM。**生产用户、认证和离线同步需结合正式代码另做迁移。
+当前先交付便于组员复制、检查的 SQLite 样本库；`schema/mysql.sql` 提供 MySQL **8.0.29+** 的同构样本表和迁移参考，`exports/mysql_seed.sql` 提供数据导入脚本，只能导入独立的空开发库。**未在 MySQL 服务上执行，也未连接 App、Redis 或 GLM。**生产用户、认证和离线同步需结合正式代码另做迁移。
 
 ## 使用
 
@@ -47,6 +47,8 @@ python -m unittest discover -s tests -v
 `search` 和 HTML 页面目前是关键词检索，不是向量检索或大模型语义搜索。重复导入同一文件不会新增重复记录；原文变更需新版本/新记录，不能借重复导入覆写。
 
 每日新增数据使用独立文件，例如 `data/2026-10-21_public_notes.json`，保持已有 ID 不变，再执行上述导入、检查和导出。
+
+MySQL 导出保留全部 7 张表，不覆盖旧数据；URL 最长 768 字符，笔记 ID 和标签最长 191 字符，超限会报错。需要的 MySQL 版本高于一般的“8.0”，是因为建表脚本使用可重复执行的触发器定义。
 
 ## 数据责任
 
