@@ -1,9 +1,9 @@
 {
-  "checked_on": "2026-10-20",
+  "checked_on": "2026-10-21",
   "timezone": "Asia/Shanghai",
   "database": {
     "status": "ok",
-    "notes_checked": 12,
+    "notes_checked": 22,
     "errors": [],
     "checks": [
       "integrity",
@@ -19,35 +19,41 @@
     ],
     "scope_note": "离线结构校验；不代替网页原文比对或人工语义核验。"
   },
-  "records": 12,
-  "authors": 6,
+  "records": 22,
+  "authors": 11,
+  "language_counts": {
+    "zh": 6,
+    "en": 16
+  },
   "exports_count_match": true,
   "unit_tests": {
     "passed": 16,
+    "checked_on": "2026-10-20",
     "command": "python -m unittest discover -s tests -v",
-    "verified_by": "implementation subagent"
+    "scope": "数据管理工具；本批只有数据与文档变更"
   },
   "browser_checks": {
-    "initial_count": 12,
-    "zh_count": 3,
-    "zh_keyword_minimal_reproduction_count": 1,
-    "provenance_details_expand": true
+    "checked_on": "2026-10-21",
+    "initial_count": 22,
+    "event_filter_count": 2,
+    "reset_restores_count": 22,
+    "layout_checked": true
   },
   "mysql_export": {
     "status": "ok",
     "source": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\loom.db",
     "output": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\exports\\mysql_seed.sql",
     "row_counts": {
-      "sources": 12,
-      "notes": 12,
-      "annotations": 12,
-      "tags": 36,
-      "note_tags": 36,
-      "import_batches": 1,
-      "processing_logs": 12
+      "sources": 22,
+      "notes": 22,
+      "annotations": 22,
+      "tags": 66,
+      "note_tags": 66,
+      "import_batches": 2,
+      "processing_logs": 22
     },
-    "total_rows": 121,
-    "sql_sha256": "03b3b9b5f083b268ee5241a4a4abf2600923bc72bc6f917f7b7b574e1848b87b",
+    "total_rows": 222,
+    "sql_sha256": "f0e8ef6f26a30e5e5bfc2d422216a218de4caf11f357880eea70f8c85bdc6d45",
     "mysql_executed": false,
     "mysql_version_required": "8.0.29+",
     "limitations": "SQL generated and locally checked only; import requires empty tables. Indexed URL/ID/tag length bounds are enforced; schema is not a live MySQL migration."
