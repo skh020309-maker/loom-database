@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export all seven Loom SQLite tables to a MySQL 8.0.29+ seed SQL file.
+"""Export all eight Loom SQLite tables to a MySQL 8.0.29+ seed SQL file.
 
 Reads SQLite in read-only mode and never connects to or installs MySQL.
 Run schema/mysql.sql in a selected database first, then import the seed into
@@ -45,6 +45,11 @@ COLUMNS = OrderedDict({
         "id", "note_id", "batch_id", "process_type", "status",
         "provider", "model", "details", "created_at",
     ),
+    "source_checks": (
+        "id", "source_id", "note_id", "checked_on", "checker_type", "fetch_status",
+        "excerpt_status", "author_check", "license_check", "license_evidence_url",
+        "notes", "method", "created_at",
+    ),
 })
 TEXT_LIMITS = {
     ("sources", "url"): 768,
@@ -54,12 +59,16 @@ TEXT_LIMITS = {
     ("tags", "name"): 191,
     ("note_tags", "note_id"): 191,
     ("processing_logs", "note_id"): 191,
+    ("source_checks", "id"): 191,
+    ("source_checks", "note_id"): 191,
 }
 for _table, _fields in {
     "sources": ("source_kind", "license_status"),
     "notes": ("language", "content_origin", "split"),
     "annotations": ("category", "summary_origin", "review_status", "pipeline_status"),
     "processing_logs": ("process_type", "status"),
+    "source_checks": ("checker_type", "fetch_status", "excerpt_status", "author_check",
+                      "license_check", "method"),
 }.items():
     for _field in _fields:
         TEXT_LIMITS[(_table, _field)] = 32
@@ -71,6 +80,7 @@ INTEGER_COLUMNS = {
     "note_tags": {"tag_id"},
     "import_batches": {"id", "record_count", "inserted_count", "skipped_count"},
     "processing_logs": {"id", "batch_id"},
+    "source_checks": {"source_id"},
 }
 
 
@@ -112,7 +122,7 @@ def export_database(db_path: Path, output: Path) -> dict[str, object]:
     counts: dict[str, int] = {}
     lines = [
         "-- Loom MySQL 8.0.29+ seed export. MySQL has NOT been executed or verified.",
-        "-- Requires schema/mysql.sql and seven EMPTY target tables in a selected database.",
+        "-- Requires schema/mysql.sql and eight EMPTY target tables in a selected database.",
         "-- Stop on the first SQL error; do not use the mysql client's --force option.",
         "-- Every text value is UTF-8 hex; original characters are preserved.",
         "SET NAMES utf8mb4 COLLATE utf8mb4_0900_bin;",
@@ -122,7 +132,7 @@ def export_database(db_path: Path, output: Path) -> dict[str, object]:
         "START TRANSACTION;",
     ]
     try:
-        conn.execute("BEGIN")  # One consistent snapshot for all seven tables.
+        conn.execute("BEGIN")  # One consistent snapshot for all eight tables.
         integrity = [row[0] for row in conn.execute("PRAGMA integrity_check")]
         if integrity != ["ok"]:
             raise ExportError(f"SQLite integrity check failed: {integrity}")

@@ -15,7 +15,7 @@ TEMPLATE = r"""<!doctype html>
 *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:15px/1.7 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
 header{background:var(--ink);color:#fff;padding:34px max(6vw,24px) 40px}.brand{letter-spacing:5px;font-size:13px;color:#e8b390}h1{font-size:32px;margin:8px 0 6px;letter-spacing:1px}header p{color:#ccdae4;margin:0;max-width:830px}
 main{max-width:1360px;margin:auto;padding:24px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.stat{background:white;border:1px solid var(--line);border-radius:12px;padding:16px 22px}.stat b{display:block;font-size:27px;line-height:1.3}.stat span{color:var(--muted);font-size:13px}.notice{background:#fff5e9;border-left:4px solid #cb7a39;padding:12px 16px;margin:0 0 20px;font-size:13px}
-.toolbar{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:12px}label{display:block;font-size:13px;color:var(--muted)}input,select{width:100%;font:inherit;border:1px solid #b9c7d1;border-radius:7px;background:white;color:var(--ink);padding:9px 12px;margin-top:5px}input:focus,select:focus{outline:2px solid #749dbc;outline-offset:2px}
+.toolbar{display:grid;grid-template-columns:2fr repeat(5,1fr);gap:12px}label{display:block;font-size:13px;color:var(--muted)}input,select{width:100%;font:inherit;border:1px solid #b9c7d1;border-radius:7px;background:white;color:var(--ink);padding:9px 12px;margin-top:5px}input:focus,select:focus{outline:2px solid #749dbc;outline-offset:2px}
 .results{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:18px 0 12px;font-size:13px;color:var(--muted)}button{font:inherit;color:var(--blue);background:white;border:1px solid var(--line);border-radius:7px;cursor:pointer;padding:6px 12px}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}article{background:white;border:1px solid var(--line);border-radius:12px;padding:21px 23px;min-width:0}article h2{font-size:18px;line-height:1.45;margin:8px 0 9px;overflow-wrap:anywhere}.meta{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:8px}.badge{color:#a6502b;background:#fff1e8;border-radius:4px;padding:1px 7px;white-space:nowrap}
 blockquote{margin:14px 0 12px;padding:10px 14px;background:#f3f6f8;border-left:3px solid #7f9cb2;font-size:15px;overflow-wrap:anywhere;white-space:pre-wrap}.small{color:var(--muted);font-size:12px}.summary{font-size:14px;margin:5px 0 12px}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font-size:12px;border:1px solid #e0e6eb;border-radius:16px;padding:1px 9px;color:#47647c}
@@ -29,17 +29,19 @@ footer{padding:30px 0 12px;color:var(--muted);font-size:12px;border-top:1px soli
 <main>
 <section class="stats" aria-label="数据概况"><div class="stat"><b id="count"></b><span>公开笔记短摘录</span></div><div class="stat"><b id="authors"></b><span>独立作者</span></div><div class="stat"><b id="langs"></b><span>中文 / 英文</span></div><div class="stat"><b id="pending"></b><span>标注待人工复核</span></div></section>
 <p class="notice">中文整理与分类为候选标注，复核状态逐条显示。每条保留原文短摘录与出处；引用和再利用前请查看对应许可。</p>
+<p class="notice" id="source-overview"></p>
 <section class="toolbar" aria-label="检索与筛选">
 <label>关键词检索<input id="query" type="search" placeholder="搜索标题、原文、中文整理或标签…" autocomplete="off"></label>
 <label>作者<select id="author"><option value="">全部作者</option></select></label>
 <label>语言<select id="language"><option value="">全部语言</option><option value="zh">中文</option><option value="en">英文</option></select></label>
 <label>分类<select id="category"><option value="">全部分类</option><option value="idea">想法</option><option value="note">笔记</option><option value="question">问题</option><option value="event">事件</option></select></label>
 <label>复核状态<select id="review"><option value="">全部状态</option><option value="pending">待人工复核</option><option value="verified">已人工复核</option><option value="rejected">已驳回</option></select></label>
+<label>来源核查<select id="source-review" aria-label="来源核查"><option value="">全部来源</option><option value="matched">原文已比对</option><option value="unavailable">暂不可访问</option><option value="license_confirmed">许可已确认</option><option value="needs_check">未比对或有冲突</option></select></label>
 </section>
 <div class="results"><span id="status" role="status" aria-live="polite"></span><button id="reset" type="button">重置筛选</button></div>
 <section id="cards" class="grid" aria-label="笔记列表"></section>
 <footer><p id="stamp"></p><p>本页离线可用，关键词匹配不代表语义检索。原文以 JSON 为准；CSV 对公式前缀做安全处理。</p>
-<a href="notes.json">JSON 数据</a><a href="notes.csv">CSV 表格</a><a href="notes.md">Markdown 清单</a><a href="../docs/高校参考.md">高校参考</a><a href="../README.md">使用说明</a></footer>
+<a href="source_audit.json">来源核查证据</a><a href="data_quality.json">质量报告</a><a href="notes.json">JSON 数据</a><a href="notes.csv">CSV 表格</a><a href="notes.md">Markdown 清单</a><a href="../docs/高校参考.md">高校参考</a><a href="../README.md">使用说明</a></footer>
 </main><noscript>请启用 JavaScript 查看筛选页面，或直接打开旁边的 notes.csv / notes.md。</noscript>
 <script id="dataset" type="application/json">__DATA__</script>
 <script>
@@ -54,11 +56,15 @@ $('count').textContent=notes.length;
 $('authors').textContent=new Set(notes.map(n=>n.author)).size;
 $('langs').textContent=`${notes.filter(n=>n.language==='zh').length} / ${notes.filter(n=>n.language==='en').length}`;
 $('pending').textContent=notes.filter(n=>(n.annotation||{}).review_status==='pending').length;
+const matchedSource=n=>n.source_check?.fetch_status==='accessible'&&['exact','normalized_match'].includes(n.source_check?.excerpt_status)&&n.source_check?.author_check==='confirmed';
+const sourceLabels={accessible:'可访问',blocked:'访问受限',unavailable:'暂不可访问',exact:'逐字匹配',normalized_match:'规范化后匹配',not_found:'未找到',not_checked:'未核查',confirmed:'已确认',not_confirmed:'未确认',conflict:'存在冲突'};
+$('source-overview').textContent=`来源再核查：${notes.filter(matchedSource).length} / ${notes.length} 条完成原文与作者比对，${notes.filter(n=>n.source_check?.license_check==='confirmed').length} 条查到明确许可。AI 辅助网页核查不代替摘要人工复核；点击条目详情查看证据与限制。`;
 for(const author of [...new Set(notes.map(n=>n.author))].sort()){const o=el('option',author);o.value=author;$('author').append(o)}
 $('stamp').textContent=`最近采集：${notes.map(n=>n.retrieved_on).sort().at(-1)||'—'} · 本周推进至 2026-10-25`;
 function render(){
-const q=$('query').value.trim().toLocaleLowerCase(),author=$('author').value,language=$('language').value,category=$('category').value,review=$('review').value;
-const matched=notes.filter(n=>{const a=n.annotation||{};return (!author||n.author===author)&&(!language||n.language===language)&&(!category||(a.category||n.category)===category)&&(!review||a.review_status===review)&&(!q||[n.title,n.original_excerpt,a.summary_zh||n.summary_zh,n.author,...n.tags].join(' ').toLocaleLowerCase().includes(q))});
+const q=$('query').value.trim().toLocaleLowerCase(),author=$('author').value,language=$('language').value,category=$('category').value,review=$('review').value,sourceReview=$('source-review').value;
+const sourceMatch=n=>!sourceReview||(sourceReview==='matched'&&matchedSource(n))||(sourceReview==='unavailable'&&['blocked','unavailable'].includes(n.source_check?.fetch_status))||(sourceReview==='license_confirmed'&&n.source_check?.license_check==='confirmed')||(sourceReview==='needs_check'&&(!matchedSource(n)||n.source_check?.license_check==='conflict'));
+const matched=notes.filter(n=>{const a=n.annotation||{};return sourceMatch(n)&&(!author||n.author===author)&&(!language||n.language===language)&&(!category||(a.category||n.category)===category)&&(!review||a.review_status===review)&&(!q||[n.title,n.original_excerpt,a.summary_zh||n.summary_zh,n.author,...n.tags].join(' ').toLocaleLowerCase().includes(q))});
 $('status').textContent=`显示 ${matched.length} / ${notes.length} 条 · 可展开核查记录`;
 const root=$('cards');root.replaceChildren();
 if(!matched.length){const empty=el('div','未找到匹配记录。试试其他关键词或重置筛选。','empty');root.append(empty);return}
@@ -70,11 +76,13 @@ card.append(el('div','中文整理 · '+(a.summary_origin==='human'?'人工撰�
 const tags=el('div',undefined,'tags');n.tags.forEach(t=>tags.append(el('span',t,'tag')));card.append(tags);
 const details=el('details');details.append(el('summary','查看位置、许可与采集依据'));
 details.append(el('p','原文定位：'+n.excerpt_locator),el('p','采集日期：'+n.retrieved_on),el('p','核查记录：'+n.evidence_note),el('p',`数据分组：${n.split} · GLM 管线：${a.pipeline_status||'not_run'} · 训练授权：未授予`),el('p','原文 SHA-256：'+n.original_sha256));
+const c=n.source_check;if(c){details.append(el('p',`来源再核查：${c.checked_on} · ${c.checker_type==='human'?'人工声明':'AI 辅助'} / ${sourceLabels[c.fetch_status]} · 摘录${sourceLabels[c.excerpt_status]} · 作者${sourceLabels[c.author_check]} · 许可${sourceLabels[c.license_check]}`),el('p',c.notes));if(c.license_evidence_url)details.append(link(c.license_evidence_url,'查看许可证据原页'))}else{details.append(el('p','来源再核查：尚无记录'))}
 if(n.license_url)details.append(link(n.license_url,'查看许可条款'));card.append(details);
-const bottom=el('div',undefined,'bottom');bottom.append(link(n.url,'打开原始来源 ↗'),el('span',n.license_status==='open'?n.license_name:'再利用许可未核实'));card.append(bottom);root.append(card);
+const licenseLabel=c?.license_check==='conflict'?'许可证据存在冲突 · 请查详情':n.license_status==='open'?n.license_name:c?.license_check==='confirmed'?'本轮查到许可 · 详见核查证据':'再利用许可未核实';
+const bottom=el('div',undefined,'bottom');bottom.append(link(n.url,'打开原始来源 ↗'),el('span',licenseLabel));card.append(bottom);root.append(card);
 }}
-['query','author','language','category','review'].forEach(id=>$(id).addEventListener('input',render));
-$('reset').addEventListener('click',()=>{['query','author','language','category','review'].forEach(id=>$(id).value='');render()});
+['query','author','language','category','review','source-review'].forEach(id=>$(id).addEventListener('input',render));
+$('reset').addEventListener('click',()=>{['query','author','language','category','review','source-review'].forEach(id=>$(id).value='');render()});
 render();
 </script></body></html>
 """

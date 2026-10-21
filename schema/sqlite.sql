@@ -33,6 +33,30 @@ CREATE TABLE IF NOT EXISTS notes (
     created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ', 'now'))
 );
 
+-- A later web comparison is evidence about a source, not approval of its summary.
+CREATE TABLE IF NOT EXISTS source_checks (
+    id TEXT PRIMARY KEY NOT NULL CHECK(length(trim(id)) > 0),
+    source_id INTEGER NOT NULL REFERENCES sources(id),
+    note_id TEXT NOT NULL,
+    checked_on TEXT NOT NULL,
+    checker_type TEXT NOT NULL CHECK(checker_type IN ('ai_assisted', 'human')),
+    fetch_status TEXT NOT NULL CHECK(fetch_status IN ('accessible', 'blocked', 'unavailable')),
+    excerpt_status TEXT NOT NULL
+        CHECK(excerpt_status IN ('exact', 'normalized_match', 'not_found', 'not_checked')),
+    author_check TEXT NOT NULL CHECK(author_check IN ('confirmed', 'conflict', 'not_checked')),
+    license_check TEXT NOT NULL
+        CHECK(license_check IN ('confirmed', 'not_confirmed', 'conflict', 'not_checked')),
+    license_evidence_url TEXT,
+    notes TEXT NOT NULL CHECK(length(trim(notes)) > 0),
+    method TEXT NOT NULL CHECK(method IN ('web_reader', 'human_browser')),
+    created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ', 'now')),
+    FOREIGN KEY(note_id,source_id) REFERENCES notes(id,source_id),
+    CHECK(fetch_status = 'accessible' OR
+        (excerpt_status = 'not_checked' AND author_check = 'not_checked')),
+    CHECK(license_check NOT IN ('confirmed', 'conflict') OR
+        length(trim(coalesce(license_evidence_url, ''))) > 0)
+);
+
 CREATE TABLE IF NOT EXISTS annotations (
     note_id TEXT PRIMARY KEY REFERENCES notes(id) ON DELETE CASCADE,
     summary_zh TEXT NOT NULL CHECK(length(trim(summary_zh)) > 0),
@@ -87,7 +111,9 @@ CREATE TABLE IF NOT EXISTS processing_logs (
 
 CREATE INDEX IF NOT EXISTS idx_sources_author ON sources(external_author);
 CREATE INDEX IF NOT EXISTS idx_notes_source ON notes(source_id);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_notes_id_source ON notes(id,source_id);
 CREATE INDEX IF NOT EXISTS idx_notes_split ON notes(split);
+CREATE INDEX IF NOT EXISTS idx_checks_source_date ON source_checks(source_id, checked_on);
 CREATE INDEX IF NOT EXISTS idx_annotations_category ON annotations(category);
 CREATE INDEX IF NOT EXISTS idx_note_tags_tag ON note_tags(tag_id);
 
@@ -100,6 +126,18 @@ WHEN NEW.original_excerpt IS NOT OLD.original_excerpt
     OR NEW.excerpt_locator IS NOT OLD.excerpt_locator
 BEGIN
     SELECT RAISE(ABORT, 'original excerpt and provenance are immutable');
+END;
+
+CREATE TRIGGER IF NOT EXISTS source_checks_immutable
+BEFORE UPDATE ON source_checks
+BEGIN
+    SELECT RAISE(ABORT, 'source checks are append-only; create a new check id');
+END;
+
+CREATE TRIGGER IF NOT EXISTS source_checks_no_delete
+BEFORE DELETE ON source_checks
+BEGIN
+    SELECT RAISE(ABORT, 'source checks are append-only; preserve previous evidence');
 END;
 
 CREATE TRIGGER IF NOT EXISTS sources_immutable_attribution

@@ -1,0 +1,1429 @@
+{
+  "status": "ok",
+  "metrics": {
+    "record_count": 50,
+    "unique_id_count": 50,
+    "author_count": 23,
+    "source_url_count": 50,
+    "source_document_count": 50,
+    "by_language": {
+      "en": 28,
+      "zh": 22
+    },
+    "by_category": {
+      "event": 4,
+      "idea": 20,
+      "note": 17,
+      "question": 9
+    },
+    "by_author": {
+      "Andy Matuschak": 4,
+      "Anthony Fu": 1,
+      "Bret Victor": 2,
+      "Conge": 1,
+      "Dan Luu": 2,
+      "Derek Sivers": 1,
+      "FrostMing": 2,
+      "Jeff Atwood": 2,
+      "Joel Spolsky": 2,
+      "Julia Evans": 3,
+      "Liam Huang": 2,
+      "Maggie Appleton": 3,
+      "Matt Might": 2,
+      "Michael Nielsen": 1,
+      "Paul Graham": 1,
+      "Peter Norvig": 2,
+      "Randy Lu": 3,
+      "Simon Willison": 3,
+      "依云": 2,
+      "涛叔": 2,
+      "苏洋": 2,
+      "阮一峰": 5,
+      "阳志平": 2
+    },
+    "by_split": {
+      "dev": 37,
+      "test": 13
+    },
+    "by_license_status": {
+      "open": 12,
+      "unknown": 38
+    },
+    "by_review_status": {
+      "pending": 50
+    },
+    "by_summary_origin": {
+      "ai_assisted": 50
+    },
+    "pending_count": 50,
+    "pending_ratio": 1.0,
+    "unknown_license_count": 38,
+    "unknown_license_ratio": 0.76,
+    "human_reviewed_gold_eligible_count": 0,
+    "human_reviewed_gold_eligible_ids": [],
+    "ai_assisted_pending_count": 50,
+    "original_length_chars": {
+      "min": 11,
+      "max": 133,
+      "mean": 50.78,
+      "median": 43.0,
+      "by_id": {
+        "pub-001": 69,
+        "pub-002": 77,
+        "pub-003": 50,
+        "pub-004": 54,
+        "pub-005": 41,
+        "pub-006": 55,
+        "pub-007": 61,
+        "pub-008": 13,
+        "pub-009": 17,
+        "pub-010": 15,
+        "pub-011": 80,
+        "pub-012": 50,
+        "pub-013": 20,
+        "pub-014": 32,
+        "pub-015": 37,
+        "pub-016": 45,
+        "pub-017": 92,
+        "pub-018": 46,
+        "pub-019": 55,
+        "pub-020": 72,
+        "pub-021": 51,
+        "pub-022": 41,
+        "pub-023": 18,
+        "pub-024": 20,
+        "pub-025": 21,
+        "pub-026": 27,
+        "pub-027": 27,
+        "pub-028": 20,
+        "pub-029": 22,
+        "pub-030": 11,
+        "pub-031": 20,
+        "pub-032": 18,
+        "pub-033": 13,
+        "pub-034": 12,
+        "pub-035": 114,
+        "pub-036": 90,
+        "pub-037": 74,
+        "pub-038": 133,
+        "pub-039": 72,
+        "pub-040": 127,
+        "pub-041": 90,
+        "pub-042": 27,
+        "pub-043": 106,
+        "pub-044": 95,
+        "pub-045": 65,
+        "pub-046": 120,
+        "pub-047": 32,
+        "pub-048": 21,
+        "pub-049": 34,
+        "pub-050": 37
+      }
+    },
+    "exact_duplicate_group_count": 0,
+    "normalized_duplicate_candidate_group_count": 0,
+    "near_duplicate_pair_count": 0,
+    "near_duplicate_short_excluded_ids": [
+      "pub-008",
+      "pub-009",
+      "pub-010",
+      "pub-013",
+      "pub-023",
+      "pub-024",
+      "pub-025",
+      "pub-026",
+      "pub-027",
+      "pub-028",
+      "pub-029",
+      "pub-030",
+      "pub-031",
+      "pub-032",
+      "pub-033",
+      "pub-034",
+      "pub-042",
+      "pub-048"
+    ],
+    "database_note_count": 50,
+    "database_source_count": 50
+  },
+  "critical_issues": [],
+  "warnings": [
+    {
+      "type": "pending_human_review",
+      "ids": [
+        "pub-001",
+        "pub-002",
+        "pub-003",
+        "pub-004",
+        "pub-005",
+        "pub-006",
+        "pub-007",
+        "pub-008",
+        "pub-009",
+        "pub-010",
+        "pub-011",
+        "pub-012",
+        "pub-013",
+        "pub-014",
+        "pub-015",
+        "pub-016",
+        "pub-017",
+        "pub-018",
+        "pub-019",
+        "pub-020",
+        "pub-021",
+        "pub-022",
+        "pub-023",
+        "pub-024",
+        "pub-025",
+        "pub-026",
+        "pub-027",
+        "pub-028",
+        "pub-029",
+        "pub-030",
+        "pub-031",
+        "pub-032",
+        "pub-033",
+        "pub-034",
+        "pub-035",
+        "pub-036",
+        "pub-037",
+        "pub-038",
+        "pub-039",
+        "pub-040",
+        "pub-041",
+        "pub-042",
+        "pub-043",
+        "pub-044",
+        "pub-045",
+        "pub-046",
+        "pub-047",
+        "pub-048",
+        "pub-049",
+        "pub-050"
+      ],
+      "message": "摘要、分类和标签待人工复核，不计为 gold。"
+    },
+    {
+      "type": "unknown_license",
+      "ids": [
+        "pub-001",
+        "pub-002",
+        "pub-003",
+        "pub-004",
+        "pub-005",
+        "pub-006",
+        "pub-007",
+        "pub-008",
+        "pub-009",
+        "pub-011",
+        "pub-012",
+        "pub-014",
+        "pub-015",
+        "pub-016",
+        "pub-018",
+        "pub-019",
+        "pub-020",
+        "pub-021",
+        "pub-022",
+        "pub-023",
+        "pub-024",
+        "pub-027",
+        "pub-028",
+        "pub-031",
+        "pub-032",
+        "pub-033",
+        "pub-034",
+        "pub-035",
+        "pub-036",
+        "pub-037",
+        "pub-038",
+        "pub-039",
+        "pub-040",
+        "pub-041",
+        "pub-042",
+        "pub-043",
+        "pub-044",
+        "pub-046"
+      ],
+      "message": "许可未确认；公开可访问不代表全文或训练授权。"
+    },
+    {
+      "type": "short_excerpt",
+      "ids": [
+        "pub-008",
+        "pub-009",
+        "pub-010",
+        "pub-013",
+        "pub-023",
+        "pub-024",
+        "pub-025",
+        "pub-026",
+        "pub-027",
+        "pub-028",
+        "pub-029",
+        "pub-030",
+        "pub-031",
+        "pub-032",
+        "pub-033",
+        "pub-034",
+        "pub-042",
+        "pub-048"
+      ],
+      "message": "长度是覆盖描述，不表示内容错误；短文本不适合近重复推断。"
+    }
+  ],
+  "near_duplicate_candidates": [],
+  "groups": {
+    "authors": [
+      {
+        "key": "andy matuschak",
+        "ids": [
+          "pub-001",
+          "pub-002",
+          "pub-003",
+          "pub-004"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "anthony fu",
+        "ids": [
+          "pub-010"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "bret victor",
+        "ids": [
+          "pub-037",
+          "pub-038"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "conge",
+        "ids": [
+          "pub-014"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "dan luu",
+        "ids": [
+          "pub-035",
+          "pub-036"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "derek sivers",
+        "ids": [
+          "pub-016"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "frostming",
+        "ids": [
+          "pub-025",
+          "pub-026"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "jeff atwood",
+        "ids": [
+          "pub-039",
+          "pub-040"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "joel spolsky",
+        "ids": [
+          "pub-041",
+          "pub-042"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "julia evans",
+        "ids": [
+          "pub-012",
+          "pub-021",
+          "pub-022"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "liam huang",
+        "ids": [
+          "pub-029",
+          "pub-030"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "maggie appleton",
+        "ids": [
+          "pub-005",
+          "pub-006",
+          "pub-007"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "matt might",
+        "ids": [
+          "pub-045",
+          "pub-046"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "michael nielsen",
+        "ids": [
+          "pub-017"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "paul graham",
+        "ids": [
+          "pub-018"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "peter norvig",
+        "ids": [
+          "pub-043",
+          "pub-044"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "randy lu",
+        "ids": [
+          "pub-008",
+          "pub-009",
+          "pub-015"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "simon willison",
+        "ids": [
+          "pub-011",
+          "pub-019",
+          "pub-020"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "依云",
+        "ids": [
+          "pub-031",
+          "pub-032"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "涛叔",
+        "ids": [
+          "pub-033",
+          "pub-034"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "苏洋",
+        "ids": [
+          "pub-027",
+          "pub-028"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "阮一峰",
+        "ids": [
+          "pub-013",
+          "pub-047",
+          "pub-048",
+          "pub-049",
+          "pub-050"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "阳志平",
+        "ids": [
+          "pub-023",
+          "pub-024"
+        ],
+        "splits": [
+          "test"
+        ]
+      }
+    ],
+    "source_urls": [
+      {
+        "key": "https://antfu.me/posts/why-reproductions-are-required-zh",
+        "ids": [
+          "pub-010"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://augmentingcognition.com/ltm.html",
+        "ids": [
+          "pub-017"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://blog.codinghorror.com/rubber-duck-problem-solving/",
+        "ids": [
+          "pub-039"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://blog.codinghorror.com/the-first-rule-of-programming-its-always-your-fault/",
+        "ids": [
+          "pub-040"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://blog.lilydjwg.me/2026/5/12/customize-my-default-chinese-font.217026.html",
+        "ids": [
+          "pub-032"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://blog.lilydjwg.me/2026/6/9/summarize-youtube-video-via-subtitles.217033.html",
+        "ids": [
+          "pub-031"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://conge.livingwithfcs.org/2018/12/24/zhe-fan-dian-1851-yang-cheng-hao-xi-guan-,-bu-yao-zhong-duan/",
+        "ids": [
+          "pub-014"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://danluu.com/learn-what/",
+        "ids": [
+          "pub-036"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://danluu.com/writing-non-advice/",
+        "ids": [
+          "pub-035"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://frostming.com/posts/2021/04-28/self-host-comment-system/",
+        "ids": [
+          "pub-026"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://frostming.com/posts/2026/why-rewrite-bub/",
+        "ids": [
+          "pub-025"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://jvns.ca/blog/2026/01/27/some-notes-on-starting-to-use-django/",
+        "ids": [
+          "pub-012"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://jvns.ca/blog/2026/02/18/man-pages/",
+        "ids": [
+          "pub-022"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://jvns.ca/blog/2026/09/27/replacing-the-old-battery-on-rechargeable-bike-lights/",
+        "ids": [
+          "pub-021"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://liam.page/2026/06/06/vscode-remote-ssh-sun-path/",
+        "ids": [
+          "pub-030"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://liam.page/2026/06/11/why-std-shared-mutex-is-slow/",
+        "ids": [
+          "pub-029"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://lutaonan.com/blog/ai-writing/",
+        "ids": [
+          "pub-015"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://lutaonan.com/blog/apple-notes-and-para/",
+        "ids": [
+          "pub-009"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://lutaonan.com/blog/how-do-i-take-note/",
+        "ids": [
+          "pub-008"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://maggieappleton.com/daily-notes",
+        "ids": [
+          "pub-006"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://maggieappleton.com/epistemic-disclosure",
+        "ids": [
+          "pub-007"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://maggieappleton.com/speculative-events",
+        "ids": [
+          "pub-005"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://matt.might.net/articles/phd-school-in-pictures/",
+        "ids": [
+          "pub-045"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://matt.might.net/articles/ways-to-fail-a-phd/",
+        "ids": [
+          "pub-046"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://notes.andymatuschak.org/z2hQEhqWkdRLL9JUwfawZZx",
+        "ids": [
+          "pub-002"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://notes.andymatuschak.org/zF8xCU4BwXwbmSyp7tmff9i",
+        "ids": [
+          "pub-003"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://notes.andymatuschak.org/zLhoRUyjKU665EY16u4XXJy",
+        "ids": [
+          "pub-004"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://notes.andymatuschak.org/zNUaiGAXp21eorsER1Jm9yU",
+        "ids": [
+          "pub-001"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://paulgraham.com/think.html",
+        "ids": [
+          "pub-018"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://sive.rs/kimo",
+        "ids": [
+          "pub-016"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://soulteary.com/2026/09/09/phorge-modernization-part-16-database-introspection-in-gorge.html",
+        "ids": [
+          "pub-028"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://soulteary.com/2026/10/05/continuing-minio-otterio-early-october-maintenance-notes.html",
+        "ids": [
+          "pub-027"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://tao.zz.ac/life/sharpen-brain.html",
+        "ids": [
+          "pub-033"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://tao.zz.ac/tao.html",
+        "ids": [
+          "pub-034"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://til.simonwillison.net/sqlite/json-audit-log",
+        "ids": [
+          "pub-019"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://til.simonwillison.net/sqlite/json-extract-path",
+        "ids": [
+          "pub-011"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://til.simonwillison.net/sqlite/one-line-csv-operations",
+        "ids": [
+          "pub-020"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://worrydream.com/ExplorableExplanations/",
+        "ids": [
+          "pub-038"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://worrydream.com/LearnableProgramming/",
+        "ids": [
+          "pub-037"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/",
+        "ids": [
+          "pub-041"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/",
+        "ids": [
+          "pub-042"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.norvig.com/21-days.html",
+        "ids": [
+          "pub-043"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.norvig.com/sudoku.html",
+        "ids": [
+          "pub-044"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2018/11/weekly-issue-32.html",
+        "ids": [
+          "pub-047"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2024/01/weekly-issue-285.html",
+        "ids": [
+          "pub-050"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2024/01/weekly-issue-288.html",
+        "ids": [
+          "pub-048"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2024/03/weekly-issue-293.html",
+        "ids": [
+          "pub-049"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2026/05/weekly-issue-396.html",
+        "ids": [
+          "pub-013"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://yangzhiping.com/essays/20161212/",
+        "ids": [
+          "pub-024"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://yangzhiping.com/essays/20240530/",
+        "ids": [
+          "pub-023"
+        ],
+        "splits": [
+          "test"
+        ]
+      }
+    ],
+    "source_documents": [
+      {
+        "key": "https://antfu.me/posts/why-reproductions-are-required-zh",
+        "ids": [
+          "pub-010"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://augmentingcognition.com/ltm.html",
+        "ids": [
+          "pub-017"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://blog.codinghorror.com/rubber-duck-problem-solving/",
+        "ids": [
+          "pub-039"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://blog.codinghorror.com/the-first-rule-of-programming-its-always-your-fault/",
+        "ids": [
+          "pub-040"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://blog.lilydjwg.me/2026/5/12/customize-my-default-chinese-font.217026.html",
+        "ids": [
+          "pub-032"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://blog.lilydjwg.me/2026/6/9/summarize-youtube-video-via-subtitles.217033.html",
+        "ids": [
+          "pub-031"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://conge.livingwithfcs.org/2018/12/24/zhe-fan-dian-1851-yang-cheng-hao-xi-guan-,-bu-yao-zhong-duan/",
+        "ids": [
+          "pub-014"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://danluu.com/learn-what/",
+        "ids": [
+          "pub-036"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://danluu.com/writing-non-advice/",
+        "ids": [
+          "pub-035"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://frostming.com/posts/2021/04-28/self-host-comment-system/",
+        "ids": [
+          "pub-026"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://frostming.com/posts/2026/why-rewrite-bub/",
+        "ids": [
+          "pub-025"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://jvns.ca/blog/2026/01/27/some-notes-on-starting-to-use-django/",
+        "ids": [
+          "pub-012"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://jvns.ca/blog/2026/02/18/man-pages/",
+        "ids": [
+          "pub-022"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://jvns.ca/blog/2026/09/27/replacing-the-old-battery-on-rechargeable-bike-lights/",
+        "ids": [
+          "pub-021"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://liam.page/2026/06/06/vscode-remote-ssh-sun-path/",
+        "ids": [
+          "pub-030"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://liam.page/2026/06/11/why-std-shared-mutex-is-slow/",
+        "ids": [
+          "pub-029"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://lutaonan.com/blog/ai-writing/",
+        "ids": [
+          "pub-015"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://lutaonan.com/blog/apple-notes-and-para/",
+        "ids": [
+          "pub-009"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://lutaonan.com/blog/how-do-i-take-note/",
+        "ids": [
+          "pub-008"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://maggieappleton.com/daily-notes",
+        "ids": [
+          "pub-006"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://maggieappleton.com/epistemic-disclosure",
+        "ids": [
+          "pub-007"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://maggieappleton.com/speculative-events",
+        "ids": [
+          "pub-005"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://matt.might.net/articles/phd-school-in-pictures/",
+        "ids": [
+          "pub-045"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://matt.might.net/articles/ways-to-fail-a-phd/",
+        "ids": [
+          "pub-046"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://notes.andymatuschak.org/z2hQEhqWkdRLL9JUwfawZZx",
+        "ids": [
+          "pub-002"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://notes.andymatuschak.org/zF8xCU4BwXwbmSyp7tmff9i",
+        "ids": [
+          "pub-003"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://notes.andymatuschak.org/zLhoRUyjKU665EY16u4XXJy",
+        "ids": [
+          "pub-004"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://notes.andymatuschak.org/zNUaiGAXp21eorsER1Jm9yU",
+        "ids": [
+          "pub-001"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://paulgraham.com/think.html",
+        "ids": [
+          "pub-018"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://sive.rs/kimo",
+        "ids": [
+          "pub-016"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://soulteary.com/2026/09/09/phorge-modernization-part-16-database-introspection-in-gorge.html",
+        "ids": [
+          "pub-028"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://soulteary.com/2026/10/05/continuing-minio-otterio-early-october-maintenance-notes.html",
+        "ids": [
+          "pub-027"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://tao.zz.ac/life/sharpen-brain.html",
+        "ids": [
+          "pub-033"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://tao.zz.ac/tao.html",
+        "ids": [
+          "pub-034"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://til.simonwillison.net/sqlite/json-audit-log",
+        "ids": [
+          "pub-019"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://til.simonwillison.net/sqlite/json-extract-path",
+        "ids": [
+          "pub-011"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://til.simonwillison.net/sqlite/one-line-csv-operations",
+        "ids": [
+          "pub-020"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://worrydream.com/ExplorableExplanations/",
+        "ids": [
+          "pub-038"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://worrydream.com/LearnableProgramming/",
+        "ids": [
+          "pub-037"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/",
+        "ids": [
+          "pub-041"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/",
+        "ids": [
+          "pub-042"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.norvig.com/21-days.html",
+        "ids": [
+          "pub-043"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.norvig.com/sudoku.html",
+        "ids": [
+          "pub-044"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2018/11/weekly-issue-32.html",
+        "ids": [
+          "pub-047"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2024/01/weekly-issue-285.html",
+        "ids": [
+          "pub-050"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2024/01/weekly-issue-288.html",
+        "ids": [
+          "pub-048"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2024/03/weekly-issue-293.html",
+        "ids": [
+          "pub-049"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2026/05/weekly-issue-396.html",
+        "ids": [
+          "pub-013"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://yangzhiping.com/essays/20161212/",
+        "ids": [
+          "pub-024"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://yangzhiping.com/essays/20240530/",
+        "ids": [
+          "pub-023"
+        ],
+        "splits": [
+          "test"
+        ]
+      }
+    ]
+  },
+  "method": {
+    "near_duplicate_threshold": 0.65,
+    "minimum_nonwhitespace_chars": 30,
+    "normalization": "NFKC + whitespace collapse + unambiguous single-backtick inline code delimiters",
+    "near_duplicates": "Jaccard on sets of character 3-grams after comparison normalization and whitespace removal; candidates only, not semantic deduplication",
+    "gold": "Only verified records with a named reviewer are eligible; eligibility is not independent proof of label correctness. Pending AI-assisted labels never count as gold.",
+    "scope": "Offline data audit; does not visit source URLs, verify author identity, infer permissions, or establish GLM/MySQL/semantic-search execution. No record is modified or removed."
+  },
+  "database": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\loom.db",
+  "audited_at_utc": "2026-10-21T14:13:36.903362+00:00"
+}

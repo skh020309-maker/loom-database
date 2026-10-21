@@ -24,7 +24,7 @@ DEFAULT_DB = ROOT / "loom.db"
 SCHEMA = ROOT / "schema" / "sqlite.sql"
 REQUIRED_TABLES = {
     "sources", "notes", "annotations", "tags", "note_tags",
-    "processing_logs", "import_batches",
+    "processing_logs", "import_batches", "source_checks",
 }
 
 
@@ -303,6 +303,13 @@ def exported_records(conn: sqlite3.Connection) -> list[dict[str, Any]]:
     ).fetchall()
     for row in rows:
         item = dict(row)
+        check = conn.execute(
+            "SELECT * FROM source_checks WHERE source_id=? AND note_id=? "
+            "ORDER BY checked_on DESC,created_at DESC,id DESC LIMIT 1", (item['source_id'],item['id'])
+        ).fetchone()
+        item["source_check"] = dict(check) if check else None
+        if item["source_check"]:
+            item["source_check"].pop("source_id")
         item.pop("source_id")
         item["tags"] = [tag[0] for tag in conn.execute(
             "SELECT t.name FROM tags t JOIN note_tags nt ON t.id=nt.tag_id "
@@ -393,11 +400,25 @@ def check_database(db_path: Path) -> dict[str, Any]:
                 if not count:
                     errors.append(f"{label}：流水线完成状态缺少真实 GLM 执行记录")
         errors.extend(author_split_errors(conn))
+        # Imports validate these records too; recheck detects direct SQL corruption.
+        from source_audits import validate_audit
+        source_checks = conn.execute(
+            "SELECT c.*,s.url AS source_url FROM source_checks c "
+            "JOIN sources s ON s.id=c.source_id "
+            "JOIN notes n ON n.id=c.note_id AND n.source_id=c.source_id"
+        ).fetchall()
+        for source_check in source_checks:
+            try:
+                validate_audit(dict(source_check))
+            except ValueError as exc:
+                errors.append(f"{source_check['id']}：来源核查无效：{exc}")
         return {"status": "ok" if not errors else "failed",
                 "notes_checked": len(rows), "errors": errors,
+                "source_checks_checked": len(source_checks),
                 "checks": ["integrity", "foreign_keys", "sha256", "excerpt_length",
                            "source_provenance", "content_origin", "annotation_state",
-                           "evidence_note", "author_split_leakage", "training_permission"],
+                           "evidence_note", "author_split_leakage", "training_permission",
+                           "source_check_contract"],
                 "scope_note": "离线结构校验；不代替网页原文比对或人工语义核验。"}
     finally:
         conn.close()
@@ -442,6 +463,8 @@ def export_database(db_path: Path, fmt: str, output: Path | None) -> dict[str, A
         "summary_status": summary_status,
         "summary_origin_counts": origin_counts,
         "review_status_counts": review_counts,
+        "source_checks_coverage": sum(note['source_check'] is not None for note in notes),
+        "source_check_note": "网页来源核查与摘要人工复核独立；许可确认不等于训练授权。",
         "search_method": "SQL LIKE literal keyword search",
         "glm_executed_by_import": False,
         "coverage": "公开文字摘录；不是学生真实输入；未覆盖语音或 OCR 评测",
@@ -457,7 +480,7 @@ def export_database(db_path: Path, fmt: str, output: Path | None) -> dict[str, A
             "tags", "category", "license_status", "license_name", "license_url",
             "retrieved_on", "evidence_note", "split", "content_origin",
             "training_allowed", "owner_user_id", "summary_origin", "review_status",
-            "pipeline_status", "reviewer",
+            "pipeline_status", "reviewer", "source_check",
         ]
         buffer = io.StringIO(newline="")
         writer = csv.DictWriter(buffer, fieldnames=fields, extrasaction="ignore")
@@ -465,6 +488,7 @@ def export_database(db_path: Path, fmt: str, output: Path | None) -> dict[str, A
         for item in notes:
             line = {key: csv_safe(value) for key, value in item.items()}
             line["tags"] = json.dumps(item["tags"], ensure_ascii=False)
+            line["source_check"] = json.dumps(item["source_check"], ensure_ascii=False)
             writer.writerow(line)
         content, encoding = buffer.getvalue(), "utf-8-sig"
     else:
@@ -495,6 +519,16 @@ def export_database(db_path: Path, fmt: str, output: Path | None) -> dict[str, A
                 item["summary_zh"], "",
                 f"采集证据：{item['evidence_note']}", "",
             ])
+            check = item['source_check']
+            if check:
+                lines.extend([
+                    f"来源再核查：{check['checked_on']} / {check['checker_type']} / "
+                    f"访问 {check['fetch_status']} / 摘录 {check['excerpt_status']} / "
+                    f"作者 {check['author_check']} / 许可 {check['license_check']}。",
+                    check['notes'],
+                    f"许可证据：<{check['license_evidence_url']}>" if check['license_evidence_url'] else "许可证据：未确认",
+                    "",
+                ])
         content, encoding = "\n".join(lines) + "\n", "utf-8"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(content, encoding=encoding, newline="")

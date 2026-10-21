@@ -52,6 +52,7 @@ CREATE TABLE IF NOT EXISTS notes (
     CONSTRAINT ck_notes_split CHECK (split IN ('dev', 'test')),
     CONSTRAINT ck_notes_training CHECK (training_allowed IN (0, 1)),
     INDEX idx_notes_source (source_id),
+    UNIQUE KEY idx_notes_id_source (id,source_id),
     INDEX idx_notes_split (split)
 ) ENGINE=InnoDB ROW_FORMAT=DYNAMIC DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_bin;
 
@@ -73,6 +74,39 @@ CREATE TABLE IF NOT EXISTS annotations (
     CONSTRAINT ck_annotations_reviewer CHECK (
         review_status <> 'verified' OR CHAR_LENGTH(TRIM(COALESCE(reviewer, ''))) > 0),
     INDEX idx_annotations_category (category)
+) ENGINE=InnoDB ROW_FORMAT=DYNAMIC DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_bin;
+
+CREATE TABLE IF NOT EXISTS source_checks (
+    id VARCHAR(191) NOT NULL PRIMARY KEY,
+    source_id BIGINT NOT NULL,
+    note_id VARCHAR(191) NOT NULL,
+    checked_on LONGTEXT NOT NULL,
+    checker_type VARCHAR(32) NOT NULL,
+    fetch_status VARCHAR(32) NOT NULL,
+    excerpt_status VARCHAR(32) NOT NULL,
+    author_check VARCHAR(32) NOT NULL,
+    license_check VARCHAR(32) NOT NULL,
+    license_evidence_url LONGTEXT,
+    notes LONGTEXT NOT NULL,
+    method VARCHAR(32) NOT NULL,
+    created_at LONGTEXT NOT NULL DEFAULT (DATE_FORMAT(UTC_TIMESTAMP(), '%Y-%m-%dT%H:%i:%sZ')),
+    CONSTRAINT fk_checks_source FOREIGN KEY (source_id) REFERENCES sources(id),
+    CONSTRAINT fk_checks_note_source FOREIGN KEY (note_id,source_id) REFERENCES notes(id,source_id),
+    CONSTRAINT ck_checks_id CHECK (CHAR_LENGTH(TRIM(id)) > 0),
+    CONSTRAINT ck_checks_type CHECK (checker_type IN ('ai_assisted', 'human')),
+    CONSTRAINT ck_checks_fetch CHECK (fetch_status IN ('accessible', 'blocked', 'unavailable')),
+    CONSTRAINT ck_checks_excerpt CHECK (
+        excerpt_status IN ('exact', 'normalized_match', 'not_found', 'not_checked')),
+    CONSTRAINT ck_checks_author CHECK (author_check IN ('confirmed', 'conflict', 'not_checked')),
+    CONSTRAINT ck_checks_license CHECK (
+        license_check IN ('confirmed', 'not_confirmed', 'conflict', 'not_checked')),
+    CONSTRAINT ck_checks_notes CHECK (CHAR_LENGTH(TRIM(notes)) > 0),
+    CONSTRAINT ck_checks_method CHECK (method IN ('web_reader', 'human_browser')),
+    CONSTRAINT ck_checks_access CHECK (fetch_status = 'accessible' OR
+        (excerpt_status = 'not_checked' AND author_check = 'not_checked')),
+    CONSTRAINT ck_checks_evidence CHECK (license_check NOT IN ('confirmed', 'conflict') OR
+        CHAR_LENGTH(TRIM(COALESCE(license_evidence_url, ''))) > 0),
+    INDEX idx_checks_source (source_id)
 ) ENGINE=InnoDB ROW_FORMAT=DYNAMIC DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_bin;
 
 CREATE TABLE IF NOT EXISTS tags (
@@ -125,6 +159,18 @@ CREATE TABLE IF NOT EXISTS processing_logs (
 ) ENGINE=InnoDB ROW_FORMAT=DYNAMIC DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_bin;
 
 DELIMITER //
+CREATE TRIGGER IF NOT EXISTS source_checks_immutable
+BEFORE UPDATE ON source_checks FOR EACH ROW
+BEGIN
+    SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'source checks are append-only; create a new check id';
+END//
+
+CREATE TRIGGER IF NOT EXISTS source_checks_no_delete
+BEFORE DELETE ON source_checks FOR EACH ROW
+BEGIN
+    SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'source checks are append-only; preserve previous evidence';
+END//
+
 CREATE TRIGGER IF NOT EXISTS notes_immutable_original
 BEFORE UPDATE ON notes FOR EACH ROW
 BEGIN

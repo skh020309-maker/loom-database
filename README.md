@@ -8,6 +8,8 @@
 - `loom.db`：已经生成的 SQLite 样本数据库。
 - `exports/notes.csv`：Excel 可直接打开的 UTF-8 BOM 表格。
 - `exports/notes.json`：供开发同学导入或调用。
+- `exports/source_audit.json`：逐条网页来源再核查的证据与未解决项。
+- `exports/data_quality.json`：重复、分组泄漏、缺失字段与覆盖情况。
 - `docs/高校参考.md`：MIT、CMU、Stanford 的相关研究及可以采用的设计。
 - `docs/每日推进计划.md`：本周每天的具体产出和周日验收标准。
 - `docs/进度日志.md`：实际完成情况；计划数量不等于已采集数量。
@@ -15,6 +17,8 @@
 ## 当前范围
 
 截至 **2026-10-21**：50 条公开笔记短摘录，23 位作者，中文 22 / 英文 28；开发集 37 / 测试集 13，摘要及分类均待人工复核。
+
+来源再核查已覆盖50条：49个原页可读，47条逐字匹配、2条仅行内代码规范化后匹配，作者归属49条确认；pub-021原页暂不可达，待重试。14条在作者原页查到明确许可，35条尚未确认，1条本轮未核查。来源表保留采集时的12条明确/38条未知，后来发现的两条CC BY-NC-SA 3.0另记在`source_checks`，没有静默改写原始批次。
 
 本库收录**他人公开发表的笔记、想法的短摘录**及元数据。`original_excerpt` 是来源原文的片段，`summary_zh` 是 AI 辅助中文整理，不是作者原话，也不是人工标准答案。所有摘要和分类默认待人工复核。
 
@@ -35,12 +39,19 @@
 ```powershell
 python scripts/manage.py init
 python scripts/manage.py import data/seed_public_notes.json
+python scripts/manage.py import data/2026-10-21_public_notes.json
+python scripts/manage.py import data/2026-10-21_extra_zh_notes.json
+python scripts/manage.py import data/2026-10-21_extra_mixed_notes.json
+python scripts/source_audits.py import data/source_audit_2026-10-21_zh.json
+python scripts/source_audits.py import data/source_audit_2026-10-21_en.json
 python scripts/manage.py check
 python scripts/manage.py stats
 python scripts/manage.py search "笔记"
 python scripts/manage.py export --format json
 python scripts/manage.py export --format csv
 python scripts/manage.py export --format markdown
+python scripts/source_audits.py export
+python scripts/audit_quality.py
 python scripts/build_viewer.py
 python scripts/export_mysql.py
 python scripts/review_notes.py show pub-001
@@ -48,11 +59,11 @@ python scripts/evaluate_retrieval.py
 python -m unittest discover -s tests -v
 ```
 
-`search` 和 HTML 页面目前是关键词检索，不是向量检索或大模型语义搜索。重复导入同一文件不会新增重复记录；原文变更需新版本/新记录，不能借重复导入覆写。
+`search` 和 HTML 页面目前是关键词检索，不是向量检索或大模型语义搜索。来源再核查使用独立的`source_checks`表和追加记录，不改变摘要的人工复核状态或训练授权。重复导入同一文件不会新增重复记录；原文变更需新版本/新记录，不能借重复导入覆写。
 
 后续每日任务当前设为 **22:30（北京时间）**，周日验收后暂停。每日新增数据使用独立文件，例如 `data/2026-10-21_public_notes.json`，保持已有 ID 不变，再执行上述导入、检查和导出。
 
-MySQL 导出保留全部 7 张表，不覆盖旧数据；URL 最长 768 字符，笔记 ID 和标签最长 191 字符，超限会报错。需要的 MySQL 版本高于一般的“8.0”，是因为建表脚本使用可重复执行的触发器定义。
+MySQL 导出保留全部 8 张表，不覆盖旧数据；URL 最长 768 字符，笔记 ID 和标签最长 191 字符，超限会报错。需要的 MySQL 版本高于一般的“8.0”，是因为建表脚本使用可重复执行的触发器定义。
 
 ## 检索验收现状
 
@@ -80,3 +91,6 @@ MySQL 导出保留全部 7 张表，不覆盖旧数据；URL 最长 768 字符�
 - [人工复核操作](docs/人工复核操作.md)
 - [检索评测说明](docs/检索评测说明.md)
 - [10月21日交付记录](docs/今日交付_2026-10-21.md)
+
+- [来源核查与未解决项](docs/来源核查.md)
+- [数据质量检查方法](docs/数据质量检查.md)
