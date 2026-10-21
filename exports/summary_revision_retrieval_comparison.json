@@ -1,0 +1,112 @@
+{
+  "checked_on": "2026-10-22",
+  "benchmark_unchanged": true,
+  "benchmark_sha256": "3d9a292fb70c369ec53ff10ca689d4c69abcd877924361114029514e1729cd4c",
+  "before_corpus_sha256": "13d4c7bd125ea32ebaf6969ff4890f37dd3ce495bac06e9ef3c49b2675dcbad8",
+  "after_corpus_sha256": "779bf4836b5a25c6432f7a907faa3824a9c06bb74b8513d00a142a1da2dd1f23",
+  "before": {
+    "full_query": {
+      "questions": 16,
+      "positive_questions": 14,
+      "negative_questions": 2,
+      "hit_at_5": 0.2857142857142857,
+      "mrr_at_5": 0.25,
+      "negative_false_return_rate": 0.0
+    },
+    "preset_keyword": {
+      "questions": 16,
+      "positive_questions": 14,
+      "negative_questions": 2,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "negative_false_return_rate": 0.0
+    }
+  },
+  "after": {
+    "full_query": {
+      "questions": 16,
+      "positive_questions": 14,
+      "negative_questions": 2,
+      "hit_at_5": 0.2857142857142857,
+      "mrr_at_5": 0.25,
+      "negative_false_return_rate": 0.0
+    },
+    "preset_keyword": {
+      "questions": 16,
+      "positive_questions": 14,
+      "negative_questions": 2,
+      "hit_at_5": 0.5714285714285714,
+      "mrr_at_5": 0.5714285714285714,
+      "negative_false_return_rate": 0.0
+    }
+  },
+  "preset_keyword_changed_questions": [
+    {
+      "question_id": "ret-003",
+      "query": "重读旧笔记",
+      "expected_note_ids": [
+        "pub-003"
+      ],
+      "before_returned_ids": [
+        "pub-003"
+      ],
+      "after_returned_ids": []
+    },
+    {
+      "question_id": "ret-004",
+      "query": "尚未确认的活动",
+      "expected_note_ids": [
+        "pub-005"
+      ],
+      "before_returned_ids": [
+        "pub-005"
+      ],
+      "after_returned_ids": []
+    },
+    {
+      "question_id": "ret-007",
+      "query": "稍后阅读",
+      "expected_note_ids": [
+        "pub-008"
+      ],
+      "before_returned_ids": [
+        "pub-008"
+      ],
+      "after_returned_ids": []
+    },
+    {
+      "question_id": "ret-009",
+      "query": "逻辑漏洞",
+      "expected_note_ids": [
+        "pub-015"
+      ],
+      "before_returned_ids": [
+        "pub-015"
+      ],
+      "after_returned_ids": []
+    },
+    {
+      "question_id": "ret-010",
+      "query": "AlphaGo",
+      "expected_note_ids": [
+        "pub-017"
+      ],
+      "before_returned_ids": [
+        "pub-017"
+      ],
+      "after_returned_ids": []
+    },
+    {
+      "question_id": "ret-013",
+      "query": "自行车灯",
+      "expected_note_ids": [
+        "pub-021"
+      ],
+      "before_returned_ids": [
+        "pub-021"
+      ],
+      "after_returned_ids": []
+    }
+  ],
+  "interpretation": "同一SQL LIKE引擎和题目，摘要措辞及摘录范围收窄后预设关键词命中减少；不是语义检索或人工金标准。原文、标题、标签未变。"
+}

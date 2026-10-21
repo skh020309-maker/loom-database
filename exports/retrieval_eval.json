@@ -1,9 +1,9 @@
 {
   "status": "ok",
-  "generated_at": "2026-10-21T12:08:26.467544+00:00",
+  "generated_at": "2026-10-21T17:19:29.117685+00:00",
   "benchmark_version": "candidate-2026-10-21-v1",
   "benchmark_sha256": "3d9a292fb70c369ec53ff10ca689d4c69abcd877924361114029514e1729cd4c",
-  "corpus_searchable_sha256": "13d4c7bd125ea32ebaf6969ff4890f37dd3ce495bac06e9ef3c49b2675dcbad8",
+  "corpus_searchable_sha256": "779bf4836b5a25c6432f7a907faa3824a9c06bb74b8513d00a142a1da2dd1f23",
   "corpus_note_count": 50,
   "reference_note_ids": [
     "pub-001",
@@ -103,8 +103,8 @@
         "questions": 16,
         "positive_questions": 14,
         "negative_questions": 2,
-        "hit_at_5": 1.0,
-        "mrr_at_5": 1.0,
+        "hit_at_5": 0.5714285714285714,
+        "mrr_at_5": 0.5714285714285714,
         "negative_false_return_rate": 0.0
       },
       "by_split": {
@@ -112,16 +112,16 @@
           "questions": 11,
           "positive_questions": 10,
           "negative_questions": 1,
-          "hit_at_5": 1.0,
-          "mrr_at_5": 1.0,
+          "hit_at_5": 0.6,
+          "mrr_at_5": 0.6,
           "negative_false_return_rate": 0.0
         },
         "test": {
           "questions": 5,
           "positive_questions": 4,
           "negative_questions": 1,
-          "hit_at_5": 1.0,
-          "mrr_at_5": 1.0,
+          "hit_at_5": 0.5,
+          "mrr_at_5": 0.5,
           "negative_false_return_rate": 0.0
         }
       },
@@ -130,8 +130,8 @@
           "questions": 6,
           "positive_questions": 6,
           "negative_questions": 0,
-          "hit_at_5": 1.0,
-          "mrr_at_5": 1.0,
+          "hit_at_5": 0.5,
+          "mrr_at_5": 0.5,
           "negative_false_return_rate": null
         },
         "english_keyword": {
@@ -146,8 +146,8 @@
           "questions": 4,
           "positive_questions": 4,
           "negative_questions": 0,
-          "hit_at_5": 1.0,
-          "mrr_at_5": 1.0,
+          "hit_at_5": 0.25,
+          "mrr_at_5": 0.25,
           "negative_false_return_rate": null
         },
         "negative": {
@@ -269,12 +269,10 @@
       "preset_keyword": {
         "submitted_query": "重读旧笔记",
         "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
-        "returned_ids": [
-          "pub-003"
-        ],
-        "first_relevant_rank": 1,
-        "hit_at_5": 1,
-        "reciprocal_rank_at_5": 1.0,
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
         "negative_false_return": null
       }
     },
@@ -302,12 +300,10 @@
       "preset_keyword": {
         "submitted_query": "尚未确认的活动",
         "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
-        "returned_ids": [
-          "pub-005"
-        ],
-        "first_relevant_rank": 1,
-        "hit_at_5": 1,
-        "reciprocal_rank_at_5": 1.0,
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
         "negative_false_return": null
       }
     },
@@ -403,12 +399,10 @@
       "preset_keyword": {
         "submitted_query": "稍后阅读",
         "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
-        "returned_ids": [
-          "pub-008"
-        ],
-        "first_relevant_rank": 1,
-        "hit_at_5": 1,
-        "reciprocal_rank_at_5": 1.0,
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
         "negative_false_return": null
       }
     },
@@ -471,12 +465,10 @@
       "preset_keyword": {
         "submitted_query": "逻辑漏洞",
         "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
-        "returned_ids": [
-          "pub-015"
-        ],
-        "first_relevant_rank": 1,
-        "hit_at_5": 1,
-        "reciprocal_rank_at_5": 1.0,
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
         "negative_false_return": null
       }
     },
@@ -504,12 +496,10 @@
       "preset_keyword": {
         "submitted_query": "AlphaGo",
         "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
-        "returned_ids": [
-          "pub-017"
-        ],
-        "first_relevant_rank": 1,
-        "hit_at_5": 1,
-        "reciprocal_rank_at_5": 1.0,
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
         "negative_false_return": null
       }
     },
@@ -608,12 +598,10 @@
       "preset_keyword": {
         "submitted_query": "自行车灯",
         "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
-        "returned_ids": [
-          "pub-021"
-        ],
-        "first_relevant_rank": 1,
-        "hit_at_5": 1,
-        "reciprocal_rank_at_5": 1.0,
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
         "negative_false_return": null
       }
     },

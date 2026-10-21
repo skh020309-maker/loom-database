@@ -16,11 +16,13 @@
 
 ## 当前范围
 
-截至 **2026-10-21**：50 条公开笔记短摘录，23 位作者，中文 22 / 英文 28；开发集 37 / 测试集 13，摘要及分类均待人工复核。
+截至 **2026-10-22**：50 条公开笔记短摘录，23 位作者，中文 22 / 英文 28；开发集 37 / 测试集 13，摘要及分类均待人工复核。
 
 来源再核查已覆盖50条：49个原页可读，47条逐字匹配、2条仅行内代码规范化后匹配，作者归属49条确认；pub-021原页暂不可达，待重试。14条在作者原页查到明确许可，35条尚未确认，1条本轮未核查。来源表保留采集时的12条明确/38条未知，后来发现的两条CC BY-NC-SA 3.0另记在`source_checks`，没有静默改写原始批次。
 
 本库收录**他人公开发表的笔记、想法的短摘录**及元数据。`original_excerpt` 是来源原文的片段，`summary_zh` 是 AI 辅助中文整理，不是作者原话，也不是人工标准答案。所有摘要和分类默认待人工复核。
+
+全部50条摘要已做短摘录范围AI检查与交叉复查：中文21条、英文27条收窄到`original_excerpt`所支持的信息，2条原样保留；48条修订均在10月22日应用，旧摘要与理由保存在修订文件和数据库日志。分类及标签仍可能依赖原页上下文，尚未完成同口径审查。全部50条仍为AI辅助、待人工复核，不是金标准。
 
 原始笔记正文不会被摘要覆盖。来源中没有的日期、事件或作者意图不自动补成事实。没有运行 GLM 加工的条目保持 `pipeline_status=not_run`；导入成功只说明数据写入成功。
 
@@ -44,6 +46,8 @@ python scripts/manage.py import data/2026-10-21_extra_zh_notes.json
 python scripts/manage.py import data/2026-10-21_extra_mixed_notes.json
 python scripts/source_audits.py import data/source_audit_2026-10-21_zh.json
 python scripts/source_audits.py import data/source_audit_2026-10-21_en.json
+python scripts/apply_annotation_revision.py data/annotation_revision_2026-10-21_zh.json
+python scripts/apply_annotation_revision.py data/annotation_revision_2026-10-22_en.json
 python scripts/manage.py check
 python scripts/manage.py stats
 python scripts/manage.py search "笔记"
@@ -67,7 +71,7 @@ MySQL 导出保留全部 8 张表，不覆盖旧数据；URL 最长 768 字符�
 
 ## 检索验收现状
 
-已建立16题候选基线（14正例、2负例），目标与标签均待人工复核。当前50条快照中，中文自然表达与模糊回忆0/10命中，英文原词4/4命中；当前实现是SQL LIKE字面匹配。预指定关键词对照仅检查可检索字段，不代表自动关键词提取或语义理解。完整指标与语料指纹见 `exports/retrieval_eval.json`。
+已建立16题候选基线（14正例、2负例），目标与标签均待人工复核。当前50条快照中，中文自然表达与模糊回忆0/10命中，英文原词4/4命中；当前实现是SQL LIKE字面匹配。10月22日摘要修订后，固定预指定关键词对照由14/14降为8/14；没有修改题目或关键词追求较高分数。这一对照仅检查可检索字段，不代表自动关键词提取或语义理解。完整指标与语料指纹见 `exports/retrieval_eval.json`。
 
 组员可用 `scripts/review_notes.py` 修订和确认候选标注，修改会保留前后差异；浏览页支持按复核状态筛选。当前50条都还没有被标成人工已核验。
 
@@ -94,3 +98,8 @@ MySQL 导出保留全部 8 张表，不覆盖旧数据；URL 最长 768 字符�
 
 - [来源核查与未解决项](docs/来源核查.md)
 - [数据质量检查方法](docs/数据质量检查.md)
+
+- [中文摘要范围检查](docs/中文摘要检查_2026-10-21.md)
+
+- [英文摘要范围检查](docs/英文摘要检查_2026-10-22.md)
+- [10月22日交付记录](docs/今日交付_2026-10-22.md)

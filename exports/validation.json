@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-10-21",
+  "checked_on": "2026-10-22",
   "timezone": "Asia/Shanghai",
   "database": {
     "status": "ok",
@@ -40,22 +40,26 @@
   },
   "exports_count_match": true,
   "unit_tests": {
-    "passed": 55,
-    "checked_on": "2026-10-21",
+    "passed": 69,
+    "checked_on": "2026-10-22",
     "command": "python -m unittest discover -s tests -v",
-    "scope": "导入/原文保护/标注复核/检索/来源核查隔离与幂等/只读质量审计"
+    "scope": "导入/原文保护/标注复核/检索/来源核查/质量审计/摘要修订整批回滚与人工保护及规范哈希幂等"
   },
   "browser_checks": {
-    "checked_on": "2026-10-21",
+    "checked_on": "2026-10-22",
     "initial_count": 50,
-    "matched_source_count": 49,
-    "unavailable_source_count": 1,
-    "license_confirmed_count": 14,
-    "needs_source_check_count": 1,
-    "new_license_author_filter_count": 2,
-    "verified_filter_count": 0,
+    "chinese_count": 22,
+    "english_count": 28,
+    "chinese_maintenance_query_ids": [
+      "pub-025"
+    ],
+    "english_knowledge_query_ids": [
+      "pub-041",
+      "pub-045"
+    ],
     "reset_restores_count": 50,
     "layout_checked": true,
+    "updated_summaries_visible": true,
     "source_and_annotation_states_separate": true
   },
   "retrieval_baseline": {
@@ -69,15 +73,16 @@
       "mrr_at_5": 0.25,
       "negative_false_return_rate": 0.0
     },
-    "candidate_keyword": {
+    "preset_keyword": {
       "questions": 16,
       "positive_questions": 14,
       "negative_questions": 2,
-      "hit_at_5": 1.0,
-      "mrr_at_5": 1.0,
+      "hit_at_5": 0.5714285714285714,
+      "mrr_at_5": 0.5714285714285714,
       "negative_false_return_rate": 0.0
     },
-    "details": "exports/retrieval_eval.json"
+    "details": "exports/retrieval_eval.json",
+    "comparison": "exports/summary_revision_retrieval_comparison.json"
   },
   "mysql_export": {
     "status": "ok",
@@ -90,11 +95,11 @@
       "tags": 139,
       "note_tags": 150,
       "import_batches": 4,
-      "processing_logs": 50,
+      "processing_logs": 98,
       "source_checks": 50
     },
-    "total_rows": 543,
-    "sql_sha256": "32038633d98f0a09ba734695f3e5de29cf239fbf48933946f8cb36f62561c24b",
+    "total_rows": 591,
+    "sql_sha256": "be6f0187a9102c5c558bcbb7db088244167ec3440cced68586e643b2028f3a69",
     "mysql_executed": false,
     "mysql_version_required": "8.0.29+",
     "limitations": "SQL generated and locally checked only; import requires empty tables. Indexed URL/ID/tag length bounds are enforced; schema is not a live MySQL migration.",
@@ -134,8 +139,10 @@
       "inserted": 0,
       "skipped": 50
     },
-    "original_seven_tables_unchanged": true,
-    "annotation_status_changed": false
+    "annotation_status_changed": false,
+    "last_full_web_audit_on": "2026-10-21",
+    "limited_recheck_on": "2026-10-22",
+    "limited_recheck_note": "pub-021仅重试一次仍不可达；pub-031/pub-032原页及CC BY-NC-SA 3.0许可链接重新确认，未重复写核查记录。"
   },
   "quality_audit": {
     "status": "ok",
@@ -143,5 +150,52 @@
     "warning_count": 3,
     "near_duplicate_candidate_count": 0,
     "details": "exports/data_quality.json"
+  },
+  "summary_revision": {
+    "applied_on": "2026-10-22",
+    "reviewed": 50,
+    "applied": 48,
+    "unchanged": 2,
+    "human_verified": 0,
+    "batches": [
+      {
+        "file": "annotation_revision_2026-10-21_zh.json",
+        "applied": 21,
+        "replay_skipped": 21,
+        "source_revision_sha256": "12160de5eb3d9808e56bb27c560e8882214ef4dcae4f07a438dcaa276c31f93e",
+        "input_file_sha256": "b76118764a820795cf006e5f09aeb555380d7dceb8328bca7a05d03e3f78bff4"
+      },
+      {
+        "file": "annotation_revision_2026-10-22_en.json",
+        "applied": 27,
+        "replay_skipped": 27,
+        "source_revision_sha256": "95d195dc859064d0c8742a42fed9e4c1c5801551ea046d46d1ae4e99b5589329",
+        "input_file_sha256": "4d665fc4aef76c3d6b27838ac1b49fdd3a1b502bec9556f406c2b13796ccf478"
+      }
+    ],
+    "six_protected_tables_unchanged": [
+      "notes",
+      "sources",
+      "tags",
+      "note_tags",
+      "import_batches",
+      "source_checks"
+    ],
+    "annotation_category_and_review_pipeline_fields_unchanged": true,
+    "prior_processing_logs_unchanged": true,
+    "new_annotation_logs": 48,
+    "all_50_still_ai_assisted_pending": true,
+    "rebuild_from_4_seeds_2_audits_2_revisions_matches_current": true,
+    "notes": "source_revision_sha256为规范化内容哈希，input_file_sha256为实际输入字节哈希；本轮仅AI复查。"
+  },
+  "export_validation": {
+    "json": 50,
+    "csv": 50,
+    "markdown": 50,
+    "html_embedded_payload_equals_json": true,
+    "source_audits": 50,
+    "mysql_tables": 8,
+    "mysql_rows": 591,
+    "mysql_live_executed": false
   }
 }
