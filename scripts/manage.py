@@ -410,6 +410,10 @@ def csv_safe(value: Any) -> Any:
     return value
 
 
+SUMMARY_ORIGIN_LABELS = {"ai_assisted": "AI 辅助", "human": "人工撰写"}
+REVIEW_STATUS_LABELS = {"pending": "待人工复核", "verified": "已人工复核", "rejected": "已驳回"}
+
+
 def export_database(db_path: Path, fmt: str, output: Path | None) -> dict[str, Any]:
     check = check_database(db_path)
     if check["errors"]:
@@ -420,11 +424,24 @@ def export_database(db_path: Path, fmt: str, output: Path | None) -> dict[str, A
     output = Path(output) if output else ROOT / "exports" / f"notes.{suffix}"
     if output.resolve() == Path(db_path).resolve():
         raise DataError("导出路径不能覆盖数据库")
+    origin_counts = {key: sum(note["summary_origin"] == key for note in notes)
+                     for key in SUMMARY_ORIGIN_LABELS}
+    review_counts = {key: sum(note["review_status"] == key for note in notes)
+                     for key in REVIEW_STATUS_LABELS}
+    summary_status = (
+        "摘要来源：" + "、".join(f"{label} {origin_counts[key]} 条"
+                              for key, label in SUMMARY_ORIGIN_LABELS.items())
+        + "；复核状态：" + "、".join(f"{label} {review_counts[key]} 条"
+                                  for key, label in REVIEW_STATUS_LABELS.items())
+        + "。"
+    )
     metadata = {
         "project": "Loom public excerpt research seed",
         "exported_at": datetime.now(timezone.utc).isoformat(),
         "record_count": len(notes), "training_allowed": False,
-        "summary_status": "AI 辅助整理，待人工复核",
+        "summary_status": summary_status,
+        "summary_origin_counts": origin_counts,
+        "review_status_counts": review_counts,
         "search_method": "SQL LIKE literal keyword search",
         "glm_executed_by_import": False,
         "coverage": "公开文字摘录；不是学生真实输入；未覆盖语音或 OCR 评测",
@@ -454,7 +471,8 @@ def export_database(db_path: Path, fmt: str, output: Path | None) -> dict[str, A
         lines = [
             "# Loom 公开笔记研究样本", "",
             "公开文字摘录；不是学生真实输入；默认禁止训练使用。",
-            "摘要和分类为 AI 辅助整理，待人工复核；导入未运行 GLM。",
+            summary_status,
+            "导入过程未运行 GLM；逐条复核状态和流水线状态见下方记录。",
             "本批未覆盖语音或 OCR 评测。", "",
         ]
         for item in notes:
@@ -472,7 +490,8 @@ def export_database(db_path: Path, fmt: str, output: Path | None) -> dict[str, A
                 f"- 核验状态：{item['review_status']}；流水线：{item['pipeline_status']}",
                 f"- SHA-256：`{item['original_sha256']}`", "", "**原文摘录**", "",
                 *["> " + part for part in item["original_excerpt"].splitlines()],
-                "", "**中文摘要（AI 辅助，待人工复核）**", "",
+                "", f"**中文摘要（{SUMMARY_ORIGIN_LABELS[item['summary_origin']]}，"
+                    f"{REVIEW_STATUS_LABELS[item['review_status']]}）**", "",
                 item["summary_zh"], "",
                 f"采集证据：{item['evidence_note']}", "",
             ])

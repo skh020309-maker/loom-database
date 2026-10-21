@@ -1,6 +1,6 @@
 # Loom 笔记与想法数据库
 
-为 Loom「想法收件箱 + AI 加工厂」准备可追溯的公开样本，支持摘要、标签、人工复核和检索实验。首日为 **2026-10-20**；每日继续到 **2026-10-25（周日）**。私有仓库：<https://github.com/skh020309-maker/loom-database>。
+为 Loom「想法收件箱 + AI 加工厂」准备可追溯的公开样本，支持摘要、标签、人工复核和检索实验。首日为 **2026-10-20**；每日继续到 **2026-10-25（周日）**。公开仓库：<https://github.com/skh020309-maker/loom-database>。
 
 ## 先看哪里
 
@@ -14,7 +14,7 @@
 
 ## 当前范围
 
-截至 **2026-10-21**：22 条公开笔记短摘录，11 位作者，中文 6 / 英文 16；开发集 17 / 测试集 5，摘要及分类均待人工复核。
+截至 **2026-10-21**：50 条公开笔记短摘录，23 位作者，中文 22 / 英文 28；开发集 37 / 测试集 13，摘要及分类均待人工复核。
 
 本库收录**他人公开发表的笔记、想法的短摘录**及元数据。`original_excerpt` 是来源原文的片段，`summary_zh` 是 AI 辅助中文整理，不是作者原话，也不是人工标准答案。所有摘要和分类默认待人工复核。
 
@@ -43,6 +43,8 @@ python scripts/manage.py export --format csv
 python scripts/manage.py export --format markdown
 python scripts/build_viewer.py
 python scripts/export_mysql.py
+python scripts/review_notes.py show pub-001
+python scripts/evaluate_retrieval.py
 python -m unittest discover -s tests -v
 ```
 
@@ -51,6 +53,12 @@ python -m unittest discover -s tests -v
 后续每日任务当前设为 **22:30（北京时间）**，周日验收后暂停。每日新增数据使用独立文件，例如 `data/2026-10-21_public_notes.json`，保持已有 ID 不变，再执行上述导入、检查和导出。
 
 MySQL 导出保留全部 7 张表，不覆盖旧数据；URL 最长 768 字符，笔记 ID 和标签最长 191 字符，超限会报错。需要的 MySQL 版本高于一般的“8.0”，是因为建表脚本使用可重复执行的触发器定义。
+
+## 检索验收现状
+
+已建立16题候选基线（14正例、2负例），目标与标签均待人工复核。当前50条快照中，中文自然表达与模糊回忆0/10命中，英文原词4/4命中；当前实现是SQL LIKE字面匹配。预指定关键词对照仅检查可检索字段，不代表自动关键词提取或语义理解。完整指标与语料指纹见 `exports/retrieval_eval.json`。
+
+组员可用 `scripts/review_notes.py` 修订和确认候选标注，修改会保留前后差异；浏览页支持按复核状态筛选。当前50条都还没有被标成人工已核验。
 
 ## 数据责任
 
@@ -69,3 +77,6 @@ MySQL 导出保留全部 7 张表，不覆盖旧数据；URL 最长 768 字符�
 - [进度日志](docs/进度日志.md)
 - [仓库状态](docs/仓库状态.md)
 - [高校参考](docs/高校参考.md)
+- [人工复核操作](docs/人工复核操作.md)
+- [检索评测说明](docs/检索评测说明.md)
+- [10月21日交付记录](docs/今日交付_2026-10-21.md)

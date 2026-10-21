@@ -1,0 +1,25 @@
+{
+  "version": "candidate-2026-10-21-v1",
+  "label_origin": "ai_assisted",
+  "review_status": "pending",
+  "description": "固定22条参考样本的16道候选检索题；目标及负例判断尚未人工核验。关键词是预先指定的诊断对照，不是系统自动提取。",
+  "reference_note_ids": ["pub-001", "pub-002", "pub-003", "pub-004", "pub-005", "pub-006", "pub-007", "pub-008", "pub-009", "pub-010", "pub-011", "pub-012", "pub-013", "pub-014", "pub-015", "pub-016", "pub-017", "pub-018", "pub-019", "pub-020", "pub-021", "pub-022"],
+  "questions": [
+    {"id":"ret-001","split":"dev","query_type":"chinese_natural","query":"每条笔记只写一个想法会有什么帮助？","keyword_baseline":"原子性","expected_ids":["pub-001"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-002","split":"dev","query_type":"english_keyword","query":"concept-oriented","keyword_baseline":"concept-oriented","expected_ids":["pub-002"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-003","split":"dev","query_type":"fuzzy_recall","query":"我记得有人说把笔记互相连起来时会顺便重新读旧内容","keyword_baseline":"重读旧笔记","expected_ids":["pub-003"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-004","split":"test","query_type":"chinese_natural","query":"有没有办法把还没确定要参加的活动先放进日历？","keyword_baseline":"尚未确认的活动","expected_ids":["pub-005"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-005","split":"test","query_type":"fuzzy_recall","query":"想找那篇说先把零碎想法写下来以后再整理的笔记","keyword_baseline":"Daily Notes Pages","expected_ids":["pub-006"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-006","split":"test","query_type":"english_keyword","query":"Epistemic Disclosure","keyword_baseline":"Epistemic Disclosure","expected_ids":["pub-007"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-007","split":"dev","query_type":"chinese_natural","query":"收藏文章之前可以先记下自己想解决的问题吗？","keyword_baseline":"稍后阅读","expected_ids":["pub-008"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-008","split":"dev","query_type":"english_keyword","query":"json_extract","keyword_baseline":"json_extract","expected_ids":["pub-011"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-009","split":"dev","query_type":"chinese_natural","query":"谁提过让AI写作助手帮忙找逻辑问题而不只是代写？","keyword_baseline":"逻辑漏洞","expected_ids":["pub-015"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-010","split":"test","query_type":"fuzzy_recall","query":"有个人读围棋AI论文时先快速看几遍再一点点弄懂，在哪里？","keyword_baseline":"AlphaGo","expected_ids":["pub-017"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-011","split":"dev","query_type":"english_keyword","query":"SQLite","keyword_baseline":"JSON audit log","expected_ids":["pub-019"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending","label_note":"SQLite是刻意含糊的广义查询；目标是一条审计日志笔记，其他SQLite结果未必不相关，人工复核时需审查目标完整性。"},
+    {"id":"ret-012","split":"dev","query_type":"chinese_natural","query":"怎么用数据库直接查询CSV文件里的数据？","keyword_baseline":"CSV","expected_ids":["pub-020"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-013","split":"dev","query_type":"fuzzy_recall","query":"之前看到一个人修好了自行车灯但还不知道能用多久","keyword_baseline":"自行车灯","expected_ids":["pub-021"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-014","split":"dev","query_type":"chinese_natural","query":"有没有人想过把命令行手册做得更容易查找？","keyword_baseline":"man pages","expected_ids":["pub-022"],"no_answer":false,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-015","split":"dev","query_type":"negative","query":"明天厦门到北京的航班还剩哪些座位？","keyword_baseline":"航班座位","expected_ids":[],"no_answer":true,"label_origin":"ai_assisted","review_status":"pending"},
+    {"id":"ret-016","split":"test","query_type":"negative","query":"Find the measured pressure of the fictional cobalt marshmallow reactor","keyword_baseline":"cobalt marshmallow reactor","expected_ids":[],"no_answer":true,"label_origin":"ai_assisted","review_status":"pending"}
+  ]
+}

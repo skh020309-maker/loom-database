@@ -1,0 +1,712 @@
+{
+  "status": "ok",
+  "generated_at": "2026-10-21T12:08:26.467544+00:00",
+  "benchmark_version": "candidate-2026-10-21-v1",
+  "benchmark_sha256": "3d9a292fb70c369ec53ff10ca689d4c69abcd877924361114029514e1729cd4c",
+  "corpus_searchable_sha256": "13d4c7bd125ea32ebaf6969ff4890f37dd3ce495bac06e9ef3c49b2675dcbad8",
+  "corpus_note_count": 50,
+  "reference_note_ids": [
+    "pub-001",
+    "pub-002",
+    "pub-003",
+    "pub-004",
+    "pub-005",
+    "pub-006",
+    "pub-007",
+    "pub-008",
+    "pub-009",
+    "pub-010",
+    "pub-011",
+    "pub-012",
+    "pub-013",
+    "pub-014",
+    "pub-015",
+    "pub-016",
+    "pub-017",
+    "pub-018",
+    "pub-019",
+    "pub-020",
+    "pub-021",
+    "pub-022"
+  ],
+  "top_k": 5,
+  "label_origin": "ai_assisted",
+  "review_status": "pending",
+  "gold_standard": false,
+  "glm_executed": false,
+  "ranking": "当前引擎 ORDER BY note ID；无相关性排序",
+  "tracks": {
+    "full_query": {
+      "overall": {
+        "questions": 16,
+        "positive_questions": 14,
+        "negative_questions": 2,
+        "hit_at_5": 0.2857142857142857,
+        "mrr_at_5": 0.25,
+        "negative_false_return_rate": 0.0
+      },
+      "by_split": {
+        "dev": {
+          "questions": 11,
+          "positive_questions": 10,
+          "negative_questions": 1,
+          "hit_at_5": 0.3,
+          "mrr_at_5": 0.25,
+          "negative_false_return_rate": 0.0
+        },
+        "test": {
+          "questions": 5,
+          "positive_questions": 4,
+          "negative_questions": 1,
+          "hit_at_5": 0.25,
+          "mrr_at_5": 0.25,
+          "negative_false_return_rate": 0.0
+        }
+      },
+      "by_query_type": {
+        "chinese_natural": {
+          "questions": 6,
+          "positive_questions": 6,
+          "negative_questions": 0,
+          "hit_at_5": 0.0,
+          "mrr_at_5": 0.0,
+          "negative_false_return_rate": null
+        },
+        "english_keyword": {
+          "questions": 4,
+          "positive_questions": 4,
+          "negative_questions": 0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.875,
+          "negative_false_return_rate": null
+        },
+        "fuzzy_recall": {
+          "questions": 4,
+          "positive_questions": 4,
+          "negative_questions": 0,
+          "hit_at_5": 0.0,
+          "mrr_at_5": 0.0,
+          "negative_false_return_rate": null
+        },
+        "negative": {
+          "questions": 2,
+          "positive_questions": 0,
+          "negative_questions": 2,
+          "hit_at_5": null,
+          "mrr_at_5": null,
+          "negative_false_return_rate": 0.0
+        }
+      }
+    },
+    "preset_keyword": {
+      "overall": {
+        "questions": 16,
+        "positive_questions": 14,
+        "negative_questions": 2,
+        "hit_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "negative_false_return_rate": 0.0
+      },
+      "by_split": {
+        "dev": {
+          "questions": 11,
+          "positive_questions": 10,
+          "negative_questions": 1,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "negative_false_return_rate": 0.0
+        },
+        "test": {
+          "questions": 5,
+          "positive_questions": 4,
+          "negative_questions": 1,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "negative_false_return_rate": 0.0
+        }
+      },
+      "by_query_type": {
+        "chinese_natural": {
+          "questions": 6,
+          "positive_questions": 6,
+          "negative_questions": 0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "negative_false_return_rate": null
+        },
+        "english_keyword": {
+          "questions": 4,
+          "positive_questions": 4,
+          "negative_questions": 0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "negative_false_return_rate": null
+        },
+        "fuzzy_recall": {
+          "questions": 4,
+          "positive_questions": 4,
+          "negative_questions": 0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "negative_false_return_rate": null
+        },
+        "negative": {
+          "questions": 2,
+          "positive_questions": 0,
+          "negative_questions": 2,
+          "hit_at_5": null,
+          "mrr_at_5": null,
+          "negative_false_return_rate": 0.0
+        }
+      }
+    }
+  },
+  "query_type_counts": {
+    "chinese_natural": 6,
+    "english_keyword": 4,
+    "fuzzy_recall": 4,
+    "negative": 2
+  },
+  "limitations": [
+    "题目和目标均为 AI 辅助候选，尚未人工核验；结果不是人工金标准准确率。",
+    "整句和预指定关键词均为真实 SQL LIKE 字面匹配；关键词命中不证明语义检索已实现。",
+    "关键词在看过参考样本后预指定，是有利的诊断条件，未测试自动关键词提取能力。",
+    "检索范围是当前数据库全部可检索记录；扩库或改标注会改变结果，应连同语料指纹比较。",
+    "split 继承预期目标作者；负例没有目标作者，其 split 只是题目分组。",
+    "负例错误返回率只衡量无答案候选题是否返回任何结果；不衡量生成答案的幻觉。",
+    "少量候选题不支持泛化结论；没有执行向量检索、重排序、GLM、语音或 OCR。"
+  ],
+  "details": [
+    {
+      "id": "ret-001",
+      "split": "dev",
+      "query_type": "chinese_natural",
+      "query": "每条笔记只写一个想法会有什么帮助？",
+      "keyword_baseline": "原子性",
+      "expected_ids": [
+        "pub-001"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "每条笔记只写一个想法会有什么帮助？",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "原子性",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-001"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-002",
+      "split": "dev",
+      "query_type": "english_keyword",
+      "query": "concept-oriented",
+      "keyword_baseline": "concept-oriented",
+      "expected_ids": [
+        "pub-002"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "concept-oriented",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-002"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "concept-oriented",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-002"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-003",
+      "split": "dev",
+      "query_type": "fuzzy_recall",
+      "query": "我记得有人说把笔记互相连起来时会顺便重新读旧内容",
+      "keyword_baseline": "重读旧笔记",
+      "expected_ids": [
+        "pub-003"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "我记得有人说把笔记互相连起来时会顺便重新读旧内容",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "重读旧笔记",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-003"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-004",
+      "split": "test",
+      "query_type": "chinese_natural",
+      "query": "有没有办法把还没确定要参加的活动先放进日历？",
+      "keyword_baseline": "尚未确认的活动",
+      "expected_ids": [
+        "pub-005"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "有没有办法把还没确定要参加的活动先放进日历？",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "尚未确认的活动",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-005"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-005",
+      "split": "test",
+      "query_type": "fuzzy_recall",
+      "query": "想找那篇说先把零碎想法写下来以后再整理的笔记",
+      "keyword_baseline": "Daily Notes Pages",
+      "expected_ids": [
+        "pub-006"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "想找那篇说先把零碎想法写下来以后再整理的笔记",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "Daily Notes Pages",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-006"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-006",
+      "split": "test",
+      "query_type": "english_keyword",
+      "query": "Epistemic Disclosure",
+      "keyword_baseline": "Epistemic Disclosure",
+      "expected_ids": [
+        "pub-007"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "Epistemic Disclosure",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-007"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "Epistemic Disclosure",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-007"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-007",
+      "split": "dev",
+      "query_type": "chinese_natural",
+      "query": "收藏文章之前可以先记下自己想解决的问题吗？",
+      "keyword_baseline": "稍后阅读",
+      "expected_ids": [
+        "pub-008"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "收藏文章之前可以先记下自己想解决的问题吗？",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "稍后阅读",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-008"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-008",
+      "split": "dev",
+      "query_type": "english_keyword",
+      "query": "json_extract",
+      "keyword_baseline": "json_extract",
+      "expected_ids": [
+        "pub-011"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "json_extract",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-011"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "json_extract",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-011"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-009",
+      "split": "dev",
+      "query_type": "chinese_natural",
+      "query": "谁提过让AI写作助手帮忙找逻辑问题而不只是代写？",
+      "keyword_baseline": "逻辑漏洞",
+      "expected_ids": [
+        "pub-015"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "谁提过让AI写作助手帮忙找逻辑问题而不只是代写？",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "逻辑漏洞",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-015"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-010",
+      "split": "test",
+      "query_type": "fuzzy_recall",
+      "query": "有个人读围棋AI论文时先快速看几遍再一点点弄懂，在哪里？",
+      "keyword_baseline": "AlphaGo",
+      "expected_ids": [
+        "pub-017"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "有个人读围棋AI论文时先快速看几遍再一点点弄懂，在哪里？",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "AlphaGo",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-017"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-011",
+      "split": "dev",
+      "query_type": "english_keyword",
+      "query": "SQLite",
+      "keyword_baseline": "JSON audit log",
+      "expected_ids": [
+        "pub-019"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "label_note": "SQLite是刻意含糊的广义查询；目标是一条审计日志笔记，其他SQLite结果未必不相关，人工复核时需审查目标完整性。",
+      "full_query": {
+        "submitted_query": "SQLite",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-011",
+          "pub-019",
+          "pub-020"
+        ],
+        "first_relevant_rank": 2,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 0.5,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "JSON audit log",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-019"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-012",
+      "split": "dev",
+      "query_type": "chinese_natural",
+      "query": "怎么用数据库直接查询CSV文件里的数据？",
+      "keyword_baseline": "CSV",
+      "expected_ids": [
+        "pub-020"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "怎么用数据库直接查询CSV文件里的数据？",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "CSV",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-020"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-013",
+      "split": "dev",
+      "query_type": "fuzzy_recall",
+      "query": "之前看到一个人修好了自行车灯但还不知道能用多久",
+      "keyword_baseline": "自行车灯",
+      "expected_ids": [
+        "pub-021"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "之前看到一个人修好了自行车灯但还不知道能用多久",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "自行车灯",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-021"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-014",
+      "split": "dev",
+      "query_type": "chinese_natural",
+      "query": "有没有人想过把命令行手册做得更容易查找？",
+      "keyword_baseline": "man pages",
+      "expected_ids": [
+        "pub-022"
+      ],
+      "no_answer": false,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "有没有人想过把命令行手册做得更容易查找？",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": 0,
+        "reciprocal_rank_at_5": 0.0,
+        "negative_false_return": null
+      },
+      "preset_keyword": {
+        "submitted_query": "man pages",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [
+          "pub-022"
+        ],
+        "first_relevant_rank": 1,
+        "hit_at_5": 1,
+        "reciprocal_rank_at_5": 1.0,
+        "negative_false_return": null
+      }
+    },
+    {
+      "id": "ret-015",
+      "split": "dev",
+      "query_type": "negative",
+      "query": "明天厦门到北京的航班还剩哪些座位？",
+      "keyword_baseline": "航班座位",
+      "expected_ids": [],
+      "no_answer": true,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "明天厦门到北京的航班还剩哪些座位？",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": null,
+        "reciprocal_rank_at_5": null,
+        "negative_false_return": false
+      },
+      "preset_keyword": {
+        "submitted_query": "航班座位",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": null,
+        "reciprocal_rank_at_5": null,
+        "negative_false_return": false
+      }
+    },
+    {
+      "id": "ret-016",
+      "split": "test",
+      "query_type": "negative",
+      "query": "Find the measured pressure of the fictional cobalt marshmallow reactor",
+      "keyword_baseline": "cobalt marshmallow reactor",
+      "expected_ids": [],
+      "no_answer": true,
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "full_query": {
+        "submitted_query": "Find the measured pressure of the fictional cobalt marshmallow reactor",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": null,
+        "reciprocal_rank_at_5": null,
+        "negative_false_return": false
+      },
+      "preset_keyword": {
+        "submitted_query": "cobalt marshmallow reactor",
+        "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "hit_at_5": null,
+        "reciprocal_rank_at_5": null,
+        "negative_false_return": false
+      }
+    }
+  ]
+}

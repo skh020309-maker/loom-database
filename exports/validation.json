@@ -3,7 +3,7 @@
   "timezone": "Asia/Shanghai",
   "database": {
     "status": "ok",
-    "notes_checked": 22,
+    "notes_checked": 50,
     "errors": [],
     "checks": [
       "integrity",
@@ -19,41 +19,75 @@
     ],
     "scope_note": "离线结构校验；不代替网页原文比对或人工语义核验。"
   },
-  "records": 22,
-  "authors": 11,
+  "records": 50,
+  "authors": 23,
   "language_counts": {
-    "zh": 6,
-    "en": 16
+    "zh": 22,
+    "en": 28
+  },
+  "split_counts": {
+    "dev": 37,
+    "test": 13
+  },
+  "license_counts": {
+    "open": 12,
+    "unknown": 38
+  },
+  "review_status_counts": {
+    "pending": 50
   },
   "exports_count_match": true,
   "unit_tests": {
-    "passed": 16,
-    "checked_on": "2026-10-20",
+    "passed": 32,
+    "checked_on": "2026-10-21",
     "command": "python -m unittest discover -s tests -v",
-    "scope": "数据管理工具；本批只有数据与文档变更"
+    "scope": "导入、原文保护、来源许可、导出状态、人工复核、检索评测"
   },
   "browser_checks": {
     "checked_on": "2026-10-21",
-    "initial_count": 22,
-    "event_filter_count": 2,
-    "reset_restores_count": 22,
+    "initial_count": 50,
+    "verified_filter_count": 0,
+    "pending_zh_count": 22,
+    "pending_zh_keyword_read_write_lock_count": 1,
+    "reset_restores_count": 50,
     "layout_checked": true
+  },
+  "retrieval_baseline": {
+    "questions": 16,
+    "gold_standard": false,
+    "full_query": {
+      "questions": 16,
+      "positive_questions": 14,
+      "negative_questions": 2,
+      "hit_at_5": 0.2857142857142857,
+      "mrr_at_5": 0.25,
+      "negative_false_return_rate": 0.0
+    },
+    "candidate_keyword": {
+      "questions": 16,
+      "positive_questions": 14,
+      "negative_questions": 2,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "negative_false_return_rate": 0.0
+    },
+    "details": "exports/retrieval_eval.json"
   },
   "mysql_export": {
     "status": "ok",
     "source": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\loom.db",
     "output": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\exports\\mysql_seed.sql",
     "row_counts": {
-      "sources": 22,
-      "notes": 22,
-      "annotations": 22,
-      "tags": 66,
-      "note_tags": 66,
-      "import_batches": 2,
-      "processing_logs": 22
+      "sources": 50,
+      "notes": 50,
+      "annotations": 50,
+      "tags": 139,
+      "note_tags": 150,
+      "import_batches": 4,
+      "processing_logs": 50
     },
-    "total_rows": 222,
-    "sql_sha256": "f0e8ef6f26a30e5e5bfc2d422216a218de4caf11f357880eea70f8c85bdc6d45",
+    "total_rows": 493,
+    "sql_sha256": "306973e20a49c3437ae1619cf5262f5a785cf176c76b5ce9d4a8edcd934c7a2e",
     "mysql_executed": false,
     "mysql_version_required": "8.0.29+",
     "limitations": "SQL generated and locally checked only; import requires empty tables. Indexed URL/ID/tag length bounds are enforced; schema is not a live MySQL migration."

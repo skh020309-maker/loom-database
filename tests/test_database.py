@@ -178,6 +178,55 @@ class DatabaseContracts(unittest.TestCase):
         self.assertIn("- 许可：open / CC BY 4.0", content)
         self.assertIn(f"- 许可链接：<{license_url}>", content)
 
+    def mixed_review_fixture(self):
+        self.load([
+            sample(id="review-human", url="https://example.org/review/human",
+                   original_excerpt="First unique review fixture."),
+            sample(id="review-pending", url="https://example.org/review/pending",
+                   original_excerpt="Second unique review fixture."),
+            sample(id="review-rejected", url="https://example.org/review/rejected",
+                   original_excerpt="Third unique review fixture."),
+        ])
+        with manage.connect(self.db) as conn:
+            conn.execute(
+                "UPDATE annotations SET summary_origin='human',review_status='verified',"
+                "reviewer='reviewer-A',summary_zh='人工撰写且已核验的摘要' "
+                "WHERE note_id='review-human'")
+            conn.execute(
+                "UPDATE annotations SET review_status='rejected',reviewer='reviewer-A' "
+                "WHERE note_id='review-rejected'")
+
+    def test_json_export_summarizes_mixed_review_states_without_relabeling(self):
+        self.mixed_review_fixture()
+        output = self.root / "mixed.json"
+        manage.export_database(self.db, "json", output)
+        payload = json.loads(output.read_text(encoding="utf-8"))
+        metadata = payload["metadata"]
+        self.assertEqual(metadata["summary_origin_counts"], {"ai_assisted": 2, "human": 1})
+        self.assertEqual(metadata["review_status_counts"], {"pending": 1, "verified": 1, "rejected": 1})
+        for phrase in ("AI 辅助 2 条", "人工撰写 1 条", "待人工复核 1 条", "已人工复核 1 条", "已驳回 1 条"):
+            self.assertIn(phrase, metadata["summary_status"])
+        records = {note["id"]: note for note in payload["notes"]}
+        self.assertEqual(records["review-human"]["annotation"]["summary_origin"], "human")
+        self.assertEqual(records["review-human"]["annotation"]["review_status"], "verified")
+        self.assertEqual(records["review-rejected"]["annotation"]["summary_origin"], "ai_assisted")
+
+    def test_markdown_mixed_review_headings_reflect_each_annotation(self):
+        self.mixed_review_fixture()
+        output = self.root / "mixed.md"
+        manage.export_database(self.db, "markdown", output)
+        content = output.read_text(encoding="utf-8")
+        sections = {section.split(" · ", 1)[0]: section for section in content.split("\n## ")[1:]}
+        expected = {
+            "review-human": "**中文摘要（人工撰写，已人工复核）**",
+            "review-pending": "**中文摘要（AI 辅助，待人工复核）**",
+            "review-rejected": "**中文摘要（AI 辅助，已驳回）**",
+        }
+        for note_id, heading in expected.items():
+            self.assertIn(heading, sections[note_id])
+        self.assertNotIn("AI 辅助，待人工复核", sections["review-human"])
+        self.assertIn("已驳回 1 条", content.split("\n## ")[0])
+
     def test_source_license_conflicts_rejected_for_same_and_new_note_ids(self):
         baseline = sample(
             license_status="open", license_name="CC BY 4.0",
