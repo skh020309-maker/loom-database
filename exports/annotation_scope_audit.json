@@ -1,0 +1,1713 @@
+{
+  "metadata": {
+    "checked_on": "2026-10-23",
+    "timezone": "Asia/Shanghai",
+    "scope": "original_excerpt_only",
+    "label_origin": "ai_assisted",
+    "review_status": "pending",
+    "human_verified": false,
+    "database_sha256": "b1a816dc97b386861d1b6ff6c524aacdde72ff8f7d5f4aa695ed52f11ab902e3",
+    "stable_annotation_snapshot_sha256": "e98a0d0edc9affe939f65269a9871f3cca71f5499a05b61c799c6cad0693e718",
+    "input_audits": [
+      {
+        "path": "data/annotation_scope_audit_2026-10-23_001_025.json",
+        "sha256": "c11f909a0215f8ba0116950d8c9602fca58effe99a6bcff05b6c8e3941d0ee22",
+        "source_sha256_at_audit_start": "03d60083efbe75964102405f31f1660fbd77e836d7844ff5f5cc0a3ece5c4d6b",
+        "note_count": 25
+      },
+      {
+        "path": "data/annotation_scope_audit_2026-10-23_026_050.json",
+        "sha256": "342f7c9eff0e8835a82481e78b1028bd1e94acfdca7d891a769478decbe68eeb",
+        "source_sha256_at_audit_start": null,
+        "note_count": 25
+      }
+    ],
+    "note": "两组各25条AI审查后交叉复查，未代替真人。输入文件字节哈希记录实际审查开始时点，exports/notes.json当天刷新exported_at会改变其字节哈希；稳定记录指纹不包含导出元数据。建议不自动应用，原标注未变。"
+  },
+  "summary": {
+    "notes": 50,
+    "categories": {
+      "context_dependent": 3,
+      "ambiguous": 19,
+      "supported": 28
+    },
+    "tags": 150,
+    "tag_assessments": {
+      "context_dependent": 77,
+      "supported": 65,
+      "ambiguous": 8
+    },
+    "notes_with_context_dependent_tags": 45,
+    "notes_with_non_supported_tags": 46
+  },
+  "records": [
+    {
+      "note_id": "pub-001",
+      "category": "idea",
+      "category_assessment": "context_dependent",
+      "category_reason": "片段以 This way 指代未给出的做法，只有跨主题建立联系的结果；尚不能独立确定是在提出构想还是记录观察。",
+      "tags": [
+        {
+          "value": "原子性",
+          "assessment": "context_dependent",
+          "reason": "没有出现原子性或单一概念，需标题或其他原页内容。"
+        },
+        {
+          "value": "常青笔记",
+          "assessment": "context_dependent",
+          "reason": "没有出现常青笔记，不能由 this way 补出所指。"
+        },
+        {
+          "value": "知识连接",
+          "assessment": "supported",
+          "reason": "直接说跨主题和情境形成联系，可支持知识连接。"
+        }
+      ],
+      "supporting_excerpt": "This way, it’s easier to form connections across topics and contexts.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "知识连接",
+        "跨主题联系"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "bdaba26c642916e47e390baa7164a16026a036387726992bd20eed3632d02214",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-002",
+      "category": "idea",
+      "category_assessment": "ambiguous",
+      "category_reason": "按概念组织的价值判断既可作为方法建议 idea，也可作为经验记录 note；摘录未明确要求采用。",
+      "tags": [
+        {
+          "value": "概念组织",
+          "assessment": "supported",
+          "reason": "直接出现 Organizing by concept。"
+        },
+        {
+          "value": "知识积累",
+          "assessment": "context_dependent",
+          "reason": "只比较记笔记难度与益处，未交代知识如何积累。"
+        },
+        {
+          "value": "跨领域联系",
+          "assessment": "context_dependent",
+          "reason": "未写到跨领域连接，也未列出冒号后的益处。"
+        }
+      ],
+      "supporting_excerpt": "Organizing by concept makes note-taking a little harder, but in a useful way:",
+      "suggested_category": null,
+      "suggested_tags": [
+        "概念组织",
+        "记笔记"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "06b0dddfc47bd5dd6e1c07e246fa394dd3605bdc7382d0812cce879393b33a94",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-003",
+      "category": "idea",
+      "category_assessment": "ambiguous",
+      "category_reason": "寻找链接需要读旧笔记是方法性判断，可解作建议或知识记录；保留类别歧义。",
+      "tags": [
+        {
+          "value": "双向链接",
+          "assessment": "context_dependent",
+          "reason": "links 没有说明方向，不能直接推得双向链接。"
+        },
+        {
+          "value": "复习",
+          "assessment": "ambiguous",
+          "reason": "阅读旧笔记可被宽泛地称作复习，但片段没有说明复习目的或机制。"
+        },
+        {
+          "value": "旧笔记重访",
+          "assessment": "supported",
+          "reason": "明确要求 reading old notes，支持重访旧笔记。"
+        }
+      ],
+      "supporting_excerpt": "Finding the right links requires reading old notes",
+      "suggested_category": null,
+      "suggested_tags": [
+        "笔记链接",
+        "旧笔记重访"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "cb63c97a056e4a33731d902a81107e5ee90197fc7cc426f38b6ab74f0e2cce72",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-004",
+      "category": "idea",
+      "category_assessment": "ambiguous",
+      "category_reason": "描述标题在写作中形成的常见现象，没有明确建议；idea 与 note 都有解释空间。",
+      "tags": [
+        {
+          "value": "主张澄清",
+          "assessment": "context_dependent",
+          "reason": "没有出现主张或澄清，不能从标题形成推得主张澄清。"
+        },
+        {
+          "value": "写作",
+          "assessment": "supported",
+          "reason": "直接出现 text 和 written，说明写作过程。"
+        },
+        {
+          "value": "标题生成",
+          "assessment": "supported",
+          "reason": "直接描述 title emerges，支持标题形成或生成。"
+        }
+      ],
+      "supporting_excerpt": "The title often emerges from the text as it’s written.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "写作",
+        "标题生成"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "dce69312dec8fd2a557ae40e7a94516a23b8e6642a3bc9170979df42c4befaa5",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-005",
+      "category": "idea",
+      "category_assessment": "context_dependent",
+      "category_reason": "片段仅解释设想事件可能发生也可能不发生，没有提出新设计；idea 需额外上下文支撑。",
+      "tags": [
+        {
+          "value": "不确定性",
+          "assessment": "supported",
+          "reason": "may or may not 明确表达不确定性。"
+        },
+        {
+          "value": "交互设计",
+          "assessment": "context_dependent",
+          "reason": "没有提到界面、交互或设计。"
+        },
+        {
+          "value": "日程管理",
+          "assessment": "context_dependent",
+          "reason": "events 并未明确是日历或日程事件。"
+        }
+      ],
+      "supporting_excerpt": "Speculative events may or may not happen.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "不确定性",
+        "设想事件"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "9453aa251ba2410b9ffa898fe81c1f1804bf57dd195039cc1ce55a329180ce8a",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-006",
+      "category": "idea",
+      "category_assessment": "ambiguous",
+      "category_reason": "写出来是想清楚的必要一环，可作方法建议或经验判断，类别不能唯一确定。",
+      "tags": [
+        {
+          "value": "快速记录",
+          "assessment": "context_dependent",
+          "reason": "没有描述记录速度。"
+        },
+        {
+          "value": "想法整理",
+          "assessment": "supported",
+          "reason": "把写出来与想清楚联系起来，支持想法整理这一概括；不补全 it 的具体对象。"
+        },
+        {
+          "value": "每日笔记",
+          "assessment": "context_dependent",
+          "reason": "没有出现每日频率或每日笔记。"
+        }
+      ],
+      "supporting_excerpt": "Writing it out is an essential part of thinking it out.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "写作",
+        "想法整理"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "143bc625a471a453b2a99e4ec130141a86b7b2d3ca4806e7b3018619c2d2160f",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-007",
+      "category": "note",
+      "category_assessment": "ambiguous",
+      "category_reason": "这是提供可信度元数据的未完成短语，可为做法描述或行动建议，note 并非唯一类别。",
+      "tags": [
+        {
+          "value": "元数据",
+          "assessment": "supported",
+          "reason": "直接出现 metadata。"
+        },
+        {
+          "value": "可信度",
+          "assessment": "supported",
+          "reason": "epistemic validity 指内容在认识层面的有效性，可支持可信度标签。"
+        },
+        {
+          "value": "来源说明",
+          "assessment": "context_dependent",
+          "reason": "内容可信度元数据不一定是来源信息，片段没有交代来源。"
+        }
+      ],
+      "supporting_excerpt": "Providing clear metadata on the epistemic validity of content",
+      "suggested_category": null,
+      "suggested_tags": [
+        "元数据",
+        "可信度"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "b442f4da1c9e326533bd5f2df799bb4d5ca4b7e457b5916312c89c323e18a29b",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-008",
+      "category": "question",
+      "category_assessment": "supported",
+      "category_reason": "以问号明确询问从文章中希望获得什么，符合 question。",
+      "tags": [
+        {
+          "value": "信息输入",
+          "assessment": "context_dependent",
+          "reason": "问题聚焦阅读目的，没有直接描述信息输入过程；该宽泛标签需要任务上下文。"
+        },
+        {
+          "value": "稍后读",
+          "assessment": "context_dependent",
+          "reason": "没有延后阅读或稍后读安排。"
+        },
+        {
+          "value": "阅读问题",
+          "assessment": "supported",
+          "reason": "明确针对一篇文章提出阅读问题。"
+        }
+      ],
+      "supporting_excerpt": "我想从这篇文章里得到什么？",
+      "suggested_category": null,
+      "suggested_tags": [
+        "阅读问题",
+        "阅读目的"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "7b4ec90ad4f0ef7fcf12cff4fddad9a1720db753b1cdbc48bf484ff51cc1c411",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-009",
+      "category": "idea",
+      "category_assessment": "supported",
+      "category_reason": "应该要服务于行动是明确方法建议，支持 idea。",
+      "tags": [
+        {
+          "value": "PARA",
+          "assessment": "context_dependent",
+          "reason": "没有提到 PARA 方法。"
+        },
+        {
+          "value": "行动导向",
+          "assessment": "supported",
+          "reason": "直接要求笔记服务于行动。"
+        },
+        {
+          "value": "项目笔记",
+          "assessment": "context_dependent",
+          "reason": "没有说明笔记属于项目。"
+        }
+      ],
+      "supporting_excerpt": "你记下的笔记应该要服务于你的行动。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "行动导向",
+        "笔记用途"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "2251e58de96e6351e4dc07aa7e58c5824da2d7da2db043ed4956110691689e76",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-010",
+      "category": "note",
+      "category_assessment": "supported",
+      "category_reason": "对软件永远不会完成的概括判断符合知识或经验记录 note。",
+      "tags": [
+        {
+          "value": "开源协作",
+          "assessment": "context_dependent",
+          "reason": "没有开源或协作信息。"
+        },
+        {
+          "value": "最小重现",
+          "assessment": "context_dependent",
+          "reason": "没有复现错误、最小案例或重现步骤。"
+        },
+        {
+          "value": "软件维护",
+          "assessment": "ambiguous",
+          "reason": "永远不会完成可能关联持续维护，也可能指持续开发；片段没有明确区分。"
+        }
+      ],
+      "supporting_excerpt": "软件一旦诞生，就永远不会完成。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "软件",
+        "完成状态"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "515f1eb2ffbddd732d74e379879b5142610839a0523cdeb458084f40afaafe61",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-011",
+      "category": "note",
+      "category_assessment": "supported",
+      "category_reason": "说明 JSON 路径必须以根符号开始的技术规则，支持 note。",
+      "tags": [
+        {
+          "value": "JSON",
+          "assessment": "supported",
+          "reason": "明确出现 JSON value。"
+        },
+        {
+          "value": "SQLite",
+          "assessment": "context_dependent",
+          "reason": "没有出现 SQLite 名称。"
+        },
+        {
+          "value": "技术学习",
+          "assessment": "context_dependent",
+          "reason": "内容是技术规则，但没有说明学习活动或学习意图。"
+        }
+      ],
+      "supporting_excerpt": "Paths must always start with a `$`, which represents the root of the JSON value.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "JSON",
+        "JSON路径",
+        "根节点"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "14b79f1d4d68eeb6ae99efa00e1ce7d413835bb8f3e0fd6e0873dd0eecf0bcc9",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-012",
+      "category": "note",
+      "category_assessment": "supported",
+      "category_reason": "对 ORM 的 migrations 特性作经验性评价，支持 note。",
+      "tags": [
+        {
+          "value": "Django",
+          "assessment": "context_dependent",
+          "reason": "只出现 ORM，未出现 Django，不能确定具体框架。"
+        },
+        {
+          "value": "学习体会",
+          "assessment": "ambiguous",
+          "reason": "great thing 表明评价，但不足以确定这是学习体会。"
+        },
+        {
+          "value": "数据库迁移",
+          "assessment": "supported",
+          "reason": "ORM 与 migrations 直接给出对象关系映射场景中的迁移特性，支持数据库迁移。"
+        }
+      ],
+      "supporting_excerpt": "The other great thing about the ORM is migrations!",
+      "suggested_category": null,
+      "suggested_tags": [
+        "ORM",
+        "数据库迁移"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "e8c42aeb6c97d443e73b4a1a800d96739f4afeba917efb2a59489d3944dde938",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-013",
+      "category": "question",
+      "category_assessment": "supported",
+      "category_reason": "以怎么办明确提出互联网中断的假设问题，支持 question。",
+      "tags": [
+        {
+          "value": "生活场景",
+          "assessment": "supported",
+          "reason": "清晨醒来发现断网是具体的生活设想场景。"
+        },
+        {
+          "value": "通信备份",
+          "assessment": "context_dependent",
+          "reason": "没有提出备份通信这一解决方案。"
+        },
+        {
+          "value": "问题设想",
+          "assessment": "supported",
+          "reason": "某天和怎么办构成假设性问题。"
+        }
+      ],
+      "supporting_excerpt": "某天清晨，你醒来发现互联网断了，怎么办？",
+      "suggested_category": null,
+      "suggested_tags": [
+        "生活场景",
+        "问题设想",
+        "断网"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "09131da03bed163cdb527e482a2461106b5f9d4032e35d5f0df8a3daa15c387a",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-014",
+      "category": "note",
+      "category_assessment": "supported",
+      "category_reason": "作者记录每日跑步与习惯逐渐形成的经验，不是单次事件，支持 note。",
+      "tags": [
+        {
+          "value": "个人记录",
+          "assessment": "supported",
+          "reason": "第一人称说明记录天气、时间、时长和距离。"
+        },
+        {
+          "value": "日常习惯",
+          "assessment": "supported",
+          "reason": "明确出现每天及习惯养成。"
+        },
+        {
+          "value": "跑步经历",
+          "assessment": "supported",
+          "reason": "明确记录自己每日跑步的经历。"
+        }
+      ],
+      "supporting_excerpt": "我每天跑步，每天记录天气，时间，时长，距离，慢慢的习惯就养成了。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "个人记录",
+        "日常习惯",
+        "跑步经历"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "aeca06aa2d0babd55a2f4de9517898cd7dbca623b5f8e3364442d67345303c22",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-015",
+      "category": "idea",
+      "category_assessment": "ambiguous",
+      "category_reason": "我在思考是否能有写作 Copilot 是构想，也采用询问可能性的表达；idea 可保留但并非唯一解释。",
+      "tags": [
+        {
+          "value": "AI协作",
+          "assessment": "ambiguous",
+          "reason": "明确是 Copilot 辅助人类写作，但仅此句未说明其 AI 实现；不借助产品背景将 Copilot 自动等同 AI。"
+        },
+        {
+          "value": "产品构想",
+          "assessment": "supported",
+          "reason": "提出是否能存在一种写作辅助工具的构想。"
+        },
+        {
+          "value": "写作助手",
+          "assessment": "supported",
+          "reason": "直接说明辅助人类更好地写作。"
+        }
+      ],
+      "supporting_excerpt": "我在思考在写作的时候，是否也能有一个 Copilot 辅助人类更好地写作。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "产品构想",
+        "写作助手"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "2bfc2aca2bb1fb963744b8f3e1ee91c20dbf67f83f9b721568ff5dc845336486",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-016",
+      "category": "event",
+      "category_assessment": "supported",
+      "category_reason": "第一人称陈述二十岁获得学士学位的已发生事项，支持 event。",
+      "tags": [
+        {
+          "value": "个人里程碑",
+          "assessment": "supported",
+          "reason": "取得学士学位是明确的个人学业节点。"
+        },
+        {
+          "value": "学习经历",
+          "assessment": "supported",
+          "reason": "获得学位直接反映学业经历。"
+        },
+        {
+          "value": "自主学习",
+          "assessment": "context_dependent",
+          "reason": "没有说明学习方式，不能确定自主学习。"
+        }
+      ],
+      "supporting_excerpt": "I got my bachelor’s degree when I was twenty.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "个人里程碑",
+        "学习经历"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "a7f66833685d7c36749da2016933f80c52bd977fb585bca0769681d570c2bcd7",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-017",
+      "category": "note",
+      "category_assessment": "supported",
+      "category_reason": "记录多次快速阅读并逐渐深入的做法与经历，支持 note。",
+      "tags": [
+        {
+          "value": "分轮阅读",
+          "assessment": "supported",
+          "reason": "several rapid passes 和 each time 明确表明多轮阅读。"
+        },
+        {
+          "value": "科研学习",
+          "assessment": "context_dependent",
+          "reason": "没有明确科研目的或科研场景。"
+        },
+        {
+          "value": "论文阅读",
+          "assessment": "ambiguous",
+          "reason": "paper 可能指论文，也可指其他纸质文章；仅摘录无法唯一消歧为学术论文。"
+        }
+      ],
+      "supporting_excerpt": "al rapid passes over the paper in this way, each time getting deeper and deeper.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "分轮阅读",
+        "逐步深入"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "76812b7578adde1da09adcecf4935556a4ed6f62b22a041343e4badc05e04bf7",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-018",
+      "category": "question",
+      "category_assessment": "supported",
+      "category_reason": "明确询问能否让自己更加独立思考，支持 question。",
+      "tags": [
+        {
+          "value": "独立思考",
+          "assessment": "supported",
+          "reason": "independent-minded 直接表达思想独立。"
+        },
+        {
+          "value": "观点审视",
+          "assessment": "context_dependent",
+          "reason": "没有具体审视某个观点的动作或对象。"
+        },
+        {
+          "value": "问题探索",
+          "assessment": "supported",
+          "reason": "Can you 明确提出待探索的能力问题。"
+        }
+      ],
+      "supporting_excerpt": "Can you make yourself more independent-minded?",
+      "suggested_category": null,
+      "suggested_tags": [
+        "独立思考",
+        "问题探索"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "34eff7074d31eb090b76801fd09852c461fd83043a6ec496c52bdde856074eae",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-019",
+      "category": "note",
+      "category_assessment": "supported",
+      "category_reason": "描述用 JSON 保存表变更到审计日志的技术做法，支持 note。",
+      "tags": [
+        {
+          "value": "修改追踪",
+          "assessment": "supported",
+          "reason": "直接提到 store changes，支持修改追踪。"
+        },
+        {
+          "value": "数据库审计",
+          "assessment": "supported",
+          "reason": "table 与 audit log 直接支持数据库变更审计语义。"
+        },
+        {
+          "value": "项目实验",
+          "assessment": "context_dependent",
+          "reason": "没有说明是项目实验、实验结果或具体项目。"
+        }
+      ],
+      "supporting_excerpt": "using JSON to store changes to a table in an audit log.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "修改追踪",
+        "数据库审计",
+        "JSON"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "c804cd6e6649cdef1a9c17b1379e40a6a172a8775ad679523562338b45c9c346",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-020",
+      "category": "note",
+      "category_assessment": "supported",
+      "category_reason": "描述用特殊文件名打开内存数据库的技术操作，支持 note。",
+      "tags": [
+        {
+          "value": "CSV分析",
+          "assessment": "context_dependent",
+          "reason": "没有 CSV 或数据分析对象。"
+        },
+        {
+          "value": "SQL查询",
+          "assessment": "context_dependent",
+          "reason": "打开内存数据库不等于执行 SQL 查询，摘录未出现 SQL。"
+        },
+        {
+          "value": "技术实践",
+          "assessment": "supported",
+          "reason": "直接描述打开内存数据库的方法，可作技术实践标签。"
+        }
+      ],
+      "supporting_excerpt": "This uses the special `:memory:` filename to open an in-memory database.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "内存数据库",
+        "技术实践"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "9ddfedd8fa77c1f59b1739712234da9963bc5c14ce424580d2835dfe2602c835",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-021",
+      "category": "event",
+      "category_assessment": "supported",
+      "category_reason": "作者陈述已经实际使用灯具夜间骑车，属于已发生事件，支持 event。",
+      "tags": [
+        {
+          "value": "生活实践",
+          "assessment": "supported",
+          "reason": "实际夜间骑车使用灯具是生活中的实践。"
+        },
+        {
+          "value": "结果记录",
+          "assessment": "supported",
+          "reason": "灯能工作及已经使用是明确的结果报告。"
+        },
+        {
+          "value": "维修项目",
+          "assessment": "context_dependent",
+          "reason": "没有说灯曾坏过或经过维修，也可能是新灯测试。"
+        }
+      ],
+      "supporting_excerpt": "The lights work! I have used them to bike at night!",
+      "suggested_category": null,
+      "suggested_tags": [
+        "生活实践",
+        "结果记录",
+        "夜间骑行"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "3021a43b68f16a226f43dab4bdb56516cf164175eeb5fe63e2e6262b01961e4e",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-022",
+      "category": "question",
+      "category_assessment": "supported",
+      "category_reason": "明确询问如何让 man page 更易使用，支持 question。",
+      "tags": [
+        {
+          "value": "待研究问题",
+          "assessment": "supported",
+          "reason": "What might make 提出尚待探究的改进问题。"
+        },
+        {
+          "value": "文档设计",
+          "assessment": "supported",
+          "reason": "man page 是手册文档，问题直接聚焦该文档如何更易用。"
+        },
+        {
+          "value": "易用性",
+          "assessment": "supported",
+          "reason": "直接出现 easier to use。"
+        }
+      ],
+      "supporting_excerpt": "What might make a man page easier to use?",
+      "suggested_category": null,
+      "suggested_tags": [
+        "待研究问题",
+        "文档设计",
+        "易用性"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "3c2473a45d423594102d8334b5eab9ec11c442660356380b2b60c0ff88619567",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-023",
+      "category": "question",
+      "category_assessment": "supported",
+      "category_reason": "明确询问一本书真正解决的难题，支持 question。",
+      "tags": [
+        {
+          "value": "学习方法",
+          "assessment": "context_dependent",
+          "reason": "没有直接提出学习方法，可能是阅读、写作或选题场景。"
+        },
+        {
+          "value": "问题识别",
+          "assessment": "supported",
+          "reason": "询问真正解决什么难题即识别核心问题。"
+        },
+        {
+          "value": "阅读自检",
+          "assessment": "context_dependent",
+          "reason": "没有表明提问者正在阅读或进行自检。"
+        }
+      ],
+      "supporting_excerpt": "作者写一本书，真正解决的难题是什么？",
+      "suggested_category": null,
+      "suggested_tags": [
+        "问题识别",
+        "书籍问题"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "40a3dd943f30336e4d266bcb8485e2e9ee9f2ad9a303a3333781a7b635419733",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-024",
+      "category": "note",
+      "category_assessment": "ambiguous",
+      "category_reason": "尽量寻找实践机会带有建议语气，可归 idea；同时可作工程学习经验 note，保守保留歧义。",
+      "tags": [
+        {
+          "value": "个人反思",
+          "assessment": "context_dependent",
+          "reason": "没有第一人称或反思经过，不能确定个人反思。"
+        },
+        {
+          "value": "实践机会",
+          "assessment": "supported",
+          "reason": "直接出现寻找实践机会。"
+        },
+        {
+          "value": "工程学习",
+          "assessment": "supported",
+          "reason": "直接讨论学工程。"
+        }
+      ],
+      "supporting_excerpt": "学工程则是另一个套路，尽量寻找实践机会。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "实践机会",
+        "工程学习"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "737fc0a4b50d40f586faf86ffaf7a9b621974939acc02222b101daab9170138e",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-025",
+      "category": "idea",
+      "category_assessment": "context_dependent",
+      "category_reason": "仅比较未说明的两者维护宽严，没有提出具体建议或构想；idea 的判断依赖缺失上下文。",
+      "tags": [
+        {
+          "value": "开源维护",
+          "assessment": "context_dependent",
+          "reason": "维护模型并未明确属于开源软件；这两者的具体对象未知。"
+        },
+        {
+          "value": "插件设计",
+          "assessment": "context_dependent",
+          "reason": "没有提及插件，不能补出前者或后者的身份。"
+        },
+        {
+          "value": "项目反思",
+          "assessment": "context_dependent",
+          "reason": "没有交代项目或个人反思，不能从维护比较确定项目反思。"
+        }
+      ],
+      "supporting_excerpt": "这两者的维护模型完全不同，前者严，后者宽。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "维护模型",
+        "宽严比较"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "c283c1412b1173280eaa1511b12b9bec1ac1b9804c59d296772d14788b65f20e",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-026",
+      "category": "idea",
+      "category_assessment": "supported",
+      "category_reason": "以“我希望”明确表达改进与修复即时更新到后台的愿望，支持建议/构想。",
+      "tags": [
+        {
+          "value": "个人网站",
+          "assessment": "context_dependent",
+          "reason": "只提到“我的后台”，没有说明后台属于个人网站。"
+        },
+        {
+          "value": "开源协作",
+          "assessment": "context_dependent",
+          "reason": "摘录未说明代码开放许可、协作者或协作流程。"
+        },
+        {
+          "value": "自动更新",
+          "assessment": "ambiguous",
+          "reason": "“立即更新”表达时效愿望，但没有明确说明自动触发，自动化强于字面陈述。"
+        }
+      ],
+      "supporting_excerpt": "我希望有任何改进和 Bug 修复都立即更新到我的后台上",
+      "suggested_category": null,
+      "suggested_tags": [
+        "后台更新",
+        "Bug 修复",
+        "即时更新"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "04eee147103461cf2c4f4a9bc0e95dc79e46c7894d581edec63baedd56449b5d",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-027",
+      "category": "event",
+      "category_assessment": "supported",
+      "category_reason": "“时隔一个季度”“进行了”记录了已发生的维护工作，符合事件记录。",
+      "tags": [
+        {
+          "value": "对象存储",
+          "assessment": "context_dependent",
+          "reason": "摘录没有说明 OtterIO 的用途，不能由名称独立推出对象存储。"
+        },
+        {
+          "value": "开源维护",
+          "assessment": "context_dependent",
+          "reason": "维护工作明确，但是否开源未交代。"
+        },
+        {
+          "value": "项目记录",
+          "assessment": "context_dependent",
+          "reason": "摘录记录了维护活动，但未交代 OtterIO 的实体类型；项目属性需上下文。"
+        }
+      ],
+      "supporting_excerpt": "时隔一个季度，对 OtterIO 进行了一些维护工作，",
+      "suggested_category": null,
+      "suggested_tags": [
+        "OtterIO",
+        "维护记录"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "f5e8e8543b9de2bb0c8a84f74e8d674a517b2649d61bcefcf956e6fcce88eb41",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-028",
+      "category": "note",
+      "category_assessment": "supported",
+      "category_reason": "陈述 HTTP 状态正常反而推迟问题暴露的经验/现象，支持知识或经验记录。",
+      "tags": [
+        {
+          "value": "接口一致性",
+          "assessment": "context_dependent",
+          "reason": "HTTP 状态正常与问题暴露较晚并未明确说明接口之间或状态与业务结果不一致。"
+        },
+        {
+          "value": "数据库诊断",
+          "assessment": "context_dependent",
+          "reason": "摘录没有出现数据库或数据库问题的定位。"
+        },
+        {
+          "value": "项目实践",
+          "assessment": "context_dependent",
+          "reason": "没有交代项目场景及作者的实践过程。"
+        }
+      ],
+      "supporting_excerpt": "HTTP 状态正常，反而让问题更晚暴露。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "HTTP 状态",
+        "问题暴露"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "488ef26c1ba8c64437a7c0ab226c93ae4ca5877f02bbfffcf0755ad44722e23b",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-029",
+      "category": "question",
+      "category_assessment": "supported",
+      "category_reason": "明确以“凭什么”提出 C++ 读写锁代价的比较问题。",
+      "tags": [
+        {
+          "value": "实验问题",
+          "assessment": "context_dependent",
+          "reason": "提出了技术比较问题，但没有说明已进行实验或实验设置。"
+        },
+        {
+          "value": "工程学习",
+          "assessment": "context_dependent",
+          "reason": "技术问题明确，但学习目的或学习活动未陈述。"
+        },
+        {
+          "value": "性能排查",
+          "assessment": "supported",
+          "reason": "在读写锁的技术语境中比较 C++ 的较高代价，支持性能开销问题的探查。"
+        }
+      ],
+      "supporting_excerpt": "同样一把读写锁，凭什么 C++ 要贵这么多？",
+      "suggested_category": null,
+      "suggested_tags": [
+        "读写锁",
+        "C++",
+        "性能排查"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "db49245ebb1d18e6c6e41a73053fa546060ac210a6d6d3368672e413582613cc",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-030",
+      "category": "note",
+      "category_assessment": "ambiguous",
+      "category_reason": "“不要”是建议语气，也可作为经验记录；idea/note 边界仅凭一句无法唯一确定，保守保留。",
+      "tags": [
+        {
+          "value": "因果核查",
+          "assessment": "supported",
+          "reason": "警惕巧合导致的修复判断，直接涉及避免把巧合当成因果证据。"
+        },
+        {
+          "value": "开发工具",
+          "assessment": "context_dependent",
+          "reason": "没有出现具体工具或工具类别。"
+        },
+        {
+          "value": "故障复盘",
+          "assessment": "context_dependent",
+          "reason": "虽然提到修复，但没有说明故障经过、复盘活动或时间关系。"
+        }
+      ],
+      "supporting_excerpt": "不要被巧合的修复说服。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "因果核查",
+        "修复判断"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "dbc660b9b1b330797da05cc1a3e2d1420547187709127b37229a4bc1835bc5a4",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-031",
+      "category": "idea",
+      "category_assessment": "ambiguous",
+      "category_reason": "只描述随后调用 API 的一步，既可能是已有方法说明，也可能是方案构想；保守保留 idea。",
+      "tags": [
+        {
+          "value": "个人工具",
+          "assessment": "context_dependent",
+          "reason": "没有说明这是个人开发/使用的工具。"
+        },
+        {
+          "value": "信息筛选",
+          "assessment": "context_dependent",
+          "reason": "总结内容不等于筛选内容，片段未说明选择或过滤。"
+        },
+        {
+          "value": "字幕摘要",
+          "assessment": "context_dependent",
+          "reason": "“内容”的具体类型不明，不能自行补成字幕。"
+        }
+      ],
+      "supporting_excerpt": "然后调用Gemini API来总结内容。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "Gemini API",
+        "内容总结"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "aa192e5277000d66ea5d7df3aa163c3f93666f40970b3dc65198315c2141efcd",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-032",
+      "category": "question",
+      "category_assessment": "supported",
+      "category_reason": "以“我为什么不行”明确提出修行高的比较疑问。",
+      "tags": [
+        {
+          "value": "字体体验",
+          "assessment": "supported",
+          "reason": "更纱黑体与行高明确出现，支持字体相关体验问题。"
+        },
+        {
+          "value": "生活观察",
+          "assessment": "context_dependent",
+          "reason": "片段没有交代生活场景，不能由作者自问推断为生活观察。"
+        },
+        {
+          "value": "问题探索",
+          "assessment": "supported",
+          "reason": "围绕为何自己不能实现相同效果进行提问，支持问题探索。"
+        }
+      ],
+      "supporting_excerpt": "既然更纱黑体能修行高，我为什么不行？",
+      "suggested_category": null,
+      "suggested_tags": [
+        "字体体验",
+        "行高",
+        "问题探索"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "259d91955069bf9414d78de7931ff2a7141b3b7fc8f3947cf54009e683c52fe2",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-033",
+      "category": "note",
+      "category_assessment": "supported",
+      "category_reason": "对蛮力法有时能够解决问题作一般经验判断，符合 note。",
+      "tags": [
+        {
+          "value": "方法选择",
+          "assessment": "supported",
+          "reason": "指出一种方法在部分情形可行，支持方法适用性/选择话题。"
+        },
+        {
+          "value": "生活观察",
+          "assessment": "context_dependent",
+          "reason": "没有说明问题来自日常生活。"
+        },
+        {
+          "value": "算法思考",
+          "assessment": "context_dependent",
+          "reason": "蛮力法也可泛指非算法场景，摘录未出现计算、代码或算法对象。"
+        }
+      ],
+      "supporting_excerpt": "有时候蛮力法也能解决问题。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "方法选择",
+        "蛮力法",
+        "问题解决"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "56c7563d917ac556f79518b40fa393fdff1d61b7810af1a35e8c97d9dea7a1d6",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-034",
+      "category": "event",
+      "category_assessment": "supported",
+      "category_reason": "记录“今天决定”的一次决策，足以支持事件记录；不据此补足具体产品或项目。",
+      "tags": [
+        {
+          "value": "个人网站",
+          "assessment": "context_dependent",
+          "reason": "摘录没有提到网站。"
+        },
+        {
+          "value": "亲自使用产品",
+          "assessment": "context_dependent",
+          "reason": "“吃自己的狗粮”可能指 dogfooding，但片段没有交代具体产品，独立解释仍需上下文。"
+        },
+        {
+          "value": "项目迭代",
+          "assessment": "context_dependent",
+          "reason": "没有交代项目或改进/迭代行为。"
+        }
+      ],
+      "supporting_excerpt": "今天决定吃自己的狗🐶粮，",
+      "suggested_category": null,
+      "suggested_tags": [
+        "决策记录"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "80edf608810f24dd73b04a9e268101a964543d25b789f5285c8506fa55f79e88",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-035",
+      "category": "idea",
+      "category_assessment": "supported",
+      "category_reason": "以 Improve 提出每篇文章提升写作能力的行动目标，支持构想/建议。",
+      "tags": [
+        {
+          "value": "写作实践",
+          "assessment": "supported",
+          "reason": "明确涉及每篇文章的写作技巧/能力。"
+        },
+        {
+          "value": "持续改进",
+          "assessment": "supported",
+          "reason": "with each post 明确表达逐篇改进。"
+        },
+        {
+          "value": "过程目标",
+          "assessment": "supported",
+          "reason": "重视逐篇提升而不过度担心单篇质量，支持以过程为重点的目标。"
+        }
+      ],
+      "supporting_excerpt": "Improve writing technique/ability with each post",
+      "suggested_category": null,
+      "suggested_tags": [
+        "写作实践",
+        "持续改进",
+        "过程目标"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "17c566fdecb8303529fd7635fcd1b354d660667dcd814ec7e42bbeed50e63833",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-036",
+      "category": "question",
+      "category_assessment": "supported",
+      "category_reason": "明确指出仍有“学习哪些技能”的问题，虽然不是问号句，问题意图清楚。",
+      "tags": [
+        {
+          "value": "个人优势",
+          "assessment": "context_dependent",
+          "reason": "未提到优势、禀赋或能力差异。"
+        },
+        {
+          "value": "学习环境",
+          "assessment": "context_dependent",
+          "reason": "this approach 所指未明，摘录没有说明环境因素。"
+        },
+        {
+          "value": "学习选择",
+          "assessment": "supported",
+          "reason": "what skills to learn 直接涉及学习内容选择。"
+        }
+      ],
+      "supporting_excerpt": "this still leaves the question of what skills to learn.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "学习选择",
+        "技能学习"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "9b0e5a041f8b9197cad0cf6b0eb05e57c3a8399617b4dd250093ddfed3fb2e16",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-037",
+      "category": "idea",
+      "category_assessment": "ambiguous",
+      "category_reason": "这是对编程环境作用的主张/定义，也可归为知识记录；不强行改动 idea/note 边界。",
+      "tags": [
+        {
+          "value": "上下文解释",
+          "assessment": "context_dependent",
+          "reason": "明确提到理解程序，但没有上下文解释这种方式。"
+        },
+        {
+          "value": "交互设计",
+          "assessment": "supported",
+          "reason": "将编程环境界定为用于理解程序的用户界面，支持交互界面这一话题。"
+        },
+        {
+          "value": "编程教学",
+          "assessment": "context_dependent",
+          "reason": "理解程序不等于教授编程，没有教师、学习者或教学活动。"
+        }
+      ],
+      "supporting_excerpt": "A programming environment is a user interface for understanding a program.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "编程环境",
+        "用户界面",
+        "程序理解"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "261860124f050f76020148da97ea3a18bb6d5f426b7ee6edd6fddc93451cbcc2",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-038",
+      "category": "idea",
+      "category_assessment": "ambiguous",
+      "category_reason": "既可视为对主动阅读的倡议，也可视为行为特征说明，保守保留 idea。",
+      "tags": [
+        {
+          "value": "主动阅读",
+          "assessment": "supported",
+          "reason": "An active reader 直接点明主动阅读，并列出提问和考虑替代等行为。"
+        },
+        {
+          "value": "互动解释",
+          "assessment": "context_dependent",
+          "reason": "阅读者提问不等于材料具有互动解释机制，摘录未提到这种机制。"
+        },
+        {
+          "value": "假设检验",
+          "assessment": "ambiguous",
+          "reason": "questions assumptions 支持质疑假设，但“检验”可能暗示另有验证步骤，强于片段中的质疑。"
+        }
+      ],
+      "supporting_excerpt": "An active reader asks questions, considers alternatives, questions assumptions",
+      "suggested_category": null,
+      "suggested_tags": [
+        "主动阅读",
+        "质疑假设",
+        "作者可信度"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "b1af486857ffd6a3572d1512bf3802e4d8ede1267fe5c8756b755eb679932449",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-039",
+      "category": "note",
+      "category_assessment": "ambiguous",
+      "category_reason": "祈使句是表达建议，也可被记为沟通经验；idea/note 均可解释，保留原类。",
+      "tags": [
+        {
+          "value": "技术沟通",
+          "assessment": "context_dependent",
+          "reason": "要求充分描述情况，但没有限定为技术场景。"
+        },
+        {
+          "value": "调试",
+          "assessment": "context_dependent",
+          "reason": "没有出现代码、程序错误或排错活动。"
+        },
+        {
+          "value": "问题表达",
+          "assessment": "context_dependent",
+          "reason": "what’s happening 可以是一般情况，尚不能确定正在描述问题。"
+        }
+      ],
+      "supporting_excerpt": "Describe what’s happening in sufficient detail that we can follow along.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "细节描述",
+        "清晰表达"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "52401f6d2f7959ead61dd75a8c1f3eda8f5007a85797eaee22b924c36118a14e",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-040",
+      "category": "note",
+      "category_assessment": "ambiguous",
+      "category_reason": "以祈使句提出排查方法，既可作建议也可作方法记录，保守保留 note。",
+      "tags": [
+        {
+          "value": "排错方法",
+          "assessment": "supported",
+          "reason": "从自己的代码向外调查，直到明确问题所在，直接给出排错顺序。"
+        },
+        {
+          "value": "证据记录",
+          "assessment": "ambiguous",
+          "reason": "明确要求有确定证据，但没有说明记录证据；“证据核查”比现标签更贴近摘录。"
+        },
+        {
+          "value": "责任意识",
+          "assessment": "context_dependent",
+          "reason": "从自己的代码开始不必然表达道德或责任归属，片段未提出这些判断。"
+        }
+      ],
+      "supporting_excerpt": "Start with your code, and investigate further and further outward",
+      "suggested_category": null,
+      "suggested_tags": [
+        "排错方法",
+        "证据核查",
+        "由内向外排查"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "a70e764a73410334ce2c9add6d0ac83678e9b90087c0b02c2c74e570714f899d",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-041",
+      "category": "idea",
+      "category_assessment": "ambiguous",
+      "category_reason": "对丢弃代码的知识损失作判断，可读为劝告或经验陈述，保守保留 idea。",
+      "tags": [
+        {
+          "value": "渐进改造",
+          "assessment": "context_dependent",
+          "reason": "只指出从头重写会丢失知识，没有明确提出渐进改造作为替代。"
+        },
+        {
+          "value": "经验保留",
+          "assessment": "supported",
+          "reason": "丢弃代码会丢弃相关知识的判断，直接支持保留已有知识/经验这一话题。"
+        },
+        {
+          "value": "软件维护",
+          "assessment": "supported",
+          "reason": "讨论是否丢弃代码并重新开始，是软件改动/维护的直接问题。"
+        }
+      ],
+      "supporting_excerpt": "you are throwing away all that knowledge.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "经验保留",
+        "软件维护",
+        "代码重写"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "691e60132597d77ef01fda3a7d04c2894e0e31251d1f57a5cacfe46d217eedfe",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-042",
+      "category": "question",
+      "category_assessment": "supported",
+      "category_reason": "直接询问是否有 bug database，是明确问题。",
+      "tags": [
+        {
+          "value": "缺陷跟踪",
+          "assessment": "supported",
+          "reason": "bug database 是缺陷记录/跟踪的通常术语，直接支持这一主题。"
+        },
+        {
+          "value": "质量检查",
+          "assessment": "context_dependent",
+          "reason": "询问是否有缺陷库不等于描述质量检查流程或活动。"
+        },
+        {
+          "value": "项目实践",
+          "assessment": "context_dependent",
+          "reason": "摘录未明确交代项目或实际实践经过。"
+        }
+      ],
+      "supporting_excerpt": "Do you have a bug database?",
+      "suggested_category": null,
+      "suggested_tags": [
+        "缺陷跟踪",
+        "缺陷库"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "08870fbad214ca49a49c954fadf9f8da425cd2f3c6f41c0477d6ed0f2c3ac8a4",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-043",
+      "category": "note",
+      "category_assessment": "ambiguous",
+      "category_reason": "提出与程序员交流和阅读程序的建议，也可作学习方法记录，保守保留 note。",
+      "tags": [
+        {
+          "value": "代码阅读",
+          "assessment": "supported",
+          "reason": "read other programs 直接支持阅读程序/代码。"
+        },
+        {
+          "value": "同伴交流",
+          "assessment": "supported",
+          "reason": "Talk with other programmers 直接支持与同领域人员交流。"
+        },
+        {
+          "value": "编程学习",
+          "assessment": "supported",
+          "reason": "交流、阅读程序与书籍/培训作比较，直接支持编程学习方法这一主题。"
+        }
+      ],
+      "supporting_excerpt": "Talk with other programmers; read other programs.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "代码阅读",
+        "同伴交流",
+        "编程学习"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "8cb3f38602b868ac209243f7971479479268b57e44830dddd9fe552e961cc84f",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-044",
+      "category": "note",
+      "category_assessment": "supported",
+      "category_reason": "说明已有组成概念后的下一步定义，是知识/方法记录。",
+      "tags": [
+        {
+          "value": "数独",
+          "assessment": "supported",
+          "reason": "Sudoku playing grid 明确指出数独棋盘。"
+        },
+        {
+          "value": "程序设计",
+          "assessment": "context_dependent",
+          "reason": "棋盘及 squares/units/peers 的定义可能服务程序，但这句本身未说明代码或程序实现。"
+        },
+        {
+          "value": "问题建模",
+          "assessment": "supported",
+          "reason": "基于 squares、units、peers 定义棋盘，直接支持建立数独表示/模型。"
+        }
+      ],
+      "supporting_excerpt": "the next step is to define the Sudoku playing grid.",
+      "suggested_category": null,
+      "suggested_tags": [
+        "数独",
+        "棋盘定义",
+        "问题建模"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "efdfc9e7c0b99a872096a8938fd121d2f0ef0137cbdc82b9b2ca2b607635dae6",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-045",
+      "category": "idea",
+      "category_assessment": "ambiguous",
+      "category_reason": "提出阅读论文与知识边界的关系，也可归为知识记录；未强制将 idea 改为 note。",
+      "tags": [
+        {
+          "value": "文献阅读",
+          "assessment": "supported",
+          "reason": "Reading research papers 直接支持研究文献阅读。"
+        },
+        {
+          "value": "研究边界",
+          "assessment": "supported",
+          "reason": "edge of human knowledge 直接涉及人类知识边界。"
+        },
+        {
+          "value": "科研入门",
+          "assessment": "context_dependent",
+          "reason": "没有限定读者是初学者或所处入门阶段。"
+        }
+      ],
+      "supporting_excerpt": "Reading research papers takes you to the edge of human knowledge:",
+      "suggested_category": null,
+      "suggested_tags": [
+        "文献阅读",
+        "研究边界"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "15c44ca2cf0e1e7fd10f8cf2566bff822aca4e0916fce6ebfb99f3ed02bb6287",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-046",
+      "category": "idea",
+      "category_assessment": "ambiguous",
+      "category_reason": "对写作完美主义的后果作警示，也可作经验陈述；保守保留 idea。",
+      "tags": [
+        {
+          "value": "学术写作",
+          "assessment": "supported",
+          "reason": "学生规划论文结构并开始写作的场景直接支持该主题。"
+        },
+        {
+          "value": "完美主义",
+          "assessment": "supported",
+          "reason": "必须先得到 perfect structure 才动笔，直接支持追求完美导致迟迟不能开始。"
+        },
+        {
+          "value": "迭代修改",
+          "assessment": "context_dependent",
+          "reason": "摘录没有提出边写边改或迭代过程，不能把可能的解决办法补进标签。"
+        }
+      ],
+      "supporting_excerpt": "until they have the perfect structure of the paper mapped out",
+      "suggested_category": null,
+      "suggested_tags": [
+        "学术写作",
+        "完美主义",
+        "开始写作"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "1cf5f1b8e3f1b108844199991cbb29ec47aa6916e8f8f0de23135d33747be951",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-047",
+      "category": "idea",
+      "category_assessment": "supported",
+      "category_reason": "“我们要能够”明确倡议切换视角、从不同高度理解所做之事。",
+      "tags": [
+        {
+          "value": "多层思考",
+          "assessment": "supported",
+          "reason": "不同角度和不同高度直接支持多层次思考。"
+        },
+        {
+          "value": "软件设计",
+          "assessment": "context_dependent",
+          "reason": "没有限定正在做的事情属于软件设计。"
+        },
+        {
+          "value": "项目实践",
+          "assessment": "context_dependent",
+          "reason": "“正在做的事情”所指未明确，不能补成项目实践。"
+        }
+      ],
+      "supporting_excerpt": "总之，我们要能够随时切换角度，从不同的高度理解自己正在做的事情。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "多层思考",
+        "视角切换"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "4a51683c14398329472319f99469859a7af1cf3293a8cb8bb75c2770da890f2b",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-048",
+      "category": "idea",
+      "category_assessment": "ambiguous",
+      "category_reason": "陈述表达清楚与思想清楚的关系，可作建议性主张或经验记录；保守保留 idea。",
+      "tags": [
+        {
+          "value": "技术写作",
+          "assessment": "context_dependent",
+          "reason": "摘录只有把问题说清楚，未限定技术领域或书面写作。"
+        },
+        {
+          "value": "文章结构",
+          "assessment": "context_dependent",
+          "reason": "思想清楚不等于文章结构，摘录未出现文章组织。"
+        },
+        {
+          "value": "清晰表达",
+          "assessment": "supported",
+          "reason": "“把问题说清楚”直接支持表达清晰。"
+        }
+      ],
+      "supporting_excerpt": "把问题说清楚的关键，在于你的思想是否清楚。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "清晰表达",
+        "思想清楚"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "7dc645baeeaebaf44d2b4fbec5ff8606c4f84d58b36688211aff04ae91fe56c9",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-049",
+      "category": "note",
+      "category_assessment": "supported",
+      "category_reason": "记录作者对一周时间长短与流逝速度的个人感受，符合经验记录。",
+      "tags": [
+        {
+          "value": "时间感受",
+          "assessment": "supported",
+          "reason": "明确表达每周七天很短、时间过得飞快的感觉。"
+        },
+        {
+          "value": "每周回顾",
+          "assessment": "context_dependent",
+          "reason": "出现“每周”和“周刊”并不说明作者在回顾一周活动。"
+        },
+        {
+          "value": "生活观察",
+          "assessment": "supported",
+          "reason": "对自己持续发布周刊之后的时间体验作个人观察，支持生活体验观察。"
+        }
+      ],
+      "supporting_excerpt": "我一直觉得，每周七天是很短的时间，尤其是发布周刊以后，更是过得飞快。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "时间感受",
+        "生活观察",
+        "周刊发布"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "7fd44c303dae28dde53424f238f67f40f261aed7f63d05eee5450a906dce7274",
+      "human_verified": false
+    },
+    {
+      "note_id": "pub-050",
+      "category": "idea",
+      "category_assessment": "ambiguous",
+      "category_reason": "对 PPT 开会惯例作批评性判断，没有在本句明确提出替代方案；idea/note 有歧义，保守保留。",
+      "tags": [
+        {
+          "value": "书面材料",
+          "assessment": "context_dependent",
+          "reason": "仅讨论 PPT 的会议地位，没有讨论备忘录或一般书面材料；该标签的具体用意需上下文。"
+        },
+        {
+          "value": "会议习惯",
+          "assessment": "supported",
+          "reason": "明确批评将 PPT 默认成开会标准方式的习惯。"
+        },
+        {
+          "value": "团队沟通",
+          "assessment": "context_dependent",
+          "reason": "开会场景明确，但没有交代团队或沟通机制，不能补入该层目的。"
+        }
+      ],
+      "supporting_excerpt": "PPT 在国内已经泛滥成灾，大家好像默认，它是开会的标准方式，缺了还不行。",
+      "suggested_category": null,
+      "suggested_tags": [
+        "PPT",
+        "会议习惯"
+      ],
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "original_sha256": "53ffc7f69fb9004f37466a1b2f1a70cbccb711b6424389cb280af454e95f73d7",
+      "human_verified": false
+    }
+  ]
+}

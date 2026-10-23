@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-10-22",
+  "checked_on": "2026-10-23",
   "timezone": "Asia/Shanghai",
   "database": {
     "status": "ok",
@@ -43,7 +43,8 @@
     "passed": 69,
     "checked_on": "2026-10-22",
     "command": "python -m unittest discover -s tests -v",
-    "scope": "导入/原文保护/标注复核/检索/来源核查/质量审计/摘要修订整批回滚与人工保护及规范哈希幂等"
+    "scope": "导入/原文保护/标注复核/检索/来源核查/质量审计/摘要修订整批回滚与人工保护及规范哈希幂等",
+    "not_rerun_on_2026_10_23": "No code changes; actual passing test run remains 2026-10-22."
   },
   "browser_checks": {
     "checked_on": "2026-10-22",
@@ -82,12 +83,11 @@
       "negative_false_return_rate": 0.0
     },
     "details": "exports/retrieval_eval.json",
-    "comparison": "exports/summary_revision_retrieval_comparison.json"
+    "comparison": "exports/summary_revision_retrieval_comparison.json",
+    "daily_snapshot": "exports/retrieval_eval_2026-10-23.json"
   },
   "mysql_export": {
     "status": "ok",
-    "source": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\loom.db",
-    "output": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\exports\\mysql_seed.sql",
     "row_counts": {
       "sources": 50,
       "notes": 50,
@@ -102,7 +102,6 @@
     "sql_sha256": "be6f0187a9102c5c558bcbb7db088244167ec3440cced68586e643b2028f3a69",
     "mysql_executed": false,
     "mysql_version_required": "8.0.29+",
-    "limitations": "SQL generated and locally checked only; import requires empty tables. Indexed URL/ID/tag length bounds are enforced; schema is not a live MySQL migration.",
     "all_field_values_roundtrip_checked": true
   },
   "mysql_live_tested": false,
@@ -196,6 +195,55 @@
     "source_audits": 50,
     "mysql_tables": 8,
     "mysql_rows": 591,
-    "mysql_live_executed": false
+    "mysql_live_executed": false,
+    "mysql_all_field_values_roundtrip_checked": true
+  },
+  "candidate_audit": {
+    "checked_on": "2026-10-23",
+    "label_origin": "ai_assisted",
+    "review_status": "pending",
+    "human_verified": 0,
+    "question_count": 16,
+    "question_note_pairs": 800,
+    "annotation_counts": {
+      "notes": 50,
+      "categories": {
+        "context_dependent": 3,
+        "ambiguous": 19,
+        "supported": 28
+      },
+      "tags": 150,
+      "tag_assessments": {
+        "context_dependent": 77,
+        "supported": 65,
+        "ambiguous": 8
+      },
+      "notes_with_context_dependent_tags": 45,
+      "notes_with_non_supported_tags": 46
+    },
+    "missing_document_candidates": [
+      {
+        "question_id": "ret-011",
+        "note_ids": [
+          "pub-011",
+          "pub-020"
+        ]
+      }
+    ],
+    "negative_questions_supported_in_current_corpus": 2,
+    "original_benchmark_changed": false,
+    "database_changed": false,
+    "database_sha256": "b1a816dc97b386861d1b6ff6c524aacdde72ff8f7d5f4aa695ed52f11ab902e3",
+    "benchmark_sha256": "3d9a292fb70c369ec53ff10ca689d4c69abcd877924361114029514e1729cd4c",
+    "corpus_searchable_sha256": "779bf4836b5a25c6432f7a907faa3824a9c06bb74b8513d00a142a1da2dd1f23",
+    "labels_applied_to_database": 0,
+    "new_notes": 0,
+    "original_sql_metrics_unchanged": true,
+    "cross_ai_review_completed": true,
+    "evidence": {
+      "annotation": "exports/annotation_scope_audit.json",
+      "retrieval": "exports/retrieval_label_audit.json",
+      "report": "docs/候选检索与标注审查_2026-10-23.md"
+    }
   }
 }

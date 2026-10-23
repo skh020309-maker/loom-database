@@ -1425,5 +1425,5 @@
     "scope": "Offline data audit; does not visit source URLs, verify author identity, infer permissions, or establish GLM/MySQL/semantic-search execution. No record is modified or removed."
   },
   "database": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\loom.db",
-  "audited_at_utc": "2026-10-21T17:19:29.077716+00:00"
+  "audited_at_utc": "2026-10-23T14:37:53.260484+00:00"
 }

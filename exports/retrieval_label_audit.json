@@ -1,0 +1,1265 @@
+{
+  "metadata": {
+    "date": "2026-10-23",
+    "timezone": "Asia/Shanghai",
+    "scope": "original_excerpt_only",
+    "stored_record_relevance_scope": "title_and_original_excerpt_only",
+    "label_origin": "ai_assisted",
+    "review_status": "pending",
+    "human_verified": false,
+    "network_used": false,
+    "source_context_used_for_excerpt_support": false,
+    "annotation_summary_tags_used_for_support": false,
+    "record_count": 50,
+    "question_count": 16,
+    "examined_question_note_pairs": 800,
+    "benchmark_version": "candidate-2026-10-21-v1",
+    "benchmark_sha256": "3d9a292fb70c369ec53ff10ca689d4c69abcd877924361114029514e1729cd4c",
+    "corpus_export_sha256": "b1440152c2a1ebc1244be53581b8b4ceec7df9ae3baca5249316daffc7191bf5",
+    "definitions": {
+      "directly_supported_ids": "严格仅凭已存original_excerpt支持必要主题/限定事实；不能由标题、摘要、标签或原页外部上下文补齐。",
+      "related_but_insufficient_ids": "原目标之外的主要邻近候选，不能据此直接当成漏标正例。",
+      "expected_with_insufficient_excerpt_ids": "原目标中摘录缺必要信息者；不否定其文档定位相关性。",
+      "stored_record_relevant_ids": "允许标题加摘录的文档定位相关判断，可是部分相关；不能作完整回答充分性标签。",
+      "metadata_only_candidate_ids": "文档定位关键命名或关系依赖标题；不表示摘录完全不相关。",
+      "no_answer_supported": "仅对原no_answer=true负例填写当前50条均无直接支持的判断；正例保持null。",
+      "excerpt_answerable": "本次严格片段口径下是否有充分支持的摘录，不是原页/现实世界有无答案判断。",
+      "other_examined_note_ids": "逐一阅读后未单列主要候选证据的其余条目；不是人工金标准全量负标签。"
+    },
+    "limitations": [
+      "所有审查为AI辅助pending，未真人核验。",
+      "未联网或借原页未存上下文补足摘录。",
+      "未改benchmark、数据库、已有导出、人工标注、引擎或split。",
+      "未用新候选标签重算指标，不宣称正式准确率改进。",
+      "正例缺充分摘录不改成无答案负例。"
+    ],
+    "source_audit_path": "data/retrieval_label_audit_2026-10-23.json",
+    "source_audit_sha256": "c24af053e78b359cf6eb45166159ba5e5c4ab620abd5fa9af4044db4c75be20a",
+    "fixed_sql_report_path": "exports/retrieval_eval_2026-10-23.json",
+    "fixed_sql_report_sha256": "b211e4dd483fc41d88518f84a5bdd40c7d0f474894eb987e933cb4a6b86401a2",
+    "candidate_labels_used_for_scoring": false,
+    "database_sha256": "b1a816dc97b386861d1b6ff6c524aacdde72ff8f7d5f4aa695ed52f11ab902e3"
+  },
+  "summary": {
+    "positive_questions_with_excerpt_support": [
+      "ret-002",
+      "ret-003"
+    ],
+    "positive_questions_with_insufficient_expected_excerpt": [
+      "ret-001",
+      "ret-004",
+      "ret-005",
+      "ret-006",
+      "ret-007",
+      "ret-008",
+      "ret-009",
+      "ret-010",
+      "ret-011",
+      "ret-012",
+      "ret-013",
+      "ret-014"
+    ],
+    "negative_questions_supported": [
+      "ret-015",
+      "ret-016"
+    ],
+    "missing_record_relevance_candidates": [
+      {
+        "question_id": "ret-011",
+        "note_ids": [
+          "pub-011",
+          "pub-020"
+        ]
+      }
+    ],
+    "cross_split_related_candidates": [
+      {
+        "question_id": "ret-005",
+        "candidates": [
+          {
+            "note_id": "pub-004",
+            "note_split": "dev",
+            "question_split": "test",
+            "action": "仅记录邻近候选，不变更split；若未来加入多目标须重审作者分组"
+          }
+        ]
+      },
+      {
+        "question_id": "ret-007",
+        "candidates": [
+          {
+            "note_id": "pub-023",
+            "note_split": "test",
+            "question_split": "dev",
+            "action": "仅记录邻近候选，不变更split；若未来加入多目标须重审作者分组"
+          },
+          {
+            "note_id": "pub-038",
+            "note_split": "test",
+            "question_split": "dev",
+            "action": "仅记录邻近候选，不变更split；若未来加入多目标须重审作者分组"
+          }
+        ]
+      }
+    ],
+    "interpretation": "主要明确文档定位漏标为ret-011的pub-011/pub-020。命名定位和完整回答的证据层级不同，多数其余问题暴露片段范围不足，不能擅改正式标签或分数。"
+  },
+  "examined_note_ids": [
+    "pub-001",
+    "pub-002",
+    "pub-003",
+    "pub-004",
+    "pub-005",
+    "pub-006",
+    "pub-007",
+    "pub-008",
+    "pub-009",
+    "pub-010",
+    "pub-011",
+    "pub-012",
+    "pub-013",
+    "pub-014",
+    "pub-015",
+    "pub-016",
+    "pub-017",
+    "pub-018",
+    "pub-019",
+    "pub-020",
+    "pub-021",
+    "pub-022",
+    "pub-023",
+    "pub-024",
+    "pub-025",
+    "pub-026",
+    "pub-027",
+    "pub-028",
+    "pub-029",
+    "pub-030",
+    "pub-031",
+    "pub-032",
+    "pub-033",
+    "pub-034",
+    "pub-035",
+    "pub-036",
+    "pub-037",
+    "pub-038",
+    "pub-039",
+    "pub-040",
+    "pub-041",
+    "pub-042",
+    "pub-043",
+    "pub-044",
+    "pub-045",
+    "pub-046",
+    "pub-047",
+    "pub-048",
+    "pub-049",
+    "pub-050"
+  ],
+  "questions": [
+    {
+      "id": "ret-001",
+      "query": "每条笔记只写一个想法会有什么帮助？",
+      "original_split": "dev",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-001"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [
+        "pub-002",
+        "pub-003"
+      ],
+      "expected_with_insufficient_excerpt_ids": [
+        "pub-001"
+      ],
+      "no_answer_supported": null,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [
+        "pub-001"
+      ],
+      "stored_record_relevance_reason": "原目标001的 This way 未说明单想法方式，不能由片段推出原子性前提。标题 atomic 加联系益处可定位相关文档；002谈概念组织，003谈阅读旧笔记，均不是原子性答案。",
+      "metadata_only_candidate_ids": [
+        "pub-001"
+      ],
+      "metadata_only_candidate_reason": {
+        "pub-001": "定位的关键命名或关系依赖标题，片段自身不足明确命名；详见该题assessment。"
+      },
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-001",
+          "quote": "This way",
+          "relation": "insufficient",
+          "reason": "指代方式缺失，未说明每条一个想法。"
+        },
+        {
+          "note_id": "pub-002",
+          "quote": "Organizing by concept",
+          "relation": "related",
+          "reason": "概念组织与原子性相关但不是单想法粒度。"
+        },
+        {
+          "note_id": "pub-003",
+          "quote": "reading old notes",
+          "relation": "related",
+          "reason": "寻找链接需读旧笔记，不谈原子性。"
+        }
+      ],
+      "assessment": "原目标001的 This way 未说明单想法方式，不能由片段推出原子性前提。标题 atomic 加联系益处可定位相关文档；002谈概念组织，003谈阅读旧笔记，均不是原子性答案。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "每条笔记只写一个想法会有什么帮助？",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "原子性",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [
+            "pub-001"
+          ],
+          "first_relevant_rank": 1,
+          "hit_at_5": 1,
+          "reciprocal_rank_at_5": 1.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-002",
+      "query": "concept-oriented",
+      "original_split": "dev",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-002"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [
+        "pub-002"
+      ],
+      "related_but_insufficient_ids": [],
+      "expected_with_insufficient_excerpt_ids": [],
+      "no_answer_supported": null,
+      "excerpt_answerable": true,
+      "stored_record_relevant_ids": [
+        "pub-002"
+      ],
+      "stored_record_relevance_reason": "按概念组织的摘录直接支持 concept-oriented 主题定位；标题亦精确命名，不能从片段再补写具体益处。",
+      "metadata_only_candidate_ids": [],
+      "metadata_only_candidate_reason": {},
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-002",
+          "quote": "Organizing by concept",
+          "relation": "direct",
+          "reason": "原文直接呈现概念导向组织主题。"
+        }
+      ],
+      "assessment": "按概念组织的摘录直接支持 concept-oriented 主题定位；标题亦精确命名，不能从片段再补写具体益处。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "concept-oriented",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [
+            "pub-002"
+          ],
+          "first_relevant_rank": 1,
+          "hit_at_5": 1,
+          "reciprocal_rank_at_5": 1.0,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "concept-oriented",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [
+            "pub-002"
+          ],
+          "first_relevant_rank": 1,
+          "hit_at_5": 1,
+          "reciprocal_rank_at_5": 1.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-003",
+      "query": "我记得有人说把笔记互相连起来时会顺便重新读旧内容",
+      "original_split": "dev",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-003"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [
+        "pub-003"
+      ],
+      "related_but_insufficient_ids": [
+        "pub-001"
+      ],
+      "expected_with_insufficient_excerpt_ids": [],
+      "no_answer_supported": null,
+      "excerpt_answerable": true,
+      "stored_record_relevant_ids": [
+        "pub-003"
+      ],
+      "stored_record_relevance_reason": "寻找链接需要阅读旧笔记与主要回忆一致；顺便是宽松描述，没有增加独立事实。001只讲跨主题联系，不讲阅读旧笔记。",
+      "metadata_only_candidate_ids": [],
+      "metadata_only_candidate_reason": {},
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-003",
+          "quote": "requires reading old notes",
+          "relation": "direct",
+          "reason": "直接支持链接与阅读旧笔记的关系。"
+        },
+        {
+          "note_id": "pub-001",
+          "quote": "connections across topics and contexts",
+          "relation": "related",
+          "reason": "有知识联系而没有重读行为。"
+        }
+      ],
+      "assessment": "寻找链接需要阅读旧笔记与主要回忆一致；顺便是宽松描述，没有增加独立事实。001只讲跨主题联系，不讲阅读旧笔记。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "我记得有人说把笔记互相连起来时会顺便重新读旧内容",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "重读旧笔记",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-004",
+      "query": "有没有办法把还没确定要参加的活动先放进日历？",
+      "original_split": "test",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-005"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [],
+      "expected_with_insufficient_excerpt_ids": [
+        "pub-005"
+      ],
+      "no_answer_supported": null,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [
+        "pub-005"
+      ],
+      "stored_record_relevance_reason": "片段只说推测事件可能发生也可能不发生，没说放入日历的步骤。Speculative Calendar Events 标题可定位相关日历文档，不能代替操作答案。",
+      "metadata_only_candidate_ids": [
+        "pub-005"
+      ],
+      "metadata_only_candidate_reason": {
+        "pub-005": "定位的关键命名或关系依赖标题，片段自身不足明确命名；详见该题assessment。"
+      },
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-005",
+          "quote": "Speculative events may or may not happen",
+          "relation": "insufficient",
+          "reason": "没有日历操作或先加入日历的办法。"
+        }
+      ],
+      "assessment": "片段只说推测事件可能发生也可能不发生，没说放入日历的步骤。Speculative Calendar Events 标题可定位相关日历文档，不能代替操作答案。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "有没有办法把还没确定要参加的活动先放进日历？",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "尚未确认的活动",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-005",
+      "query": "想找那篇说先把零碎想法写下来以后再整理的笔记",
+      "original_split": "test",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-006"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [
+        "pub-004",
+        "pub-046"
+      ],
+      "expected_with_insufficient_excerpt_ids": [
+        "pub-006"
+      ],
+      "no_answer_supported": null,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [
+        "pub-006"
+      ],
+      "stored_record_relevance_reason": "006只说写出内容有助思考，没有零碎想法、以后整理的流程。Daily Notes Pages 标题可帮助部分相关定位。004写作中形成标题、046反对等完美结构才开始均为邻近想法，不能当同一流程。004为dev而题为test。",
+      "metadata_only_candidate_ids": [
+        "pub-006"
+      ],
+      "metadata_only_candidate_reason": {
+        "pub-006": "定位的关键命名或关系依赖标题，片段自身不足明确命名；详见该题assessment。"
+      },
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-006",
+          "quote": "Writing it out is an essential part",
+          "relation": "insufficient",
+          "reason": "没有零碎想法及以后整理。"
+        },
+        {
+          "note_id": "pub-004",
+          "quote": "title often emerges from the text",
+          "relation": "related",
+          "reason": "写作中形成标题，不是延后整理零碎笔记。"
+        },
+        {
+          "note_id": "pub-046",
+          "quote": "can't begin to write",
+          "relation": "related",
+          "reason": "等完美结构会无法开始，不是先记后整工作流。"
+        }
+      ],
+      "assessment": "006只说写出内容有助思考，没有零碎想法、以后整理的流程。Daily Notes Pages 标题可帮助部分相关定位。004写作中形成标题、046反对等完美结构才开始均为邻近想法，不能当同一流程。004为dev而题为test。",
+      "cross_split_candidates": [
+        {
+          "note_id": "pub-004",
+          "note_split": "dev",
+          "question_split": "test",
+          "action": "仅记录邻近候选，不变更split；若未来加入多目标须重审作者分组"
+        }
+      ],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "想找那篇说先把零碎想法写下来以后再整理的笔记",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "Daily Notes Pages",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [
+            "pub-006"
+          ],
+          "first_relevant_rank": 1,
+          "hit_at_5": 1,
+          "reciprocal_rank_at_5": 1.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-006",
+      "query": "Epistemic Disclosure",
+      "original_split": "test",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-007"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [
+        "pub-038"
+      ],
+      "expected_with_insufficient_excerpt_ids": [
+        "pub-007"
+      ],
+      "no_answer_supported": null,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [
+        "pub-007"
+      ],
+      "stored_record_relevance_reason": "Epistemic Disclosure 是命名条目定位，007标题精确匹配、属于合法相关结果；片段只描述认识有效性的元数据，没有给出该名称。038谈质疑作者可靠性，不是同一披露机制。",
+      "metadata_only_candidate_ids": [
+        "pub-007"
+      ],
+      "metadata_only_candidate_reason": {
+        "pub-007": "定位的关键命名或关系依赖标题，片段自身不足明确命名；详见该题assessment。"
+      },
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-007",
+          "quote": "metadata on the epistemic validity",
+          "relation": "insufficient",
+          "reason": "描述概念但不命名Epistemic Disclosure。"
+        },
+        {
+          "note_id": "pub-038",
+          "quote": "trustworthiness of the author",
+          "relation": "related",
+          "reason": "涉及可信度但不含该命名或披露机制。"
+        }
+      ],
+      "assessment": "Epistemic Disclosure 是命名条目定位，007标题精确匹配、属于合法相关结果；片段只描述认识有效性的元数据，没有给出该名称。038谈质疑作者可靠性，不是同一披露机制。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "Epistemic Disclosure",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [
+            "pub-007"
+          ],
+          "first_relevant_rank": 1,
+          "hit_at_5": 1,
+          "reciprocal_rank_at_5": 1.0,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "Epistemic Disclosure",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [
+            "pub-007"
+          ],
+          "first_relevant_rank": 1,
+          "hit_at_5": 1,
+          "reciprocal_rank_at_5": 1.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-007",
+      "query": "收藏文章之前可以先记下自己想解决的问题吗？",
+      "original_split": "dev",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-008"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [
+        "pub-023",
+        "pub-038"
+      ],
+      "expected_with_insufficient_excerpt_ids": [
+        "pub-008"
+      ],
+      "no_answer_supported": null,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [
+        "pub-008"
+      ],
+      "stored_record_relevance_reason": "008直接询问从文章获得什么，可定位阅读目标相关文档；但没说收藏前的时序、先记录或自己想解决的问题。023问作者解决的难题，038谈主动阅读提问，均不足支持原流程且均为test，题为dev。",
+      "metadata_only_candidate_ids": [],
+      "metadata_only_candidate_reason": {},
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-008",
+          "quote": "我想从这篇文章里得到什么？",
+          "relation": "insufficient",
+          "reason": "有个人阅读期望问题，没有收藏前时序。"
+        },
+        {
+          "note_id": "pub-023",
+          "quote": "作者写一本书，真正解决的难题是什么？",
+          "relation": "related",
+          "reason": "作者要解决的难题不同于读者自己的目标。"
+        },
+        {
+          "note_id": "pub-038",
+          "quote": "An active reader asks questions",
+          "relation": "related",
+          "reason": "主动阅读提问，不是收藏前记录目的。"
+        }
+      ],
+      "assessment": "008直接询问从文章获得什么，可定位阅读目标相关文档；但没说收藏前的时序、先记录或自己想解决的问题。023问作者解决的难题，038谈主动阅读提问，均不足支持原流程且均为test，题为dev。",
+      "cross_split_candidates": [
+        {
+          "note_id": "pub-023",
+          "note_split": "test",
+          "question_split": "dev",
+          "action": "仅记录邻近候选，不变更split；若未来加入多目标须重审作者分组"
+        },
+        {
+          "note_id": "pub-038",
+          "note_split": "test",
+          "question_split": "dev",
+          "action": "仅记录邻近候选，不变更split；若未来加入多目标须重审作者分组"
+        }
+      ],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "收藏文章之前可以先记下自己想解决的问题吗？",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "稍后阅读",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-008",
+      "query": "json_extract",
+      "original_split": "dev",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-011"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [
+        "pub-019"
+      ],
+      "expected_with_insufficient_excerpt_ids": [
+        "pub-011"
+      ],
+      "no_answer_supported": null,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [
+        "pub-011"
+      ],
+      "stored_record_relevance_reason": "json_extract 是函数名定位，011标题精确命名，合法支持文档定位；片段只解释JSON路径的$根，未命名函数。019谈JSON审计但无该函数，不能自动列为漏标目标。",
+      "metadata_only_candidate_ids": [
+        "pub-011"
+      ],
+      "metadata_only_candidate_reason": {
+        "pub-011": "定位的关键命名或关系依赖标题，片段自身不足明确命名；详见该题assessment。"
+      },
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-011",
+          "quote": "root of the JSON value",
+          "relation": "insufficient",
+          "reason": "是JSON路径而非命名json_extract。"
+        },
+        {
+          "note_id": "pub-019",
+          "quote": "JSON to store changes to a table",
+          "relation": "related",
+          "reason": "有JSON数据主题，没有该函数。"
+        }
+      ],
+      "assessment": "json_extract 是函数名定位，011标题精确命名，合法支持文档定位；片段只解释JSON路径的$根，未命名函数。019谈JSON审计但无该函数，不能自动列为漏标目标。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "json_extract",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [
+            "pub-011"
+          ],
+          "first_relevant_rank": 1,
+          "hit_at_5": 1,
+          "reciprocal_rank_at_5": 1.0,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "json_extract",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [
+            "pub-011"
+          ],
+          "first_relevant_rank": 1,
+          "hit_at_5": 1,
+          "reciprocal_rank_at_5": 1.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-009",
+      "query": "谁提过让AI写作助手帮忙找逻辑问题而不只是代写？",
+      "original_split": "dev",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-015"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [
+        "pub-031"
+      ],
+      "expected_with_insufficient_excerpt_ids": [
+        "pub-015"
+      ],
+      "no_answer_supported": null,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [
+        "pub-015"
+      ],
+      "stored_record_relevance_reason": "015标题及片段直接涉及AI写作Copilot，可定位部分相关文档；片段没有逻辑漏洞、逻辑审查或不只是代写的对比。031的模型总结也不等于写作逻辑检查。",
+      "metadata_only_candidate_ids": [],
+      "metadata_only_candidate_reason": {},
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-015",
+          "quote": "Copilot 辅助人类更好地写作",
+          "relation": "insufficient",
+          "reason": "有写作辅助，没有逻辑审查限定。"
+        },
+        {
+          "note_id": "pub-031",
+          "quote": "调用Gemini API来总结内容",
+          "relation": "related",
+          "reason": "是模型总结，不是找逻辑问题。"
+        }
+      ],
+      "assessment": "015标题及片段直接涉及AI写作Copilot，可定位部分相关文档；片段没有逻辑漏洞、逻辑审查或不只是代写的对比。031的模型总结也不等于写作逻辑检查。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "谁提过让AI写作助手帮忙找逻辑问题而不只是代写？",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "逻辑漏洞",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-010",
+      "query": "有个人读围棋AI论文时先快速看几遍再一点点弄懂，在哪里？",
+      "original_split": "test",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-017"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [
+        "pub-045"
+      ],
+      "expected_with_insufficient_excerpt_ids": [
+        "pub-017"
+      ],
+      "no_answer_supported": null,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [
+        "pub-017"
+      ],
+      "stored_record_relevance_reason": "017直接支持快速多遍、逐次深入读论文的主要回忆，可作为部分相关定位；片段和标题都不确认围棋AI或AlphaGo。045是文献阅读邻近主题，没有快速多遍方法。",
+      "metadata_only_candidate_ids": [],
+      "metadata_only_candidate_reason": {},
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-017",
+          "quote": "several rapid passes over the paper",
+          "relation": "insufficient",
+          "reason": "支持逐遍深入，但未命名围棋AI论文。"
+        },
+        {
+          "note_id": "pub-045",
+          "quote": "Reading research papers",
+          "relation": "related",
+          "reason": "一般读论文作用，不是逐遍阅读方法。"
+        }
+      ],
+      "assessment": "017直接支持快速多遍、逐次深入读论文的主要回忆，可作为部分相关定位；片段和标题都不确认围棋AI或AlphaGo。045是文献阅读邻近主题，没有快速多遍方法。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "有个人读围棋AI论文时先快速看几遍再一点点弄懂，在哪里？",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "AlphaGo",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-011",
+      "query": "SQLite",
+      "original_split": "dev",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-019"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [
+        "pub-011",
+        "pub-020",
+        "pub-012"
+      ],
+      "expected_with_insufficient_excerpt_ids": [
+        "pub-019"
+      ],
+      "no_answer_supported": null,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [
+        "pub-011",
+        "pub-019",
+        "pub-020"
+      ],
+      "stored_record_relevance_reason": "SQLite广义文档定位漏标011和020，加原019共三条标题都明确SQLite且均dev。三条摘录自身都未命名SQLite，不能把片段不足当标题检索错误。012只有Django/ORM迁移，不足确认SQLite。",
+      "metadata_only_candidate_ids": [
+        "pub-011",
+        "pub-019",
+        "pub-020"
+      ],
+      "metadata_only_candidate_reason": {
+        "pub-011": "定位的关键命名或关系依赖标题，片段自身不足明确命名；详见该题assessment。",
+        "pub-019": "定位的关键命名或关系依赖标题，片段自身不足明确命名；详见该题assessment。",
+        "pub-020": "定位的关键命名或关系依赖标题，片段自身不足明确命名；详见该题assessment。"
+      },
+      "missing_stored_record_relevant_ids": [
+        "pub-011",
+        "pub-020"
+      ],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-019",
+          "quote": "changes to a table in an audit log",
+          "relation": "insufficient",
+          "reason": "审计日志片段未命名SQLite。"
+        },
+        {
+          "note_id": "pub-011",
+          "quote": "root of the JSON value",
+          "relation": "related",
+          "reason": "JSON路径片段未命名SQLite，标题明确。"
+        },
+        {
+          "note_id": "pub-020",
+          "quote": "open an in-memory database",
+          "relation": "related",
+          "reason": "内存数据库片段未命名SQLite，标题明确。"
+        },
+        {
+          "note_id": "pub-012",
+          "quote": "ORM is migrations",
+          "relation": "related",
+          "reason": "ORM迁移及Django题材不足命名SQLite。"
+        }
+      ],
+      "assessment": "SQLite广义文档定位漏标011和020，加原019共三条标题都明确SQLite且均dev。三条摘录自身都未命名SQLite，不能把片段不足当标题检索错误。012只有Django/ORM迁移，不足确认SQLite。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "SQLite",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [
+            "pub-011",
+            "pub-019",
+            "pub-020"
+          ],
+          "first_relevant_rank": 2,
+          "hit_at_5": 1,
+          "reciprocal_rank_at_5": 0.5,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "JSON audit log",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [
+            "pub-019"
+          ],
+          "first_relevant_rank": 1,
+          "hit_at_5": 1,
+          "reciprocal_rank_at_5": 1.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-012",
+      "query": "怎么用数据库直接查询CSV文件里的数据？",
+      "original_split": "dev",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-020"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [],
+      "expected_with_insufficient_excerpt_ids": [
+        "pub-020"
+      ],
+      "no_answer_supported": null,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [
+        "pub-020"
+      ],
+      "stored_record_relevance_reason": "020标题明确数据库直接查询CSV，是合法相关文档；摘录只说:memory:打开内存数据库，不含CSV、导入或查询步骤。",
+      "metadata_only_candidate_ids": [
+        "pub-020"
+      ],
+      "metadata_only_candidate_reason": {
+        "pub-020": "定位的关键命名或关系依赖标题，片段自身不足明确命名；详见该题assessment。"
+      },
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-020",
+          "quote": "open an in-memory database",
+          "relation": "insufficient",
+          "reason": "仅内存数据库，没有CSV查询方法。"
+        }
+      ],
+      "assessment": "020标题明确数据库直接查询CSV，是合法相关文档；摘录只说:memory:打开内存数据库，不含CSV、导入或查询步骤。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "怎么用数据库直接查询CSV文件里的数据？",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "CSV",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [
+            "pub-020"
+          ],
+          "first_relevant_rank": 1,
+          "hit_at_5": 1,
+          "reciprocal_rank_at_5": 1.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-013",
+      "query": "之前看到一个人修好了自行车灯但还不知道能用多久",
+      "original_split": "dev",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-021"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [
+        "pub-030"
+      ],
+      "expected_with_insufficient_excerpt_ids": [
+        "pub-021"
+      ],
+      "no_answer_supported": null,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [
+        "pub-021"
+      ],
+      "stored_record_relevance_reason": "021标题更换车灯旧电池、片段说夜骑可用，可定位部分相关文档；摘录没有修复动作或不知道能用多久。030虽提修复但属于软件排障，不是车灯，不能仅凭同词认作漏标。",
+      "metadata_only_candidate_ids": [
+        "pub-021"
+      ],
+      "metadata_only_candidate_reason": {
+        "pub-021": "定位的关键命名或关系依赖标题，片段自身不足明确命名；详见该题assessment。"
+      },
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-021",
+          "quote": "I have used them to bike at night!",
+          "relation": "insufficient",
+          "reason": "仅证明灯可夜骑，没有修复经过或使用寿命态度。"
+        },
+        {
+          "note_id": "pub-030",
+          "quote": "不要被巧合的修复说服。",
+          "relation": "related",
+          "reason": "软件排障用语，不是自行车灯。"
+        }
+      ],
+      "assessment": "021标题更换车灯旧电池、片段说夜骑可用，可定位部分相关文档；摘录没有修复动作或不知道能用多久。030虽提修复但属于软件排障，不是车灯，不能仅凭同词认作漏标。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "之前看到一个人修好了自行车灯但还不知道能用多久",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "自行车灯",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-014",
+      "query": "有没有人想过把命令行手册做得更容易查找？",
+      "original_split": "dev",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [
+        "pub-022"
+      ],
+      "original_no_answer": false,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [],
+      "expected_with_insufficient_excerpt_ids": [
+        "pub-022"
+      ],
+      "no_answer_supported": null,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [
+        "pub-022"
+      ],
+      "stored_record_relevance_reason": "022标题和摘录都直接谈man page易用性，可定位相关文档；中文更容易查找比原文easier to use更具体，严格片段不足以支持查找子功能，须真人确认是否接受宽松同义。",
+      "metadata_only_candidate_ids": [],
+      "metadata_only_candidate_reason": {},
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [
+        {
+          "note_id": "pub-022",
+          "quote": "make a man page easier to use",
+          "relation": "insufficient",
+          "reason": "更易用不等于明确改进查找子功能。"
+        }
+      ],
+      "assessment": "022标题和摘录都直接谈man page易用性，可定位相关文档；中文更容易查找比原文easier to use更具体，严格片段不足以支持查找子功能，须真人确认是否接受宽松同义。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "有没有人想过把命令行手册做得更容易查找？",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": 0,
+          "reciprocal_rank_at_5": 0.0,
+          "negative_false_return": null
+        },
+        "preset_keyword": {
+          "submitted_query": "man pages",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [
+            "pub-022"
+          ],
+          "first_relevant_rank": 1,
+          "hit_at_5": 1,
+          "reciprocal_rank_at_5": 1.0,
+          "negative_false_return": null
+        }
+      }
+    },
+    {
+      "id": "ret-015",
+      "query": "明天厦门到北京的航班还剩哪些座位？",
+      "original_split": "dev",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [],
+      "original_no_answer": true,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [],
+      "expected_with_insufficient_excerpt_ids": [],
+      "no_answer_supported": true,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [],
+      "stored_record_relevance_reason": "逐一检查50条摘录和标题，没有厦门至北京明日航班余座数据；明天也没有绑定检索时点。仅确认当前库无直接支持，不表示现实世界无答案或生成端无幻觉。",
+      "metadata_only_candidate_ids": [],
+      "metadata_only_candidate_reason": {},
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [],
+      "assessment": "逐一检查50条摘录和标题，没有厦门至北京明日航班余座数据；明天也没有绑定检索时点。仅确认当前库无直接支持，不表示现实世界无答案或生成端无幻觉。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "明天厦门到北京的航班还剩哪些座位？",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": null,
+          "reciprocal_rank_at_5": null,
+          "negative_false_return": false
+        },
+        "preset_keyword": {
+          "submitted_query": "航班座位",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": null,
+          "reciprocal_rank_at_5": null,
+          "negative_false_return": false
+        }
+      }
+    },
+    {
+      "id": "ret-016",
+      "query": "Find the measured pressure of the fictional cobalt marshmallow reactor",
+      "original_split": "test",
+      "label_origin": "ai_assisted",
+      "review_status": "pending",
+      "human_verified": false,
+      "original_expected_ids": [],
+      "original_no_answer": true,
+      "directly_supported_ids": [],
+      "related_but_insufficient_ids": [],
+      "expected_with_insufficient_excerpt_ids": [],
+      "no_answer_supported": true,
+      "excerpt_answerable": false,
+      "stored_record_relevant_ids": [],
+      "stored_record_relevance_reason": "逐一检查50条摘录和标题，没有cobalt marshmallow reactor或其测量压力。只确认当前库无直接支持，不把搜索无返回扩大为现实世界不存在该实体。",
+      "metadata_only_candidate_ids": [],
+      "metadata_only_candidate_reason": {},
+      "missing_stored_record_relevant_ids": [],
+      "per_note_evidence": [],
+      "assessment": "逐一检查50条摘录和标题，没有cobalt marshmallow reactor或其测量压力。只确认当前库无直接支持，不把搜索无返回扩大为现实世界不存在该实体。",
+      "cross_split_candidates": [],
+      "split_changes_made": false,
+      "benchmark_changes_made": false,
+      "fixed_baseline_returns": {
+        "full_query": {
+          "submitted_query": "Find the measured pressure of the fictional cobalt marshmallow reactor",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": null,
+          "reciprocal_rank_at_5": null,
+          "negative_false_return": false
+        },
+        "preset_keyword": {
+          "submitted_query": "cobalt marshmallow reactor",
+          "search_method": "SQL LIKE literal keyword search（非向量或语义检索）",
+          "returned_ids": [],
+          "first_relevant_rank": null,
+          "hit_at_5": null,
+          "reciprocal_rank_at_5": null,
+          "negative_false_return": false
+        }
+      }
+    }
+  ]
+}
