@@ -1,0 +1,302 @@
+{
+  "checked_on": "2026-10-24",
+  "timezone": "Asia/Shanghai",
+  "generated_at_utc": "2026-10-24T14:39:13.461462+00:00",
+  "status": "pass",
+  "scope": "Mechanical consistency check of October 23 AI audit assets against current formal SQLite data and fixed candidate benchmark; no new webpage access or human semantic validation.",
+  "network_used": false,
+  "database_modified": false,
+  "annotations_modified": false,
+  "benchmark_modified": false,
+  "prior_audit_date": "2026-10-23",
+  "input_files_at_read": [
+    {
+      "path": "data/annotation_scope_audit_2026-10-23_001_025.json",
+      "sha256": "c11f909a0215f8ba0116950d8c9602fca58effe99a6bcff05b6c8e3941d0ee22",
+      "bytes": 28293
+    },
+    {
+      "path": "data/annotation_scope_audit_2026-10-23_026_050.json",
+      "sha256": "342f7c9eff0e8835a82481e78b1028bd1e94acfdca7d891a769478decbe68eeb",
+      "bytes": 25674
+    },
+    {
+      "path": "data/retrieval_label_audit_2026-10-23.json",
+      "sha256": "c24af053e78b359cf6eb45166159ba5e5c4ab620abd5fa9af4044db4c75be20a",
+      "bytes": 65866
+    },
+    {
+      "path": "exports/annotation_scope_audit.json",
+      "sha256": "c01fd6eeeef947cd52d02224ac965badf7a8c662c94962f5ad147111a6d5eee6",
+      "bytes": 62546
+    },
+    {
+      "path": "exports/retrieval_label_audit.json",
+      "sha256": "f310f664f62312c498cc3d3dccec9664777efcc6848da418fcf7de05267dae53",
+      "bytes": 48850
+    },
+    {
+      "path": "data/retrieval_benchmark.json",
+      "sha256": "3d9a292fb70c369ec53ff10ca689d4c69abcd877924361114029514e1729cd4c",
+      "bytes": 4945
+    },
+    {
+      "path": "exports/notes.json",
+      "sha256": "29e8263d65d1e59cf36d0b992acd28d334a19e7c4a95f74a0b423aaae5a86e55",
+      "bytes": 136191
+    },
+    {
+      "path": "exports/retrieval_eval_2026-10-23.json",
+      "sha256": "b211e4dd483fc41d88518f84a5bdd40c7d0f474894eb987e933cb4a6b86401a2",
+      "bytes": 22679
+    }
+  ],
+  "database_sha256": "b1a816dc97b386861d1b6ff6c524aacdde72ff8f7d5f4aa695ed52f11ab902e3",
+  "stable_annotation_snapshot_sha256": "e98a0d0edc9affe939f65269a9871f3cca71f5499a05b61c799c6cad0693e718",
+  "stable_records_sha256": "488c235a2e898ffd5f0d20416b3ff120be435a264795fbce16aa255959bc8435",
+  "checks": [
+    {
+      "name": "current_export_content_equals_formal_db",
+      "passed": true,
+      "details": {
+        "exported_at_at_read": "2026-10-24T14:38:28.539029+00:00",
+        "metadata_ignored": true
+      }
+    },
+    {
+      "name": "50_unique_note_ids",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all_original_hashes_match",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw_and_merged_annotation_id_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "annotation_quotes_snapshots_and_pending_state",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "merged_preserves_raw_annotation_opinions",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "annotation_summary_recomputed",
+      "passed": true,
+      "details": {
+        "notes": 50,
+        "categories": {
+          "context_dependent": 3,
+          "ambiguous": 19,
+          "supported": 28
+        },
+        "tags": 150,
+        "tag_assessments": {
+          "context_dependent": 77,
+          "supported": 65,
+          "ambiguous": 8
+        },
+        "notes_with_context_dependent_tags": 45,
+        "notes_with_non_supported_tags": 46
+      }
+    },
+    {
+      "name": "known_context_and_ambiguous_counts",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stable_annotation_snapshot_sha256",
+      "passed": true,
+      "details": {
+        "recomputed": "e98a0d0edc9affe939f65269a9871f3cca71f5499a05b61c799c6cad0693e718",
+        "includes_export_metadata": false
+      }
+    },
+    {
+      "name": "annotation_input_asset_byte_digests",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "retrieval_question_and_corpus_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "retrieval_quotes_snapshots_split_and_pending_state",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "retrieval_export_preserves_audit_and_real_fixed_returns",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "ret011_missing_candidates_remain_sidecar_only",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "cross_split_candidates_not_applied",
+      "passed": true,
+      "details": [
+        {
+          "question_id": "ret-005",
+          "note_id": "pub-004",
+          "note_split": "dev",
+          "question_split": "test",
+          "action": "仅记录邻近候选，不变更split；若未来加入多目标须重审作者分组"
+        },
+        {
+          "question_id": "ret-007",
+          "note_id": "pub-023",
+          "note_split": "test",
+          "question_split": "dev",
+          "action": "仅记录邻近候选，不变更split；若未来加入多目标须重审作者分组"
+        },
+        {
+          "question_id": "ret-007",
+          "note_id": "pub-038",
+          "note_split": "test",
+          "question_split": "dev",
+          "action": "仅记录邻近候选，不变更split；若未来加入多目标须重审作者分组"
+        }
+      ]
+    },
+    {
+      "name": "negative_cases_and_fixed_scores_preserved",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "retrieval_input_asset_byte_digests",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "benchmark_byte_binding",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "historical_input_hashes_resolved_to_commits",
+      "passed": true,
+      "details": {
+        "e2d1f6f4e9f7cd13ac6d683cdfd5d5cc6d6178fd": {
+          "sha256": "b1440152c2a1ebc1244be53581b8b4ceec7df9ae3baca5249316daffc7191bf5",
+          "records_equal_current_db": true,
+          "exported_at": "2026-10-23T14:37:53.215511+00:00"
+        },
+        "77003f1859eb09a11c4650dd7b39058ad251ff02": {
+          "sha256": "03d60083efbe75964102405f31f1660fbd77e836d7844ff5f5cc0a3ece5c4d6b",
+          "records_equal_current_db": true,
+          "exported_at": "2026-10-21T17:19:29.005902+00:00"
+        }
+      }
+    },
+    {
+      "name": "database_hash_binding_and_no_mutation",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "formal_pending_training_and_pipeline_state",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "historical_unresolved_pub021_not_promoted",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "failures": [],
+  "counts": {
+    "notes": 50,
+    "annotation_audit_records": 50,
+    "category_assessments": {
+      "context_dependent": 3,
+      "ambiguous": 19,
+      "supported": 28
+    },
+    "tag_assessments": {
+      "context_dependent": 77,
+      "supported": 65,
+      "ambiguous": 8
+    },
+    "retrieval_questions": 16,
+    "question_note_pairs": 800,
+    "cross_split_related_candidates": 3
+  },
+  "historical_source_check_snapshot": {
+    "checked_on": {
+      "2026-10-21": 50
+    },
+    "fetch_status": {
+      "accessible": 49,
+      "unavailable": 1
+    },
+    "excerpt_status": {
+      "exact": 47,
+      "normalized_match": 2,
+      "not_checked": 1
+    },
+    "license_check": {
+      "not_confirmed": 35,
+      "confirmed": 14,
+      "not_checked": 1
+    }
+  },
+  "unresolved_pub021": {
+    "id": "audit-20261021-pub-021",
+    "checked_on": "2026-10-21",
+    "checker_type": "ai_assisted",
+    "fetch_status": "unavailable",
+    "excerpt_status": "not_checked",
+    "author_check": "not_checked",
+    "license_check": "not_checked"
+  },
+  "freeze_risks": [
+    {
+      "risk": "No human gold labels",
+      "state": "50 notes and all audit opinions remain ai_assisted/pending; AI cross-review is not human verification."
+    },
+    {
+      "risk": "Context-dependent or ambiguous labels",
+      "state": "77 tags require context and 8 are ambiguous; current categories/tags still equal audit input snapshots; candidate suggestions were not applied."
+    },
+    {
+      "risk": "Retrieval benchmark is diagnostic",
+      "state": "ret-011 has two omitted relevant-document candidates in sidecar only; fixed benchmark and scores unchanged. Related-document lookup and excerpt-only answer sufficiency remain separate."
+    },
+    {
+      "risk": "Historical source access and licensing",
+      "state": "No webpages visited on October 24 by this check. Source checks remain dated October 21, with later limited retries documented separately; pub-021 is unresolved. Confirmed license checks do not grant training permission."
+    },
+    {
+      "risk": "Incomplete source byte provenance for one raw audit file",
+      "state": "The pub-026..050 raw audit does not contain its own source_sha256. Do not backfill a fabricated historical hash; merged per-record original_sha256 and stable_annotation_snapshot_sha256 bind it to the same 50-note content."
+    },
+    {
+      "risk": "Export timestamp changes",
+      "state": "Historical corpus_export_sha256 is anchored to the e2d1f6f commit and is not a claim about the byte hash of an October 24 export after exported_at refresh. Stable content checks exclude export metadata."
+    },
+    {
+      "risk": "Unverified integrations",
+      "state": "This check does not validate live MySQL, GLM, Redis, semantic retrieval, Android or full application integration."
+    }
+  ],
+  "unit_test_suite_rerun": false,
+  "output_is_ai_assisted_validation": true,
+  "human_verified": false
+}

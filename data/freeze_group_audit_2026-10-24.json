@@ -1,0 +1,1366 @@
+{
+  "metadata": {
+    "checked_on": "2026-10-24",
+    "timezone": "Asia/Shanghai",
+    "audited_at_utc": "2026-10-24T14:38:33.910460+00:00",
+    "label_origin": "ai_assisted",
+    "review_status": "pending",
+    "human_verified": false,
+    "scope": "只读离线冻结前审查；统计、字面重复与分组检查，加AI辅助语义邻近检查。无联网、无新采集、无数据库或标注变更。",
+    "source_path": "exports/notes.json",
+    "source_file_sha256_at_read": "29e8263d65d1e59cf36d0b992acd28d334a19e7c4a95f74a0b423aaae5a86e55",
+    "database_sha256_at_read": "b1a816dc97b386861d1b6ff6c524aacdde72ff8f7d5f4aa695ed52f11ab902e3",
+    "stable_record_snapshot_sha256": "8b16be87e8a8d35ac5369c98255f8823143a6b44aa6aae7c1f99624be58d7fb3"
+  },
+  "counts": {
+    "notes": 50,
+    "unique_ids": 50,
+    "authors": 23,
+    "source_urls": 50,
+    "source_documents": 50,
+    "split": {
+      "dev": 37,
+      "test": 13
+    },
+    "language": {
+      "en": 28,
+      "zh": 22
+    },
+    "all_ai_assisted_pending": true,
+    "human_verified": 0
+  },
+  "default_literal_checks": {
+    "critical_issue_count": 0,
+    "exact_original_duplicate_groups": [],
+    "normalized_duplicate_candidate_groups": [],
+    "duplicate_id_groups": [],
+    "near_duplicate_candidates": [],
+    "parameters": {
+      "near_duplicate_threshold": 0.65,
+      "minimum_nonwhitespace_chars": 30,
+      "normalization": "NFKC + whitespace collapse + unambiguous single-backtick inline code delimiters",
+      "near_duplicates": "Jaccard on sets of character 3-grams after comparison normalization and whitespace removal; candidates only, not semantic deduplication",
+      "gold": "Only verified records with a named reviewer are eligible; eligibility is not independent proof of label correctness. Pending AI-assisted labels never count as gold.",
+      "scope": "Offline data audit; does not visit source URLs, verify author identity, infer permissions, or establish GLM/MySQL/semantic-search execution. No record is modified or removed."
+    },
+    "eligible_notes": 32,
+    "pairs_compared": 496,
+    "pairs_not_compared_due_to_short_excerpts": 729,
+    "excluded_short_count": 18,
+    "excluded_short_ids": [
+      "pub-008",
+      "pub-009",
+      "pub-010",
+      "pub-013",
+      "pub-023",
+      "pub-024",
+      "pub-025",
+      "pub-026",
+      "pub-027",
+      "pub-028",
+      "pub-029",
+      "pub-030",
+      "pub-031",
+      "pub-032",
+      "pub-033",
+      "pub-034",
+      "pub-042",
+      "pub-048"
+    ]
+  },
+  "split_checks": {
+    "author_normalization": "NFKC + whitespace collapse + casefold",
+    "source_document_normalization": "scheme/host lower-case, strip URL fragment; preserve path/query and HTTP/HTTPS differences",
+    "author_groups": [
+      {
+        "key": "andy matuschak",
+        "ids": [
+          "pub-001",
+          "pub-002",
+          "pub-003",
+          "pub-004"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "anthony fu",
+        "ids": [
+          "pub-010"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "bret victor",
+        "ids": [
+          "pub-037",
+          "pub-038"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "conge",
+        "ids": [
+          "pub-014"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "dan luu",
+        "ids": [
+          "pub-035",
+          "pub-036"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "derek sivers",
+        "ids": [
+          "pub-016"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "frostming",
+        "ids": [
+          "pub-025",
+          "pub-026"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "jeff atwood",
+        "ids": [
+          "pub-039",
+          "pub-040"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "joel spolsky",
+        "ids": [
+          "pub-041",
+          "pub-042"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "julia evans",
+        "ids": [
+          "pub-012",
+          "pub-021",
+          "pub-022"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "liam huang",
+        "ids": [
+          "pub-029",
+          "pub-030"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "maggie appleton",
+        "ids": [
+          "pub-005",
+          "pub-006",
+          "pub-007"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "matt might",
+        "ids": [
+          "pub-045",
+          "pub-046"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "michael nielsen",
+        "ids": [
+          "pub-017"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "paul graham",
+        "ids": [
+          "pub-018"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "peter norvig",
+        "ids": [
+          "pub-043",
+          "pub-044"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "randy lu",
+        "ids": [
+          "pub-008",
+          "pub-009",
+          "pub-015"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "simon willison",
+        "ids": [
+          "pub-011",
+          "pub-019",
+          "pub-020"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "依云",
+        "ids": [
+          "pub-031",
+          "pub-032"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "涛叔",
+        "ids": [
+          "pub-033",
+          "pub-034"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "苏洋",
+        "ids": [
+          "pub-027",
+          "pub-028"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "阮一峰",
+        "ids": [
+          "pub-013",
+          "pub-047",
+          "pub-048",
+          "pub-049",
+          "pub-050"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "阳志平",
+        "ids": [
+          "pub-023",
+          "pub-024"
+        ],
+        "splits": [
+          "test"
+        ]
+      }
+    ],
+    "source_document_groups": [
+      {
+        "key": "https://antfu.me/posts/why-reproductions-are-required-zh",
+        "ids": [
+          "pub-010"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://augmentingcognition.com/ltm.html",
+        "ids": [
+          "pub-017"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://blog.codinghorror.com/rubber-duck-problem-solving/",
+        "ids": [
+          "pub-039"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://blog.codinghorror.com/the-first-rule-of-programming-its-always-your-fault/",
+        "ids": [
+          "pub-040"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://blog.lilydjwg.me/2026/5/12/customize-my-default-chinese-font.217026.html",
+        "ids": [
+          "pub-032"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://blog.lilydjwg.me/2026/6/9/summarize-youtube-video-via-subtitles.217033.html",
+        "ids": [
+          "pub-031"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://conge.livingwithfcs.org/2018/12/24/zhe-fan-dian-1851-yang-cheng-hao-xi-guan-,-bu-yao-zhong-duan/",
+        "ids": [
+          "pub-014"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://danluu.com/learn-what/",
+        "ids": [
+          "pub-036"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://danluu.com/writing-non-advice/",
+        "ids": [
+          "pub-035"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://frostming.com/posts/2021/04-28/self-host-comment-system/",
+        "ids": [
+          "pub-026"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://frostming.com/posts/2026/why-rewrite-bub/",
+        "ids": [
+          "pub-025"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://jvns.ca/blog/2026/01/27/some-notes-on-starting-to-use-django/",
+        "ids": [
+          "pub-012"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://jvns.ca/blog/2026/02/18/man-pages/",
+        "ids": [
+          "pub-022"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://jvns.ca/blog/2026/09/27/replacing-the-old-battery-on-rechargeable-bike-lights/",
+        "ids": [
+          "pub-021"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://liam.page/2026/06/06/vscode-remote-ssh-sun-path/",
+        "ids": [
+          "pub-030"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://liam.page/2026/06/11/why-std-shared-mutex-is-slow/",
+        "ids": [
+          "pub-029"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://lutaonan.com/blog/ai-writing/",
+        "ids": [
+          "pub-015"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://lutaonan.com/blog/apple-notes-and-para/",
+        "ids": [
+          "pub-009"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://lutaonan.com/blog/how-do-i-take-note/",
+        "ids": [
+          "pub-008"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://maggieappleton.com/daily-notes",
+        "ids": [
+          "pub-006"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://maggieappleton.com/epistemic-disclosure",
+        "ids": [
+          "pub-007"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://maggieappleton.com/speculative-events",
+        "ids": [
+          "pub-005"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://matt.might.net/articles/phd-school-in-pictures/",
+        "ids": [
+          "pub-045"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://matt.might.net/articles/ways-to-fail-a-phd/",
+        "ids": [
+          "pub-046"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://notes.andymatuschak.org/z2hQEhqWkdRLL9JUwfawZZx",
+        "ids": [
+          "pub-002"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://notes.andymatuschak.org/zF8xCU4BwXwbmSyp7tmff9i",
+        "ids": [
+          "pub-003"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://notes.andymatuschak.org/zLhoRUyjKU665EY16u4XXJy",
+        "ids": [
+          "pub-004"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://notes.andymatuschak.org/zNUaiGAXp21eorsER1Jm9yU",
+        "ids": [
+          "pub-001"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://paulgraham.com/think.html",
+        "ids": [
+          "pub-018"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://sive.rs/kimo",
+        "ids": [
+          "pub-016"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://soulteary.com/2026/09/09/phorge-modernization-part-16-database-introspection-in-gorge.html",
+        "ids": [
+          "pub-028"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://soulteary.com/2026/10/05/continuing-minio-otterio-early-october-maintenance-notes.html",
+        "ids": [
+          "pub-027"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://tao.zz.ac/life/sharpen-brain.html",
+        "ids": [
+          "pub-033"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://tao.zz.ac/tao.html",
+        "ids": [
+          "pub-034"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://til.simonwillison.net/sqlite/json-audit-log",
+        "ids": [
+          "pub-019"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://til.simonwillison.net/sqlite/json-extract-path",
+        "ids": [
+          "pub-011"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://til.simonwillison.net/sqlite/one-line-csv-operations",
+        "ids": [
+          "pub-020"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://worrydream.com/ExplorableExplanations/",
+        "ids": [
+          "pub-038"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://worrydream.com/LearnableProgramming/",
+        "ids": [
+          "pub-037"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/",
+        "ids": [
+          "pub-041"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/",
+        "ids": [
+          "pub-042"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.norvig.com/21-days.html",
+        "ids": [
+          "pub-043"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.norvig.com/sudoku.html",
+        "ids": [
+          "pub-044"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2018/11/weekly-issue-32.html",
+        "ids": [
+          "pub-047"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2024/01/weekly-issue-285.html",
+        "ids": [
+          "pub-050"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2024/01/weekly-issue-288.html",
+        "ids": [
+          "pub-048"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2024/03/weekly-issue-293.html",
+        "ids": [
+          "pub-049"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://www.ruanyifeng.com/blog/2026/05/weekly-issue-396.html",
+        "ids": [
+          "pub-013"
+        ],
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "key": "https://yangzhiping.com/essays/20161212/",
+        "ids": [
+          "pub-024"
+        ],
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "key": "https://yangzhiping.com/essays/20240530/",
+        "ids": [
+          "pub-023"
+        ],
+        "splits": [
+          "test"
+        ]
+      }
+    ],
+    "author_split_leakage": [],
+    "source_document_split_leakage": [],
+    "source_url_author_conflicts": [],
+    "limitations": "不推断不同作者名是否同一真人，不把不同URL查询参数强行合并；主题在dev/test之间可能接近，不等同于作者/源文档泄漏。"
+  },
+  "diagnostic_all_length_scans": [
+    {
+      "gram_size": 2,
+      "threshold": 0.35,
+      "minimum_nonwhitespace_chars": 3,
+      "notes_scanned": 50,
+      "pairs_scanned": 1225,
+      "excluded_ids": [],
+      "candidate_count": 0,
+      "candidates": [],
+      "top_10_even_below_threshold": [
+        {
+          "ids": [
+            "pub-040",
+            "pub-046"
+          ],
+          "jaccard": 0.293103,
+          "splits": [
+            "dev",
+            "test"
+          ]
+        },
+        {
+          "ids": [
+            "pub-044",
+            "pub-046"
+          ],
+          "jaccard": 0.261261,
+          "splits": [
+            "dev",
+            "test"
+          ]
+        },
+        {
+          "ids": [
+            "pub-040",
+            "pub-044"
+          ],
+          "jaccard": 0.256637,
+          "splits": [
+            "dev",
+            "dev"
+          ]
+        },
+        {
+          "ids": [
+            "pub-041",
+            "pub-045"
+          ],
+          "jaccard": 0.255814,
+          "splits": [
+            "dev",
+            "test"
+          ]
+        },
+        {
+          "ids": [
+            "pub-040",
+            "pub-041"
+          ],
+          "jaccard": 0.25,
+          "splits": [
+            "dev",
+            "dev"
+          ]
+        },
+        {
+          "ids": [
+            "pub-007",
+            "pub-040"
+          ],
+          "jaccard": 0.247423,
+          "splits": [
+            "test",
+            "dev"
+          ]
+        },
+        {
+          "ids": [
+            "pub-017",
+            "pub-038"
+          ],
+          "jaccard": 0.244898,
+          "splits": [
+            "test",
+            "test"
+          ]
+        },
+        {
+          "ids": [
+            "pub-011",
+            "pub-036"
+          ],
+          "jaccard": 0.230769,
+          "splits": [
+            "dev",
+            "dev"
+          ]
+        },
+        {
+          "ids": [
+            "pub-001",
+            "pub-038"
+          ],
+          "jaccard": 0.222222,
+          "splits": [
+            "dev",
+            "test"
+          ]
+        },
+        {
+          "ids": [
+            "pub-038",
+            "pub-040"
+          ],
+          "jaccard": 0.220339,
+          "splits": [
+            "test",
+            "dev"
+          ]
+        }
+      ],
+      "interpretation": "仅诊断字符重叠，不改变正式审计参数；共同英语片段或同主题不等于重复。"
+    },
+    {
+      "gram_size": 3,
+      "threshold": 0.1,
+      "minimum_nonwhitespace_chars": 3,
+      "notes_scanned": 50,
+      "pairs_scanned": 1225,
+      "excluded_ids": [],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "ids": [
+            "pub-041",
+            "pub-045"
+          ],
+          "jaccard": 0.102804,
+          "splits": [
+            "dev",
+            "test"
+          ]
+        }
+      ],
+      "top_10_even_below_threshold": [
+        {
+          "ids": [
+            "pub-041",
+            "pub-045"
+          ],
+          "jaccard": 0.102804,
+          "splits": [
+            "dev",
+            "test"
+          ]
+        },
+        {
+          "ids": [
+            "pub-020",
+            "pub-042"
+          ],
+          "jaccard": 0.089552,
+          "splits": [
+            "dev",
+            "dev"
+          ]
+        },
+        {
+          "ids": [
+            "pub-040",
+            "pub-046"
+          ],
+          "jaccard": 0.086207,
+          "splits": [
+            "dev",
+            "test"
+          ]
+        },
+        {
+          "ids": [
+            "pub-011",
+            "pub-046"
+          ],
+          "jaccard": 0.085714,
+          "splits": [
+            "dev",
+            "test"
+          ]
+        },
+        {
+          "ids": [
+            "pub-040",
+            "pub-044"
+          ],
+          "jaccard": 0.075,
+          "splits": [
+            "dev",
+            "dev"
+          ]
+        },
+        {
+          "ids": [
+            "pub-012",
+            "pub-043"
+          ],
+          "jaccard": 0.074766,
+          "splits": [
+            "dev",
+            "dev"
+          ]
+        },
+        {
+          "ids": [
+            "pub-017",
+            "pub-046"
+          ],
+          "jaccard": 0.074324,
+          "splits": [
+            "test",
+            "test"
+          ]
+        },
+        {
+          "ids": [
+            "pub-001",
+            "pub-022"
+          ],
+          "jaccard": 0.074074,
+          "splits": [
+            "dev",
+            "dev"
+          ]
+        },
+        {
+          "ids": [
+            "pub-037",
+            "pub-043"
+          ],
+          "jaccard": 0.072581,
+          "splits": [
+            "test",
+            "dev"
+          ]
+        },
+        {
+          "ids": [
+            "pub-036",
+            "pub-040"
+          ],
+          "jaccard": 0.072368,
+          "splits": [
+            "dev",
+            "dev"
+          ]
+        }
+      ],
+      "interpretation": "仅诊断字符重叠，不改变正式审计参数；共同英语片段或同主题不等于重复。"
+    }
+  ],
+  "ai_semantic_review": {
+    "examined_note_ids": [
+      "pub-001",
+      "pub-002",
+      "pub-003",
+      "pub-004",
+      "pub-005",
+      "pub-006",
+      "pub-007",
+      "pub-008",
+      "pub-009",
+      "pub-010",
+      "pub-011",
+      "pub-012",
+      "pub-013",
+      "pub-014",
+      "pub-015",
+      "pub-016",
+      "pub-017",
+      "pub-018",
+      "pub-019",
+      "pub-020",
+      "pub-021",
+      "pub-022",
+      "pub-023",
+      "pub-024",
+      "pub-025",
+      "pub-026",
+      "pub-027",
+      "pub-028",
+      "pub-029",
+      "pub-030",
+      "pub-031",
+      "pub-032",
+      "pub-033",
+      "pub-034",
+      "pub-035",
+      "pub-036",
+      "pub-037",
+      "pub-038",
+      "pub-039",
+      "pub-040",
+      "pub-041",
+      "pub-042",
+      "pub-043",
+      "pub-044",
+      "pub-045",
+      "pub-046",
+      "pub-047",
+      "pub-048",
+      "pub-049",
+      "pub-050"
+    ],
+    "scope": "已逐条阅读50条原文，特别检查18条不参加默认近重复评分的短摘录。仅AI辅助意见，不能作为真人结论或无语义重复的数学证明。",
+    "short_excerpt_review": [
+      {
+        "note_id": "pub-008",
+        "original_excerpt_sha256": "7b4ec90ad4f0ef7fcf12cff4fddad9a1720db753b1cdbc48bf484ff51cc1c411",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "询问从某篇文章获得什么，与pub-023的书籍解决何种难题是相邻阅读自检，不是相同问题。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-009",
+        "original_excerpt_sha256": "2251e58de96e6351e4dc07aa7e58c5824da2d7da2db043ed4956110691689e76",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "笔记服务行动的规范性建议，未发现相同命题；不能把其他写作或学习建议都并入。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-010",
+        "original_excerpt_sha256": "515f1eb2ffbddd732d74e379879b5142610839a0523cdeb458084f40afaafe61",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "软件永不彻底完成的概括，与pub-026更新愿望或pub-041重写丢失知识的命题不同。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-013",
+        "original_excerpt_sha256": "09131da03bed163cdb527e482a2461106b5f9d4032e35d5f0df8a3daa15c387a",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "互联网断连的假设性应对问题；没有其他摘录重复这一具体场景。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-023",
+        "original_excerpt_sha256": "40a3dd943f30336e4d266bcb8485e2e9ee9f2ad9a303a3333781a7b635419733",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "询问一本书真正解决的难题，与pub-008关注个人从文章获得什么不同，保留独立记录。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-024",
+        "original_excerpt_sha256": "737fc0a4b50d40f586faf86ffaf7a9b621974939acc02222b101daab9170138e",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "学习工程时寻找实践机会的建议，不等同于pub-043与程序员交流或读代码。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-025",
+        "original_excerpt_sha256": "c283c1412b1173280eaa1511b12b9bec1ac1b9804c59d296772d14788b65f20e",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "比较两个未指明对象的维护模型，指代不足；不能据泛化维护主题认作其他条目的改写。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-026",
+        "original_excerpt_sha256": "04eee147103461cf2c4f4a9bc0e95dc79e46c7894d581edec63baedd56449b5d",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "希望改进和Bug修复立即更新后台，是个人期望；不同于pub-027已经做过维护的事件。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-027",
+        "original_excerpt_sha256": "f5e8e8543b9de2bb0c8a84f74e8d674a517b2649d61bcefcf956e6fcce88eb41",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "隔一季度维护OtterIO的具体事件，其他技术维护建议不构成同一事件。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-028",
+        "original_excerpt_sha256": "488ef26c1ba8c64437a7c0ab226c93ae4ca5877f02bbfffcf0755ad44722e23b",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "HTTP状态正常延迟问题暴露的观察，与pub-040逐层排查要求的内容不同。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-029",
+        "original_excerpt_sha256": "db49245ebb1d18e6c6e41a73053fa546060ac210a6d6d3368672e413582613cc",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "C++读写锁成本的具体问题，未发现重复问题。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-030",
+        "original_excerpt_sha256": "dbc660b9b1b330797da05cc1a3e2d1420547187709127b37229a4bc1835bc5a4",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "不要相信巧合修复的警示，与pub-040要求定位证据相近，但原命题与表述范围不同，不合并。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-031",
+        "original_excerpt_sha256": "aa192e5277000d66ea5d7df3aa163c3f93666f40970b3dc65198315c2141efcd",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "调用Gemini API总结内容的步骤，未发现重复步骤；不由标题补齐字幕或具体内容。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-032",
+        "original_excerpt_sha256": "259d91955069bf9414d78de7931ff2a7141b3b7fc8f3947cf54009e683c52fe2",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "以更纱黑体修行高提出自我尝试疑问，未发现重复对象或同一问题。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-033",
+        "original_excerpt_sha256": "56c7563d917ac556f79518b40fa393fdff1d61b7810af1a35e8c97d9dea7a1d6",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "蛮力法有时可解决问题的限定判断，未发现重复；不能与一般工程实践建议合并。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-034",
+        "original_excerpt_sha256": "80edf608810f24dd73b04a9e268101a964543d25b789f5285c8506fa55f79e88",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "当日决定“吃自己的狗粮”的自述，具体所指缺失；不推定为其他网站或项目记录。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-042",
+        "original_excerpt_sha256": "08870fbad214ca49a49c954fadf9f8da425cd2f3c6f41c0477d6ed0f2c3ac8a4",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "是否有缺陷库的提问，与pub-020内存数据库设置、pub-019审计日志不是同一个命题。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "note_id": "pub-048",
+        "original_excerpt_sha256": "7dc645baeeaebaf44d2b4fbec5ff8606c4f84d58b36688211aff04ae91fe56c9",
+        "assessment": "no_confirmed_duplicate_in_current_corpus",
+        "reason": "说清问题依赖思想清楚，与pub-006写出内容促进思考有主题联系但因果方向与命题不同，不认作重复。",
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      }
+    ],
+    "related_pairs_retained": [
+      {
+        "ids": [
+          "pub-006",
+          "pub-048"
+        ],
+        "splits": [
+          "test",
+          "dev"
+        ],
+        "assessment": "related_or_lexically_similar_not_confirmed_duplicate",
+        "reason": "写作与思考有联系，但前者说写出内容是思考过程的一环，后者说表达清晰取决于思想清晰；不是同一句话的改写。",
+        "merge_recommended": false,
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "ids": [
+          "pub-008",
+          "pub-023"
+        ],
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "assessment": "related_or_lexically_similar_not_confirmed_duplicate",
+        "reason": "均为阅读自检，但一个问自己希望从文章获得什么，另一个问作者的书解决何种难题；问题对象与主体不同。",
+        "merge_recommended": false,
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "ids": [
+          "pub-030",
+          "pub-040"
+        ],
+        "splits": [
+          "dev",
+          "dev"
+        ],
+        "assessment": "related_or_lexically_similar_not_confirmed_duplicate",
+        "reason": "均重视排查证据；一个反对巧合修复，一个提出从自身代码向外排查的步骤，命题和范围不同。",
+        "merge_recommended": false,
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "ids": [
+          "pub-010",
+          "pub-041"
+        ],
+        "splits": [
+          "dev",
+          "dev"
+        ],
+        "assessment": "related_or_lexically_similar_not_confirmed_duplicate",
+        "reason": "同属软件维护思考，一个是软件永不完成，一个是重写会丢失知识，不能当成重复。",
+        "merge_recommended": false,
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "ids": [
+          "pub-004",
+          "pub-046"
+        ],
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "assessment": "related_or_lexically_similar_not_confirmed_duplicate",
+        "reason": "均涉及写作结构，分别描述标题在写作中形成与完美结构前置导致无法开始，侧重点不同。",
+        "merge_recommended": false,
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "ids": [
+          "pub-035",
+          "pub-046"
+        ],
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "assessment": "related_or_lexically_similar_not_confirmed_duplicate",
+        "reason": "均反对过度追求单次完美；一个强调每篇持续练习，一个针对论文结构造成的拖延，保留独立来源与观点。",
+        "merge_recommended": false,
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "ids": [
+          "pub-041",
+          "pub-045"
+        ],
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "assessment": "related_or_lexically_similar_not_confirmed_duplicate",
+        "reason": "字符3gram诊断出现最高重叠，主要共享knowledge等词；一个讲丢代码丢知识，另一个讲读论文到知识边界，语义不同。",
+        "merge_recommended": false,
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      },
+      {
+        "ids": [
+          "pub-040",
+          "pub-046"
+        ],
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "assessment": "related_or_lexically_similar_not_confirmed_duplicate",
+        "reason": "字符2gram重叠最高但不相关：代码排障与完美论文结构导致拖延，英语常见字符组合不能判重。",
+        "merge_recommended": false,
+        "label_origin": "ai_assisted",
+        "review_status": "pending"
+      }
+    ],
+    "confirmed_semantic_duplicates": [],
+    "action": "不删除、不合并、不移动split；保留主题相邻性供后续真人审阅。"
+  },
+  "invariants": {
+    "database_modified": false,
+    "original_excerpt_modified": false,
+    "annotations_modified": false,
+    "formal_near_duplicate_parameters_modified": false,
+    "new_records": 0,
+    "removed_records": 0
+  },
+  "limitations": [
+    "字面近重复候选为空不能证明没有跨语言改写或其他语义重复。",
+    "短句诊断降低阈值只是敏感性检查，未改正式0.65/30字符阈值。",
+    "没有访问原页，不更新来源可用性、作者身份或授权状态。",
+    "所有AI意见保持ai_assisted/pending，未调用human复核入口。"
+  ]
+}

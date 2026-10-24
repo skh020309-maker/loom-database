@@ -1,0 +1,91 @@
+{
+  "checked_on": "2026-10-24",
+  "checked_at_utc": "2026-10-24T14:38:28.712883+00:00",
+  "status": "pass",
+  "database": {
+    "status": "ok",
+    "notes_checked": 50,
+    "errors": [],
+    "source_checks_checked": 50,
+    "checks": [
+      "integrity",
+      "foreign_keys",
+      "sha256",
+      "excerpt_length",
+      "source_provenance",
+      "content_origin",
+      "annotation_state",
+      "evidence_note",
+      "author_split_leakage",
+      "training_permission",
+      "source_check_contract"
+    ],
+    "scope_note": "离线结构校验；不代替网页原文比对或人工语义核验。"
+  },
+  "database_sha256": "b1a816dc97b386861d1b6ff6c524aacdde72ff8f7d5f4aa695ed52f11ab902e3",
+  "database_all_8_tables_unchanged": true,
+  "fixed_benchmark_unchanged": true,
+  "records": 50,
+  "csv_records": 50,
+  "csv_all_26_columns_match_json": true,
+  "csv_formula_prefix_policy_preserved": true,
+  "markdown_record_blocks": 50,
+  "markdown_ids_and_displayed_source_excerpt_summary_state_tags_match": true,
+  "html_embedded_payload_equals_json": true,
+  "json_records_equal_formal_database": true,
+  "source_checks": 50,
+  "mysql_tables": 8,
+  "mysql_rows": 591,
+  "mysql_all_fields_utf8_roundtrip_equal_sqlite": true,
+  "mysql_executed": false,
+  "mysql_export": {
+    "status": "ok",
+    "source": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\loom.db",
+    "output": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\exports\\mysql_seed.sql",
+    "row_counts": {
+      "sources": 50,
+      "notes": 50,
+      "annotations": 50,
+      "tags": 139,
+      "note_tags": 150,
+      "import_batches": 4,
+      "processing_logs": 98,
+      "source_checks": 50
+    },
+    "total_rows": 591,
+    "sql_sha256": "be6f0187a9102c5c558bcbb7db088244167ec3440cced68586e643b2028f3a69",
+    "mysql_executed": false,
+    "mysql_version_required": "8.0.29+",
+    "limitations": "SQL generated and locally checked only; import requires empty tables. Indexed URL/ID/tag length bounds are enforced; schema is not a live MySQL migration."
+  },
+  "quality": {
+    "critical": 0,
+    "warnings": 3,
+    "exact_duplicate_groups": 0,
+    "normalized_duplicate_groups": 0,
+    "near_duplicate_pairs": 0,
+    "short_excluded_count": 18
+  },
+  "retrieval": {
+    "benchmark_sha256": "3d9a292fb70c369ec53ff10ca689d4c69abcd877924361114029514e1729cd4c",
+    "corpus_searchable_sha256": "779bf4836b5a25c6432f7a907faa3824a9c06bb74b8513d00a142a1da2dd1f23",
+    "tracks_and_details_equal_oct23": true,
+    "full_query": {
+      "questions": 16,
+      "positive_questions": 14,
+      "negative_questions": 2,
+      "hit_at_5": 0.2857142857142857,
+      "mrr_at_5": 0.25,
+      "negative_false_return_rate": 0.0
+    },
+    "preset_keyword": {
+      "questions": 16,
+      "positive_questions": 14,
+      "negative_questions": 2,
+      "hit_at_5": 0.5714285714285714,
+      "mrr_at_5": 0.5714285714285714,
+      "negative_false_return_rate": 0.0
+    }
+  },
+  "unit_tests_not_rerun": "No repository code changed; prior 69 passing tests remain dated 2026-10-22."
+}

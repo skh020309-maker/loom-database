@@ -1,0 +1,760 @@
+{
+  "checked_on": "2026-10-24",
+  "timezone": "Asia/Shanghai",
+  "checked_at_utc": "2026-10-24T14:38:14.281111+00:00",
+  "status": "ok",
+  "scope": "Independent SQLite rebuild from four public-note seed batches, two source-audit files and two summary-revision files; no October 23 advisory sidecar imported.",
+  "formal_database": {
+    "path": "loom.db",
+    "sha256_before": "b1a816dc97b386861d1b6ff6c524aacdde72ff8f7d5f4aa695ed52f11ab902e3",
+    "sha256_after": "b1a816dc97b386861d1b6ff6c524aacdde72ff8f7d5f4aa695ed52f11ab902e3",
+    "unchanged": true
+  },
+  "temporary_database": {
+    "path": "backups/rebuild_2026-10-24_l8lmynym/rebuilt.db",
+    "included_in_release": false,
+    "deleted": false
+  },
+  "input_files": [
+    {
+      "path": "data/seed_public_notes.json",
+      "sha256": "42a1978d08900f4d9d5837c2c0eb06794c915d243e7714c72e85097666bb33ea"
+    },
+    {
+      "path": "data/2026-10-21_public_notes.json",
+      "sha256": "de235d09afa16005872d67053ba981c0a732d989ac9179184626c90a79f4993a"
+    },
+    {
+      "path": "data/2026-10-21_extra_zh_notes.json",
+      "sha256": "0bed9393a0845c3ad87a809686aa608fecb41e528dd01671fd8395e2fb989098"
+    },
+    {
+      "path": "data/2026-10-21_extra_mixed_notes.json",
+      "sha256": "6a96586d6e2265c4c56dff4a811e6f14ec6b07610a2d93fb18361f69ddfc012e"
+    },
+    {
+      "path": "data/source_audit_2026-10-21_zh.json",
+      "sha256": "f257d1682e53317e79858b120524bf5d5fa8818c4e1d190f27b17d6e1c86e892"
+    },
+    {
+      "path": "data/source_audit_2026-10-21_en.json",
+      "sha256": "7416d2be464f8c8992091f0af7c050d8796cf23ad477394363988f10a7c2cc16"
+    },
+    {
+      "path": "data/annotation_revision_2026-10-21_zh.json",
+      "sha256": "b76118764a820795cf006e5f09aeb555380d7dceb8328bca7a05d03e3f78bff4"
+    },
+    {
+      "path": "data/annotation_revision_2026-10-22_en.json",
+      "sha256": "4d665fc4aef76c3d6b27838ac1b49fdd3a1b502bec9556f406c2b13796ccf478"
+    }
+  ],
+  "first_rebuild": {
+    "note_imports": [
+      {
+        "path": "data/seed_public_notes.json",
+        "status": "ok",
+        "batch_id": 1,
+        "records": 12,
+        "inserted": 12,
+        "skipped": 0,
+        "glm_executed": false
+      },
+      {
+        "path": "data/2026-10-21_public_notes.json",
+        "status": "ok",
+        "batch_id": 2,
+        "records": 10,
+        "inserted": 10,
+        "skipped": 0,
+        "glm_executed": false
+      },
+      {
+        "path": "data/2026-10-21_extra_zh_notes.json",
+        "status": "ok",
+        "batch_id": 3,
+        "records": 12,
+        "inserted": 12,
+        "skipped": 0,
+        "glm_executed": false
+      },
+      {
+        "path": "data/2026-10-21_extra_mixed_notes.json",
+        "status": "ok",
+        "batch_id": 4,
+        "records": 16,
+        "inserted": 16,
+        "skipped": 0,
+        "glm_executed": false
+      }
+    ],
+    "source_audit_imports": [
+      {
+        "path": "data/source_audit_2026-10-21_zh.json",
+        "status": "ok",
+        "inserted": 22,
+        "skipped": 0,
+        "record_count": 22,
+        "annotations_modified": false,
+        "licenses_modified": false
+      },
+      {
+        "path": "data/source_audit_2026-10-21_en.json",
+        "status": "ok",
+        "inserted": 28,
+        "skipped": 0,
+        "record_count": 28,
+        "annotations_modified": false,
+        "licenses_modified": false
+      }
+    ],
+    "summary_revisions": [
+      {
+        "path": "data/annotation_revision_2026-10-21_zh.json",
+        "status": "ok",
+        "dry_run": false,
+        "records": 21,
+        "planned": 21,
+        "applied": 21,
+        "skipped": 0,
+        "revised_note_ids": [
+          "pub-008",
+          "pub-009",
+          "pub-010",
+          "pub-013",
+          "pub-015",
+          "pub-023",
+          "pub-024",
+          "pub-025",
+          "pub-026",
+          "pub-027",
+          "pub-028",
+          "pub-029",
+          "pub-030",
+          "pub-031",
+          "pub-032",
+          "pub-033",
+          "pub-034",
+          "pub-047",
+          "pub-048",
+          "pub-049",
+          "pub-050"
+        ],
+        "skipped_notes": [],
+        "log_ids": [
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71
+        ],
+        "source_revision_file": "annotation_revision_2026-10-21_zh.json",
+        "source_revision_sha256": "12160de5eb3d9808e56bb27c560e8882214ef4dcae4f07a438dcaa276c31f93e",
+        "input_file_sha256": "b76118764a820795cf006e5f09aeb555380d7dceb8328bca7a05d03e3f78bff4",
+        "source_revision_hash_method": "SHA-256 of validated records sorted by note_id, canonical JSON sort_keys=True/separators=(',',':')/ensure_ascii=False, UTF-8 without BOM; formatting, LF/CRLF outside strings and record order do not affect the hash",
+        "original_modified": false,
+        "glm_executed": false,
+        "scope": "仅 AI 辅助摘要修订，保持待人工复核；不改变分类、标签或 GLM 管线状态。"
+      },
+      {
+        "path": "data/annotation_revision_2026-10-22_en.json",
+        "status": "ok",
+        "dry_run": false,
+        "records": 27,
+        "planned": 27,
+        "applied": 27,
+        "skipped": 0,
+        "revised_note_ids": [
+          "pub-001",
+          "pub-002",
+          "pub-003",
+          "pub-004",
+          "pub-005",
+          "pub-006",
+          "pub-007",
+          "pub-011",
+          "pub-012",
+          "pub-016",
+          "pub-017",
+          "pub-018",
+          "pub-019",
+          "pub-020",
+          "pub-021",
+          "pub-022",
+          "pub-035",
+          "pub-036",
+          "pub-037",
+          "pub-038",
+          "pub-039",
+          "pub-041",
+          "pub-042",
+          "pub-043",
+          "pub-044",
+          "pub-045",
+          "pub-046"
+        ],
+        "skipped_notes": [],
+        "log_ids": [
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98
+        ],
+        "source_revision_file": "annotation_revision_2026-10-22_en.json",
+        "source_revision_sha256": "95d195dc859064d0c8742a42fed9e4c1c5801551ea046d46d1ae4e99b5589329",
+        "input_file_sha256": "4d665fc4aef76c3d6b27838ac1b49fdd3a1b502bec9556f406c2b13796ccf478",
+        "source_revision_hash_method": "SHA-256 of validated records sorted by note_id, canonical JSON sort_keys=True/separators=(',',':')/ensure_ascii=False, UTF-8 without BOM; formatting, LF/CRLF outside strings and record order do not affect the hash",
+        "original_modified": false,
+        "glm_executed": false,
+        "scope": "仅 AI 辅助摘要修订，保持待人工复核；不改变分类、标签或 GLM 管线状态。"
+      }
+    ],
+    "check": {
+      "status": "ok",
+      "notes_checked": 50,
+      "errors": [],
+      "source_checks_checked": 50,
+      "checks": [
+        "integrity",
+        "foreign_keys",
+        "sha256",
+        "excerpt_length",
+        "source_provenance",
+        "content_origin",
+        "annotation_state",
+        "evidence_note",
+        "author_split_leakage",
+        "training_permission",
+        "source_check_contract"
+      ],
+      "scope_note": "离线结构校验；不代替网页原文比对或人工语义核验。"
+    },
+    "table_counts": {
+      "annotations": 50,
+      "import_batches": 4,
+      "note_tags": 150,
+      "notes": 50,
+      "processing_logs": 98,
+      "source_checks": 50,
+      "sources": 50,
+      "tags": 139
+    },
+    "total_rows": 591
+  },
+  "comparison": {
+    "note_records_compared": 50,
+    "full_export_records_equal": false,
+    "business_export_records_equal": true,
+    "excluded_export_paths": [
+      "created_at",
+      "updated_at",
+      "annotation.updated_at",
+      "source_check.created_at"
+    ],
+    "exclusion_reason": "These timestamps record actual first insertion or revision application. Replaying on October 24 must not impersonate the original October 20-22 execution dates. No content, author, source, excerpt locator, collected date, review state, category, tag, split, training permission, revision details, or ID was excluded.",
+    "business_records_sha256_formal": "c63611da36a13b7bff432a09899c6efb1596bb7eddc3eca90e6c9ded4953ffba",
+    "business_records_sha256_rebuilt": "c63611da36a13b7bff432a09899c6efb1596bb7eddc3eca90e6c9ded4953ffba",
+    "source_check_records_compared": 50,
+    "source_check_logical_fields": [
+      "id",
+      "source_id",
+      "note_id",
+      "checked_on",
+      "checker_type",
+      "fetch_status",
+      "excerpt_status",
+      "author_check",
+      "license_check",
+      "license_evidence_url",
+      "notes",
+      "method"
+    ],
+    "source_check_logical_values_equal": true,
+    "table_checks": {
+      "annotations": {
+        "formal_rows": 50,
+        "rebuilt_rows": 50,
+        "full_values_equal": false,
+        "semantic_values_equal": true,
+        "excluded_fields": [
+          "updated_at"
+        ],
+        "different_field_row_counts": {
+          "updated_at": 50
+        },
+        "semantic_sha256_formal": "3880d07e0ae3babbfdf12589a254511045aa78a609abff2c39107c3f4fb4332f",
+        "semantic_sha256_rebuilt": "3880d07e0ae3babbfdf12589a254511045aa78a609abff2c39107c3f4fb4332f"
+      },
+      "import_batches": {
+        "formal_rows": 4,
+        "rebuilt_rows": 4,
+        "full_values_equal": false,
+        "semantic_values_equal": true,
+        "excluded_fields": [
+          "created_at"
+        ],
+        "different_field_row_counts": {
+          "created_at": 4
+        },
+        "semantic_sha256_formal": "9443978d4dace58f42414e1f400ac643bef635e155be3fa51f1b6ec76d0fc291",
+        "semantic_sha256_rebuilt": "9443978d4dace58f42414e1f400ac643bef635e155be3fa51f1b6ec76d0fc291"
+      },
+      "note_tags": {
+        "formal_rows": 150,
+        "rebuilt_rows": 150,
+        "full_values_equal": true,
+        "semantic_values_equal": true,
+        "excluded_fields": [],
+        "different_field_row_counts": {},
+        "semantic_sha256_formal": "df07e85d249f91c0579d7730f508bfb49bb9246b52e149ad5b1ff12dfc190804",
+        "semantic_sha256_rebuilt": "df07e85d249f91c0579d7730f508bfb49bb9246b52e149ad5b1ff12dfc190804"
+      },
+      "notes": {
+        "formal_rows": 50,
+        "rebuilt_rows": 50,
+        "full_values_equal": false,
+        "semantic_values_equal": true,
+        "excluded_fields": [
+          "created_at"
+        ],
+        "different_field_row_counts": {
+          "created_at": 50
+        },
+        "semantic_sha256_formal": "798ddf4ce078173ec02f96774ec42f3bfaf65882851feb48e4a00ce047401afe",
+        "semantic_sha256_rebuilt": "798ddf4ce078173ec02f96774ec42f3bfaf65882851feb48e4a00ce047401afe"
+      },
+      "processing_logs": {
+        "formal_rows": 98,
+        "rebuilt_rows": 98,
+        "full_values_equal": false,
+        "semantic_values_equal": true,
+        "excluded_fields": [
+          "created_at"
+        ],
+        "different_field_row_counts": {
+          "created_at": 98
+        },
+        "semantic_sha256_formal": "5ac9771d9c53e109af5b3ad9d7eacdb47635b89bab64db76e307f47f62d882f8",
+        "semantic_sha256_rebuilt": "5ac9771d9c53e109af5b3ad9d7eacdb47635b89bab64db76e307f47f62d882f8"
+      },
+      "source_checks": {
+        "formal_rows": 50,
+        "rebuilt_rows": 50,
+        "full_values_equal": false,
+        "semantic_values_equal": true,
+        "excluded_fields": [
+          "created_at"
+        ],
+        "different_field_row_counts": {
+          "created_at": 50
+        },
+        "semantic_sha256_formal": "8b38c10c7e9da58a6e030911a7b05e26afc3da5f685ef488252d8c1d9590de48",
+        "semantic_sha256_rebuilt": "8b38c10c7e9da58a6e030911a7b05e26afc3da5f685ef488252d8c1d9590de48"
+      },
+      "sources": {
+        "formal_rows": 50,
+        "rebuilt_rows": 50,
+        "full_values_equal": false,
+        "semantic_values_equal": true,
+        "excluded_fields": [
+          "created_at"
+        ],
+        "different_field_row_counts": {
+          "created_at": 50
+        },
+        "semantic_sha256_formal": "f72a4fcc71d6fc8601ada0e310e0dc8e19d55e1d527662a55c981fdfe47d76e1",
+        "semantic_sha256_rebuilt": "f72a4fcc71d6fc8601ada0e310e0dc8e19d55e1d527662a55c981fdfe47d76e1"
+      },
+      "tags": {
+        "formal_rows": 139,
+        "rebuilt_rows": 139,
+        "full_values_equal": true,
+        "semantic_values_equal": true,
+        "excluded_fields": [],
+        "different_field_row_counts": {},
+        "semantic_sha256_formal": "136c94372cdd75ddd9d8cbb66860720950a14032c69732d4f25d0c052eab85dc",
+        "semantic_sha256_rebuilt": "136c94372cdd75ddd9d8cbb66860720950a14032c69732d4f25d0c052eab85dc"
+      }
+    },
+    "unexpected_content_differences": [],
+    "byte_identical_database_claimed": false
+  },
+  "idempotent_replay": {
+    "note_imports": [
+      {
+        "path": "data/seed_public_notes.json",
+        "status": "ok",
+        "batch_id": 5,
+        "records": 12,
+        "inserted": 0,
+        "skipped": 12,
+        "glm_executed": false
+      },
+      {
+        "path": "data/2026-10-21_public_notes.json",
+        "status": "ok",
+        "batch_id": 6,
+        "records": 10,
+        "inserted": 0,
+        "skipped": 10,
+        "glm_executed": false
+      },
+      {
+        "path": "data/2026-10-21_extra_zh_notes.json",
+        "status": "ok",
+        "batch_id": 7,
+        "records": 12,
+        "inserted": 0,
+        "skipped": 12,
+        "glm_executed": false
+      },
+      {
+        "path": "data/2026-10-21_extra_mixed_notes.json",
+        "status": "ok",
+        "batch_id": 8,
+        "records": 16,
+        "inserted": 0,
+        "skipped": 16,
+        "glm_executed": false
+      }
+    ],
+    "source_audit_imports": [
+      {
+        "path": "data/source_audit_2026-10-21_zh.json",
+        "status": "ok",
+        "inserted": 0,
+        "skipped": 22,
+        "record_count": 22,
+        "annotations_modified": false,
+        "licenses_modified": false
+      },
+      {
+        "path": "data/source_audit_2026-10-21_en.json",
+        "status": "ok",
+        "inserted": 0,
+        "skipped": 28,
+        "record_count": 28,
+        "annotations_modified": false,
+        "licenses_modified": false
+      }
+    ],
+    "summary_revisions": [
+      {
+        "path": "data/annotation_revision_2026-10-21_zh.json",
+        "status": "ok",
+        "dry_run": false,
+        "records": 21,
+        "planned": 0,
+        "applied": 0,
+        "skipped": 21,
+        "revised_note_ids": [],
+        "skipped_notes": [
+          {
+            "note_id": "pub-008",
+            "existing_log_id": 51
+          },
+          {
+            "note_id": "pub-009",
+            "existing_log_id": 52
+          },
+          {
+            "note_id": "pub-010",
+            "existing_log_id": 53
+          },
+          {
+            "note_id": "pub-013",
+            "existing_log_id": 54
+          },
+          {
+            "note_id": "pub-015",
+            "existing_log_id": 55
+          },
+          {
+            "note_id": "pub-023",
+            "existing_log_id": 56
+          },
+          {
+            "note_id": "pub-024",
+            "existing_log_id": 57
+          },
+          {
+            "note_id": "pub-025",
+            "existing_log_id": 58
+          },
+          {
+            "note_id": "pub-026",
+            "existing_log_id": 59
+          },
+          {
+            "note_id": "pub-027",
+            "existing_log_id": 60
+          },
+          {
+            "note_id": "pub-028",
+            "existing_log_id": 61
+          },
+          {
+            "note_id": "pub-029",
+            "existing_log_id": 62
+          },
+          {
+            "note_id": "pub-030",
+            "existing_log_id": 63
+          },
+          {
+            "note_id": "pub-031",
+            "existing_log_id": 64
+          },
+          {
+            "note_id": "pub-032",
+            "existing_log_id": 65
+          },
+          {
+            "note_id": "pub-033",
+            "existing_log_id": 66
+          },
+          {
+            "note_id": "pub-034",
+            "existing_log_id": 67
+          },
+          {
+            "note_id": "pub-047",
+            "existing_log_id": 68
+          },
+          {
+            "note_id": "pub-048",
+            "existing_log_id": 69
+          },
+          {
+            "note_id": "pub-049",
+            "existing_log_id": 70
+          },
+          {
+            "note_id": "pub-050",
+            "existing_log_id": 71
+          }
+        ],
+        "log_ids": [],
+        "source_revision_file": "annotation_revision_2026-10-21_zh.json",
+        "source_revision_sha256": "12160de5eb3d9808e56bb27c560e8882214ef4dcae4f07a438dcaa276c31f93e",
+        "input_file_sha256": "b76118764a820795cf006e5f09aeb555380d7dceb8328bca7a05d03e3f78bff4",
+        "source_revision_hash_method": "SHA-256 of validated records sorted by note_id, canonical JSON sort_keys=True/separators=(',',':')/ensure_ascii=False, UTF-8 without BOM; formatting, LF/CRLF outside strings and record order do not affect the hash",
+        "original_modified": false,
+        "glm_executed": false,
+        "scope": "仅 AI 辅助摘要修订，保持待人工复核；不改变分类、标签或 GLM 管线状态。"
+      },
+      {
+        "path": "data/annotation_revision_2026-10-22_en.json",
+        "status": "ok",
+        "dry_run": false,
+        "records": 27,
+        "planned": 0,
+        "applied": 0,
+        "skipped": 27,
+        "revised_note_ids": [],
+        "skipped_notes": [
+          {
+            "note_id": "pub-001",
+            "existing_log_id": 72
+          },
+          {
+            "note_id": "pub-002",
+            "existing_log_id": 73
+          },
+          {
+            "note_id": "pub-003",
+            "existing_log_id": 74
+          },
+          {
+            "note_id": "pub-004",
+            "existing_log_id": 75
+          },
+          {
+            "note_id": "pub-005",
+            "existing_log_id": 76
+          },
+          {
+            "note_id": "pub-006",
+            "existing_log_id": 77
+          },
+          {
+            "note_id": "pub-007",
+            "existing_log_id": 78
+          },
+          {
+            "note_id": "pub-011",
+            "existing_log_id": 79
+          },
+          {
+            "note_id": "pub-012",
+            "existing_log_id": 80
+          },
+          {
+            "note_id": "pub-016",
+            "existing_log_id": 81
+          },
+          {
+            "note_id": "pub-017",
+            "existing_log_id": 82
+          },
+          {
+            "note_id": "pub-018",
+            "existing_log_id": 83
+          },
+          {
+            "note_id": "pub-019",
+            "existing_log_id": 84
+          },
+          {
+            "note_id": "pub-020",
+            "existing_log_id": 85
+          },
+          {
+            "note_id": "pub-021",
+            "existing_log_id": 86
+          },
+          {
+            "note_id": "pub-022",
+            "existing_log_id": 87
+          },
+          {
+            "note_id": "pub-035",
+            "existing_log_id": 88
+          },
+          {
+            "note_id": "pub-036",
+            "existing_log_id": 89
+          },
+          {
+            "note_id": "pub-037",
+            "existing_log_id": 90
+          },
+          {
+            "note_id": "pub-038",
+            "existing_log_id": 91
+          },
+          {
+            "note_id": "pub-039",
+            "existing_log_id": 92
+          },
+          {
+            "note_id": "pub-041",
+            "existing_log_id": 93
+          },
+          {
+            "note_id": "pub-042",
+            "existing_log_id": 94
+          },
+          {
+            "note_id": "pub-043",
+            "existing_log_id": 95
+          },
+          {
+            "note_id": "pub-044",
+            "existing_log_id": 96
+          },
+          {
+            "note_id": "pub-045",
+            "existing_log_id": 97
+          },
+          {
+            "note_id": "pub-046",
+            "existing_log_id": 98
+          }
+        ],
+        "log_ids": [],
+        "source_revision_file": "annotation_revision_2026-10-22_en.json",
+        "source_revision_sha256": "95d195dc859064d0c8742a42fed9e4c1c5801551ea046d46d1ae4e99b5589329",
+        "input_file_sha256": "4d665fc4aef76c3d6b27838ac1b49fdd3a1b502bec9556f406c2b13796ccf478",
+        "source_revision_hash_method": "SHA-256 of validated records sorted by note_id, canonical JSON sort_keys=True/separators=(',',':')/ensure_ascii=False, UTF-8 without BOM; formatting, LF/CRLF outside strings and record order do not affect the hash",
+        "original_modified": false,
+        "glm_executed": false,
+        "scope": "仅 AI 辅助摘要修订，保持待人工复核；不改变分类、标签或 GLM 管线状态。"
+      }
+    ],
+    "new_notes": 0,
+    "skipped_notes": 50,
+    "new_source_checks": 0,
+    "skipped_source_checks": 50,
+    "applied_summary_revisions": 0,
+    "skipped_summary_revisions": 48,
+    "export_records_unchanged": true,
+    "table_row_deltas": {
+      "annotations": 0,
+      "import_batches": 4,
+      "note_tags": 0,
+      "notes": 0,
+      "processing_logs": 0,
+      "source_checks": 0,
+      "sources": 0,
+      "tags": 0
+    },
+    "audit_batch_rows_added": 4,
+    "audit_batch_note": "manage.import_records intentionally records each import attempt, including all-skipped attempts, in import_batches. These four new audit rows exist only in the temporary rebuilt database; they are not duplicate notes or changes to formal loom.db.",
+    "check": {
+      "status": "ok",
+      "notes_checked": 50,
+      "errors": [],
+      "source_checks_checked": 50,
+      "checks": [
+        "integrity",
+        "foreign_keys",
+        "sha256",
+        "excerpt_length",
+        "source_provenance",
+        "content_origin",
+        "annotation_state",
+        "evidence_note",
+        "author_split_leakage",
+        "training_permission",
+        "source_check_contract"
+      ],
+      "scope_note": "离线结构校验；不代替网页原文比对或人工语义核验。"
+    }
+  },
+  "limitations": [
+    "Data-rebuild acceptance only; no code changed and the 69-test suite was not rerun.",
+    "This check does not verify live MySQL, Redis, GLM/ASR, semantic search, Docker or Android/device behavior.",
+    "AI-assisted annotations remain pending; reconstruction is not human semantic verification.",
+    "Source-audit dates and reachability are replayed historical evidence, not new web visits."
+  ]
+}

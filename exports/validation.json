@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-10-23",
+  "checked_on": "2026-10-24",
   "timezone": "Asia/Shanghai",
   "database": {
     "status": "ok",
@@ -44,7 +44,8 @@
     "checked_on": "2026-10-22",
     "command": "python -m unittest discover -s tests -v",
     "scope": "导入/原文保护/标注复核/检索/来源核查/质量审计/摘要修订整批回滚与人工保护及规范哈希幂等",
-    "not_rerun_on_2026_10_23": "No code changes; actual passing test run remains 2026-10-22."
+    "not_rerun_on_2026_10_23": "No code changes; actual passing test run remains 2026-10-22.",
+    "not_rerun_on_2026_10_24": "No repository code changes; actual prior 69-test passing run remains 2026-10-22. Independent rebuild and data checks are recorded separately."
   },
   "browser_checks": {
     "checked_on": "2026-10-22",
@@ -84,10 +85,12 @@
     },
     "details": "exports/retrieval_eval.json",
     "comparison": "exports/summary_revision_retrieval_comparison.json",
-    "daily_snapshot": "exports/retrieval_eval_2026-10-23.json"
+    "daily_snapshot": "exports/retrieval_eval_2026-10-24.json"
   },
   "mysql_export": {
     "status": "ok",
+    "source": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\loom.db",
+    "output": "C:\\Users\\38386\\Desktop\\人工智能综合实验\\loom-database\\exports\\mysql_seed.sql",
     "row_counts": {
       "sources": 50,
       "notes": 50,
@@ -102,6 +105,7 @@
     "sql_sha256": "be6f0187a9102c5c558bcbb7db088244167ec3440cced68586e643b2028f3a69",
     "mysql_executed": false,
     "mysql_version_required": "8.0.29+",
+    "limitations": "SQL generated and locally checked only; import requires empty tables. Indexed URL/ID/tag length bounds are enforced; schema is not a live MySQL migration.",
     "all_field_values_roundtrip_checked": true
   },
   "mysql_live_tested": false,
@@ -148,7 +152,8 @@
     "critical_issue_count": 0,
     "warning_count": 3,
     "near_duplicate_candidate_count": 0,
-    "details": "exports/data_quality.json"
+    "details": "exports/data_quality.json",
+    "checked_on": "2026-10-24"
   },
   "summary_revision": {
     "applied_on": "2026-10-22",
@@ -196,7 +201,11 @@
     "mysql_tables": 8,
     "mysql_rows": 591,
     "mysql_live_executed": false,
-    "mysql_all_field_values_roundtrip_checked": true
+    "mysql_all_field_values_roundtrip_checked": true,
+    "csv_all_26_columns_match_json": true,
+    "markdown_displayed_fields_checked_per_record": true,
+    "json_records_equal_formal_database": true,
+    "checked_on": "2026-10-24"
   },
   "candidate_audit": {
     "checked_on": "2026-10-23",
@@ -245,5 +254,37 @@
       "retrieval": "exports/retrieval_label_audit.json",
       "report": "docs/候选检索与标注审查_2026-10-23.md"
     }
+  },
+  "freeze_candidate": {
+    "id": "rc-20261024-v1",
+    "checked_on": "2026-10-24",
+    "status": "frozen_research_candidate_with_known_limitations",
+    "manifest": "exports/freeze_manifest_2026-10-24.json",
+    "package": "dist/Loom数据库_2026-10-24_冻结候选版.zip",
+    "new_notes": 0,
+    "database_modified": false,
+    "human_verified": 0,
+    "training_allowed": false,
+    "default_near_duplicate_eligible_notes": 32,
+    "default_near_duplicate_pairs": 496,
+    "default_short_excluded_notes": 18,
+    "default_near_duplicate_candidates": 0,
+    "all_length_diagnostic_pairs": 1225,
+    "diagnostic_low_threshold_candidates": 1,
+    "author_split_leakage": 0,
+    "source_document_split_leakage": 0,
+    "audit_consistency_checks_passed": 22,
+    "independent_rebuild_business_equal": true,
+    "independent_rebuild_byte_identical": false,
+    "temporary_replay_audit_batch_rows_added": 4,
+    "reports": [
+      "data/freeze_group_audit_2026-10-24.json",
+      "exports/freeze_export_validation_2026-10-24.json",
+      "exports/rebuild_validation_2026-10-24.json",
+      "exports/freeze_audit_consistency_2026-10-24.json"
+    ],
+    "unit_tests_rerun": false,
+    "web_source_recheck_performed": false,
+    "integrations_verified": []
   }
 }
