@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-10-24",
+  "checked_on": "2026-10-25",
   "timezone": "Asia/Shanghai",
   "database": {
     "status": "ok",
@@ -45,7 +45,8 @@
     "command": "python -m unittest discover -s tests -v",
     "scope": "导入/原文保护/标注复核/检索/来源核查/质量审计/摘要修订整批回滚与人工保护及规范哈希幂等",
     "not_rerun_on_2026_10_23": "No code changes; actual passing test run remains 2026-10-22.",
-    "not_rerun_on_2026_10_24": "No repository code changes; actual prior 69-test passing run remains 2026-10-22. Independent rebuild and data checks are recorded separately."
+    "not_rerun_on_2026_10_24": "No repository code changes; actual prior 69-test passing run remains 2026-10-22. Independent rebuild and data checks are recorded separately.",
+    "not_rerun_on_2026_10_25": "No code changes; actual 69-test passing run remains 2026-10-22; final data and candidate checks are separate evidence."
   },
   "browser_checks": {
     "checked_on": "2026-10-22",
@@ -85,7 +86,7 @@
     },
     "details": "exports/retrieval_eval.json",
     "comparison": "exports/summary_revision_retrieval_comparison.json",
-    "daily_snapshot": "exports/retrieval_eval_2026-10-24.json"
+    "daily_snapshot": "exports/retrieval_eval_2026-10-25.json"
   },
   "mysql_export": {
     "status": "ok",
@@ -153,7 +154,7 @@
     "warning_count": 3,
     "near_duplicate_candidate_count": 0,
     "details": "exports/data_quality.json",
-    "checked_on": "2026-10-24"
+    "checked_on": "2026-10-25"
   },
   "summary_revision": {
     "applied_on": "2026-10-22",
@@ -205,7 +206,7 @@
     "csv_all_26_columns_match_json": true,
     "markdown_displayed_fields_checked_per_record": true,
     "json_records_equal_formal_database": true,
-    "checked_on": "2026-10-24"
+    "checked_on": "2026-10-25"
   },
   "candidate_audit": {
     "checked_on": "2026-10-23",
@@ -286,5 +287,25 @@
     "unit_tests_rerun": false,
     "web_source_recheck_performed": false,
     "integrations_verified": []
+  },
+  "final_delivery": {
+    "version": "final-20261025-v1",
+    "status": "research_data_delivery_complete_with_known_limits",
+    "candidate_comparison_passed": 18,
+    "candidate_protected_files_equal": 40,
+    "database_unchanged": true,
+    "records_unchanged": true,
+    "final_report": "docs/最终交付_2026-10-25.md",
+    "final_manifest": "exports/final_manifest_2026-10-25.json",
+    "final_archive": "dist/Loom数据库_2026-10-25_最终交付版.zip",
+    "unit_tests_rerun_today": false,
+    "automation_id": "loom-10-25",
+    "automation_status": "deleted",
+    "reports": [
+      "exports/final_statistics_2026-10-25.json",
+      "exports/final_candidate_comparison_2026-10-25.json",
+      "exports/final_export_validation_2026-10-25.json",
+      "exports/final_completion_2026-10-25.json"
+    ]
   }
 }

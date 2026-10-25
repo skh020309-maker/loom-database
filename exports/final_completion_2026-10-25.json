@@ -1,0 +1,25 @@
+{
+  "version": "final-20261025-v1",
+  "recorded_at_utc": "2026-10-25T14:42:16.578263+00:00",
+  "completed_on": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "status": "research_data_delivery_complete_with_known_limits",
+  "notes": 50,
+  "authors": 23,
+  "new_notes_today": 0,
+  "database_modified_today": false,
+  "human_gold_count": 0,
+  "all_annotations_ai_assisted_pending": true,
+  "all_training_allowed_zero": true,
+  "automation": {
+    "id": "loom-10-25",
+    "status": "deleted",
+    "deletion_confirmed_by_app_tool": true,
+    "further_scheduled_collection": false,
+    "project_files_retained": true
+  },
+  "final_report": "docs/最终交付_2026-10-25.md",
+  "final_archive": "dist/Loom数据库_2026-10-25_最终交付版.zip",
+  "final_manifest": "exports/final_manifest_2026-10-25.json",
+  "no_production_or_human_gold_claim": true
+}

@@ -1,0 +1,188 @@
+{
+  "checked_on": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "generated_at_utc": "2026-10-25T14:32:47.475159+00:00",
+  "scope": "Final read-only statistics of sourced public excerpts; no new collection or human verification.",
+  "notes": 50,
+  "external_authors": 23,
+  "sources": 50,
+  "language": {
+    "en": 28,
+    "zh": 22
+  },
+  "category": {
+    "event": 4,
+    "idea": 20,
+    "note": 17,
+    "question": 9
+  },
+  "split": {
+    "dev": 37,
+    "test": 13
+  },
+  "retrieved_on": {
+    "2026-10-20": 12,
+    "2026-10-21": 38
+  },
+  "summary_origin": {
+    "ai_assisted": 50
+  },
+  "review_status": {
+    "pending": 50
+  },
+  "pipeline_status": {
+    "not_run": 50
+  },
+  "training_allowed": {
+    "0": 50
+  },
+  "human_gold_count": 0,
+  "source_license_snapshot": {
+    "open": 12,
+    "unknown": 38
+  },
+  "historical_source_checks": {
+    "records": 50,
+    "checked_on": {
+      "2026-10-21": 50
+    },
+    "fetch_status": {
+      "accessible": 49,
+      "unavailable": 1
+    },
+    "excerpt_status": {
+      "exact": 47,
+      "normalized_match": 2,
+      "not_checked": 1
+    },
+    "author_check": {
+      "confirmed": 49,
+      "not_checked": 1
+    },
+    "license_check": {
+      "not_confirmed": 35,
+      "confirmed": 14,
+      "not_checked": 1
+    },
+    "new_confirmed_license_ids_without_rewriting_source_snapshot": [
+      "pub-031",
+      "pub-032"
+    ],
+    "no_web_sources_revisited_today": true,
+    "last_limited_recheck_documented_on": "2026-10-22"
+  },
+  "tables": {
+    "sources": 50,
+    "notes": 50,
+    "annotations": 50,
+    "tags": 139,
+    "note_tags": 150,
+    "import_batches": 4,
+    "processing_logs": 98,
+    "source_checks": 50
+  },
+  "total_table_rows": 591,
+  "processing_log_types": [
+    {
+      "process_type": "annotation",
+      "status": "succeeded",
+      "count": 48
+    },
+    {
+      "process_type": "import",
+      "status": "succeeded",
+      "count": 50
+    }
+  ],
+  "summary_revision": {
+    "applied_on": "2026-10-22",
+    "applied": 48,
+    "unchanged": 2,
+    "ai_assisted_only": true
+  },
+  "annotation_scope_review": {
+    "notes": 50,
+    "categories": {
+      "context_dependent": 3,
+      "ambiguous": 19,
+      "supported": 28
+    },
+    "tags": 150,
+    "tag_assessments": {
+      "context_dependent": 77,
+      "supported": 65,
+      "ambiguous": 8
+    },
+    "notes_with_context_dependent_tags": 45,
+    "notes_with_non_supported_tags": 46
+  },
+  "retrieval_audit": {
+    "questions": 16,
+    "question_note_pairs": 800,
+    "missing_document_candidates": [
+      {
+        "question_id": "ret-011",
+        "note_ids": [
+          "pub-011",
+          "pub-020"
+        ]
+      }
+    ],
+    "candidate_labels_applied": false,
+    "fixed_benchmark_changed": false,
+    "excerpt_only_sufficient_positive_questions": [
+      "ret-002",
+      "ret-003"
+    ]
+  },
+  "actual_sql_like_baseline": {
+    "full_query": {
+      "questions": 16,
+      "positive_questions": 14,
+      "negative_questions": 2,
+      "hit_at_5": 0.2857142857142857,
+      "mrr_at_5": 0.25,
+      "negative_false_return_rate": 0.0
+    },
+    "preset_keyword": {
+      "questions": 16,
+      "positive_questions": 14,
+      "negative_questions": 2,
+      "hit_at_5": 0.5714285714285714,
+      "mrr_at_5": 0.5714285714285714,
+      "negative_false_return_rate": 0.0
+    }
+  },
+  "quality": {
+    "critical": 0,
+    "warnings": 3,
+    "author_split_leakage": 0,
+    "source_document_split_leakage": 0,
+    "exact_duplicates": 0,
+    "normalized_duplicate_candidates": 0,
+    "default_near_duplicate_candidates": 0,
+    "short_excluded_count": 18
+  },
+  "test_evidence": {
+    "unit_tests": 69,
+    "unit_tests_actual_passed_on": "2026-10-22",
+    "unit_tests_rerun_today": false,
+    "oct24_advisory_mechanical_checks": 22,
+    "oct24_independent_rebuild_business_equal": true,
+    "oct25_candidate_archive_comparison_checks": 18,
+    "do_not_sum_as_new_unit_tests": true
+  },
+  "known_gaps": [
+    "All annotations remain ai_assisted/pending; human gold count zero.",
+    "pub-021 has no successful original-page recheck in existing historical evidence.",
+    "38 source snapshot licenses unknown; later license evidence kept separately; all training_allowed=0.",
+    "77 tags context-dependent and 8 ambiguous; review suggestions not applied.",
+    "ret-011 has two omitted document candidates; fixed labels stay pending and metrics are diagnostic.",
+    "No authorized student shorthand, voice/OCR or same-user longitudinal input.",
+    "No verified live MySQL, GLM, Redis, semantic retrieval or end-to-end App integration for this research corpus.",
+    "One raw 25-record annotation audit lacks an independent input byte hash; merged content checks remain valid."
+  ],
+  "qualitative_coverage_note": "Content favors knowledge management, writing and programming; not representative user behavior. Four university-project references are separate from the 50 notes.",
+  "database_sha256": "b1a816dc97b386861d1b6ff6c524aacdde72ff8f7d5f4aa695ed52f11ab902e3",
+  "database_modified_today": false
+}

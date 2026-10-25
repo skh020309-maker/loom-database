@@ -1,0 +1,528 @@
+{
+  "version": "final-20261025-v1",
+  "status": "research_data_delivery_complete_with_known_limits",
+  "completed_on": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "generated_at_utc": "2026-10-25T14:42:17.000778+00:00",
+  "base_commit": "3bdbee5a8b05a91bfaf66077b1409ca98dab8b70",
+  "archive_name": "Loom数据库_2026-10-25_最终交付版.zip",
+  "scope": "Final public-excerpt research delivery; pending AI labels and explicit rights/integration limits.",
+  "verification_policy": "Use this final manifest and this archive SHA256SUMS for final files. The October 24 freeze manifest applies only to its preserved candidate archive in reference/. This manifest excludes itself and the final ZIP; SHA256SUMS covers this manifest.",
+  "fingerprints": {
+    "database_sha256": "b1a816dc97b386861d1b6ff6c524aacdde72ff8f7d5f4aa695ed52f11ab902e3",
+    "fixed_benchmark_sha256": "3d9a292fb70c369ec53ff10ca689d4c69abcd877924361114029514e1729cd4c",
+    "all_exported_records_canonical_sha256": "488c235a2e898ffd5f0d20416b3ff120be435a264795fbce16aa255959bc8435",
+    "canonical_method": "SHA256 of UTF-8 json.dumps(notes,ensure_ascii=False,sort_keys=True,separators=(comma,colon)), notes in ID order, no export metadata.",
+    "searchable_corpus_sha256": "779bf4836b5a25c6432f7a907faa3824a9c06bb74b8513d00a142a1da2dd1f23"
+  },
+  "statistics_file": "exports/final_statistics_2026-10-25.json",
+  "counts": {
+    "notes": 50,
+    "authors": 23,
+    "sources": 50,
+    "language": {
+      "en": 28,
+      "zh": 22
+    },
+    "category": {
+      "event": 4,
+      "idea": 20,
+      "note": 17,
+      "question": 9
+    },
+    "split": {
+      "dev": 37,
+      "test": 13
+    },
+    "human_gold": 0,
+    "ai_assisted_pending": 50,
+    "training_allowed": 0,
+    "tables": 8,
+    "table_rows": 591
+  },
+  "test_and_validation": {
+    "unit_tests": 69,
+    "unit_tests_actual_passed_on": "2026-10-22",
+    "unit_tests_rerun_today": false,
+    "oct24_advisory_mechanical_checks": 22,
+    "oct24_independent_rebuild_business_equal": true,
+    "oct25_candidate_archive_comparison_checks": 18,
+    "do_not_sum_as_new_unit_tests": true
+  },
+  "automation": {
+    "id": "loom-10-25",
+    "status": "deleted",
+    "deletion_confirmed_by_app_tool": true,
+    "further_scheduled_collection": false,
+    "project_files_retained": true
+  },
+  "limitations": [
+    "All annotations remain ai_assisted/pending; human gold count zero.",
+    "pub-021 has no successful original-page recheck in existing historical evidence.",
+    "38 source snapshot licenses unknown; later license evidence kept separately; all training_allowed=0.",
+    "77 tags context-dependent and 8 ambiguous; review suggestions not applied.",
+    "ret-011 has two omitted document candidates; fixed labels stay pending and metrics are diagnostic.",
+    "No authorized student shorthand, voice/OCR or same-user longitudinal input.",
+    "No verified live MySQL, GLM, Redis, semantic retrieval or end-to-end App integration for this research corpus.",
+    "One raw 25-record annotation audit lacks an independent input byte hash; merged content checks remain valid."
+  ],
+  "files_excluding_this_manifest": 76,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 144,
+      "sha256": "2b209e052736fbc6684809e9ffe3aa3bb7b3cc7cabc7ae5dd214cede5b3fb102",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "README.md",
+      "bytes": 13263,
+      "sha256": "a2e8e709ab3b9de0d145379ce55323b597032caa7d2b2c9545df290cce99fa9d",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "data/2026-10-21_extra_mixed_notes.json",
+      "bytes": 24451,
+      "sha256": "6a96586d6e2265c4c56dff4a811e6f14ec6b07610a2d93fb18361f69ddfc012e",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "data/2026-10-21_extra_zh_notes.json",
+      "bytes": 18167,
+      "sha256": "0bed9393a0845c3ad87a809686aa608fecb41e528dd01671fd8395e2fb989098",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "data/2026-10-21_public_notes.json",
+      "bytes": 14989,
+      "sha256": "de235d09afa16005872d67053ba981c0a732d989ac9179184626c90a79f4993a",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "data/annotation_revision_2026-10-21_zh.json",
+      "bytes": 13351,
+      "sha256": "b76118764a820795cf006e5f09aeb555380d7dceb8328bca7a05d03e3f78bff4",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "data/annotation_revision_2026-10-22_en.json",
+      "bytes": 16839,
+      "sha256": "4d665fc4aef76c3d6b27838ac1b49fdd3a1b502bec9556f406c2b13796ccf478",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "data/annotation_scope_audit_2026-10-23_001_025.json",
+      "bytes": 28293,
+      "sha256": "c11f909a0215f8ba0116950d8c9602fca58effe99a6bcff05b6c8e3941d0ee22",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "data/annotation_scope_audit_2026-10-23_026_050.json",
+      "bytes": 25674,
+      "sha256": "342f7c9eff0e8835a82481e78b1028bd1e94acfdca7d891a769478decbe68eeb",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "data/freeze_group_audit_2026-10-24.json",
+      "bytes": 34617,
+      "sha256": "0eeb8d291035ed25f52cb8b3a1ca49ca32cd5c03ab6cc1e95a2a7bc66c2434bc",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "data/retrieval_benchmark.json",
+      "bytes": 4945,
+      "sha256": "3d9a292fb70c369ec53ff10ca689d4c69abcd877924361114029514e1729cd4c",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "data/retrieval_label_audit_2026-10-23.json",
+      "bytes": 65866,
+      "sha256": "c24af053e78b359cf6eb45166159ba5e5c4ab620abd5fa9af4044db4c75be20a",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "data/seed_public_notes.json",
+      "bytes": 13449,
+      "sha256": "42a1978d08900f4d9d5837c2c0eb06794c915d243e7714c72e85097666bb33ea",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "data/source_audit_2026-10-21_en.json",
+      "bytes": 18506,
+      "sha256": "7416d2be464f8c8992091f0af7c050d8796cf23ad477394363988f10a7c2cc16",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "data/source_audit_2026-10-21_zh.json",
+      "bytes": 15151,
+      "sha256": "f257d1682e53317e79858b120524bf5d5fa8818c4e1d190f27b17d6e1c86e892",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/中文摘要检查_2026-10-21.md",
+      "bytes": 5274,
+      "sha256": "f7ec90449fd236014d1808f786ace2640c2a68fd4eaf36672476da383bedf522",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/人工复核操作.md",
+      "bytes": 4608,
+      "sha256": "f6b76f1872e1f38de557039d31a9147faf2ad31241df8896438b451e889c8e7d",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/今日交付_2026-10-21.md",
+      "bytes": 3487,
+      "sha256": "5ada5f0e06aa13a3906794702e96c78994cd0df79703421fe9f3c2a32f4be4d8",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/今日交付_2026-10-22.md",
+      "bytes": 1882,
+      "sha256": "681b29ad2bdf5e2eedf2fcece2cd581775de740191822db6cdd4af0b3e9bcb5b",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/今日交付_2026-10-23.md",
+      "bytes": 2717,
+      "sha256": "3a5e2da6db6b0ac45278e9a99ce12f5b81eccd92cbc2346cb5a68857872cdd24",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/今日交付_2026-10-24.md",
+      "bytes": 2015,
+      "sha256": "59360886d76d1362342b9a4a22116a9216e4f5481ad4557382abf5b5d7b8c008",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/仓库状态.md",
+      "bytes": 2810,
+      "sha256": "7b6549e7174ec4865a0572d181b0f06330e45fe017f3790da5bccb572dbdb7c9",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/候选检索与标注审查_2026-10-23.md",
+      "bytes": 8847,
+      "sha256": "e364b34842a1c3638243d8c0b940d1a9835937f8875d0971fe9dbd9f1764349e",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/冻结候选版_2026-10-24.md",
+      "bytes": 6006,
+      "sha256": "5c4f1a6da3fb4070cb44a565f19a74912c9a549a14d620dc0e179a1e70cc1dbf",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/数据库设计.md",
+      "bytes": 3711,
+      "sha256": "97e74bf67b27b8fb221690ea1c29cebd57d3ff08a760ce1d9da5c7b246d86d77",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/数据质量检查.md",
+      "bytes": 4218,
+      "sha256": "91e2933f405eb5b465824f15e2a06c638299524e96368bf2a2580ba257ffb269",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/最终交付_2026-10-25.md",
+      "bytes": 7760,
+      "sha256": "c667d5ef9ff753cdb28035e9e0ddabc42e2da1d9e0a74f57c9411015202f8d1d",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/来源核查.md",
+      "bytes": 4596,
+      "sha256": "68148e39a96edfea4558d13a98e9fe8a6bbbc691d89595eae4ce6ca071830c67",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/检索评测说明.md",
+      "bytes": 6857,
+      "sha256": "51d7a88f36b53eee4e4869513b391d0d0656736d88a5236918d723086f44e29d",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/每日推进计划.md",
+      "bytes": 6524,
+      "sha256": "12bae57d01f086a45af1a3ca3c996e9816db3e029d4d6c89d85b09786e11568b",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/英文摘要检查_2026-10-22.md",
+      "bytes": 6793,
+      "sha256": "b63487aeba2d4b71597463ca37adef517287fe3b95c063dca3859594f65ead25",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/进度日志.md",
+      "bytes": 23274,
+      "sha256": "7049f660c75555b579b6a53711df81ca09f67104aff813dfa10f16085a82fa6c",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/采集与标注规范.md",
+      "bytes": 4573,
+      "sha256": "dbbc78fa017102ff0ca6ff58cd804a069b91eedad43c597f00164fd65eed3c63",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "docs/高校参考.md",
+      "bytes": 8436,
+      "sha256": "38c31111fd30b3aede652986dd4ff3f11dedacbcaf809e6d5b58d18fa6f1cd43",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/annotation_scope_audit.json",
+      "bytes": 62546,
+      "sha256": "c01fd6eeeef947cd52d02224ac965badf7a8c662c94962f5ad147111a6d5eee6",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/data_quality.json",
+      "bytes": 29111,
+      "sha256": "69797074aa2a08b2e8d950e3bafdc7b1c7959c2cc9b7813d42c6752c3f8a3a66",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/final_candidate_comparison_2026-10-25.json",
+      "bytes": 17076,
+      "sha256": "750b92f93755491f3bbc621aef3b7ec8ec53cc1897b323be6a56304b06ba3561",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/final_completion_2026-10-25.json",
+      "bytes": 849,
+      "sha256": "d4e918a119bc44bb7be4f43cf094deb00fadad9018bad69c6b34c030ac53da0f",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/final_export_validation_2026-10-25.json",
+      "bytes": 2435,
+      "sha256": "56c87b10948270a606086c50d156cc09c038edff215a7f01c7dabb4088d3b0e4",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/final_statistics_2026-10-25.json",
+      "bytes": 5037,
+      "sha256": "12274a3cc1c75b8e4c7fcbac910acfab88e9239dda8706baa7746a327a9e2fc8",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/freeze_audit_consistency_2026-10-24.json",
+      "bytes": 9572,
+      "sha256": "b73502af43eb8a208d0fd3b5f67d635de77a2ea49927871858d54ff5ca5d5142",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/freeze_export_validation_2026-10-24.json",
+      "bytes": 3076,
+      "sha256": "747f5dd4077ef53e25e190210cd533fe5c3d023a27ae706baeeb6982fb8c40be",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/freeze_manifest_2026-10-24.json",
+      "bytes": 15302,
+      "sha256": "9555d9235b9bb96ff452e03e568f30e2f6bc37f31439001535272117f22a42dd",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/mysql_seed.sql",
+      "bytes": 416026,
+      "sha256": "be6f0187a9102c5c558bcbb7db088244167ec3440cced68586e643b2028f3a69",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/notes.csv",
+      "bytes": 77156,
+      "sha256": "833938694ff14e359386396a0e9dad81ad215d18774d1f5bb7cea214bf92e56f",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/notes.json",
+      "bytes": 136191,
+      "sha256": "d1a57cce3def788e7be5d9dc94387f294fc26d6ed95c671c47fd9cdf86055a3e",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/notes.md",
+      "bytes": 75989,
+      "sha256": "3b23be1821107807ea89ab7504100bf39e3314cc147028a3e0d668420037f596",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/rebuild_validation_2026-10-24.json",
+      "bytes": 22879,
+      "sha256": "b59ef2a872aa4e832e79770f2c8fef9056fb293d47eb5510ad9b312e6aa0540d",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/retrieval_eval.json",
+      "bytes": 22679,
+      "sha256": "2c7b764c0b2128d84a2c0421cfda8e5207137bd45f5da0bc85a403f53a135dc2",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/retrieval_eval_2026-10-23.json",
+      "bytes": 22679,
+      "sha256": "b211e4dd483fc41d88518f84a5bdd40c7d0f474894eb987e933cb4a6b86401a2",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/retrieval_eval_2026-10-24.json",
+      "bytes": 22679,
+      "sha256": "4c02b0cab71447f1063c495c1df4e473c84b49dad1e003f9c85f10d5742f2f38",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/retrieval_eval_2026-10-25.json",
+      "bytes": 22679,
+      "sha256": "2c7b764c0b2128d84a2c0421cfda8e5207137bd45f5da0bc85a403f53a135dc2",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/retrieval_label_audit.json",
+      "bytes": 48850,
+      "sha256": "f310f664f62312c498cc3d3dccec9664777efcc6848da418fcf7de05267dae53",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/source_audit.json",
+      "bytes": 40532,
+      "sha256": "0ccaf1819447d3af836f940e57d32f54acd0266315482ded211844fceb18ce86",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/summary_revision_retrieval_comparison.json",
+      "bytes": 2925,
+      "sha256": "78c45e1cd928fa2a756b1d48450459bb80f08a579068e69379222e981ef4ee1b",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/validation.json",
+      "bytes": 10176,
+      "sha256": "6971f7f57928dce5297ee2a3c9d183eb76fdd717265beb3919f97fe194d7e11a",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "exports/浏览数据库.html",
+      "bytes": 128964,
+      "sha256": "b338d7fa145102d74c33e7c659f909f76c70655973f83a76c7ad4978aaa4fc13",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "loom.db",
+      "bytes": 270336,
+      "sha256": "b1a816dc97b386861d1b6ff6c524aacdde72ff8f7d5f4aa695ed52f11ab902e3",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "reference/Loom数据库_2026-10-24_冻结候选版.zip",
+      "bytes": 466931,
+      "sha256": "a0c04d8c50d782dd3635372438676ee705c55e811f82752054e54df4a3269f48",
+      "role": "preserved_prior_candidate_archive"
+    },
+    {
+      "path": "schema/mysql.sql",
+      "bytes": 10160,
+      "sha256": "91841e7a86a2739e722e63f2954dfd33c3ee4fd3752a7bae8fb57d3ea759e910",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "schema/sqlite.sql",
+      "bytes": 7005,
+      "sha256": "45db93f9481e5ce6738e482c1107841658178382beec2d8e57916ec1a40107b4",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "scripts/apply_annotation_revision.py",
+      "bytes": 8883,
+      "sha256": "6d573ff2aeb60ec46c16bc47f400ed2f4e3c82096f18257ea411f3adeb0c0966",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "scripts/audit_quality.py",
+      "bytes": 15289,
+      "sha256": "8c9e9bf6c188eeb3a10e2dbeb929dc05add2de5f980216fe30f379adc90c7d03",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "scripts/build_viewer.py",
+      "bytes": 13090,
+      "sha256": "d949964a58c360b2cc752e6895679cedbdf75df30aec04d075ff9a118f3c2907",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "scripts/evaluate_retrieval.py",
+      "bytes": 11383,
+      "sha256": "e34f09f48f88ce2afef3fa008b09bbf0d21c252c82014f591f3b321c3948b300",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "scripts/export_mysql.py",
+      "bytes": 10328,
+      "sha256": "57a9c5b7cb1c9f9267c356f6cbc41cc1c8f68d544b53ea0acaab95ec1a4e3f8d",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "scripts/manage.py",
+      "bytes": 31094,
+      "sha256": "ee44b0ff74249f639bedf1e0652819ad116096a841f74958e3de67cebf8afb34",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "scripts/package_release.py",
+      "bytes": 1846,
+      "sha256": "a0fccf3f806d2487973e33981063a3567df9c1125b53cabd1279c5b91f080700",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "scripts/review_notes.py",
+      "bytes": 6508,
+      "sha256": "f8bd9826ae6bfa5547588ae79830cf72aecb304416b859c2c61755ec3e3f63d3",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "scripts/source_audits.py",
+      "bytes": 9337,
+      "sha256": "1ec173ebb9adb4a5e66c871e8e37b4b2ae12ae45581db5a65e666ce14da9bab9",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "tests/test_annotation_revision.py",
+      "bytes": 12937,
+      "sha256": "4596d146ccef9ffbd5532db7658a4f8fccc8b55f08b693734acd6b60faf0f435",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "tests/test_database.py",
+      "bytes": 16290,
+      "sha256": "bd62ddf3a6d74a3ba6362b02119a54b5c7eaf674f24510c2ec2d4e120b124b99",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "tests/test_quality_audit.py",
+      "bytes": 7053,
+      "sha256": "3a2b2df0691250063fd4a55938875a049e2f92cf7a5eb1d13cbfa3fe8219b3e5",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "tests/test_retrieval_eval.py",
+      "bytes": 7197,
+      "sha256": "d1a592cd18257e5d3630641be9e0f9a9a25d4af012d89170981fbc7a019894ac",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "tests/test_review_notes.py",
+      "bytes": 4184,
+      "sha256": "065db0581aacafdcebd00938ce09f4bf6a737ef4dfededf7a1d095c012425cad",
+      "role": "final_delivery_file"
+    },
+    {
+      "path": "tests/test_source_audits.py",
+      "bytes": 9050,
+      "sha256": "8b204bee7964d20b3d518bf93fd0db96ffe6c1edeeab4d93d4b54fae5efc2263",
+      "role": "final_delivery_file"
+    }
+  ]
+}

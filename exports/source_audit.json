@@ -2,7 +2,7 @@
   "metadata": {
     "project": "Loom source checks",
     "record_count": 50,
-    "exported_at": "2026-10-24T14:38:28.569968+00:00",
+    "exported_at": "2026-10-25T14:32:47.301511+00:00",
     "annotation_status_changed": false,
     "scope": "指定笔记摘录的网页来源比对；不传播到同源其他摘录，不是人工语义金标准，不授予训练许可"
   },
